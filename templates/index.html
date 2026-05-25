@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard de análise de sentimentos com IA - Visualize avaliações de clientes com gráficos interativos">
+    <title>Analisador de Sentimentos com IA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: SRI não se aplica a CSS dinâmico do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Category Selection Screen -->
+    <div id="category-selection-screen" class="selection-screen">
+        <div class="selection-container">
+            <header class="selection-header">
+                <span class="main-icon">🧠</span>
+                <h1>Analisador de Sentimentos</h1>
+                <p>Selecione uma fonte de dados para analisar o sentimento e as emoções com inteligência artificial</p>
+            </header>
+
+            <!-- Cards Grid -->
+            <div class="category-grid">
+                <div class="category-card" data-category="playstore">
+                    <div class="card-icon">📱</div>
+                    <h3>Google Play Store</h3>
+                    <p>Avaliações de apps: estabilidade, bugs, versões do app, versão do Android e atualizações.</p>
+                    <span class="card-count-badge">100 avaliações</span>
+                </div>
+
+                <div class="category-card" data-category="youtube">
+                    <div class="card-icon">📺</div>
+                    <h3>YouTube Canais</h3>
+                    <p>Comentários de vídeos: didática, áudio, quantidade de anúncios, duração do vídeo e temas.</p>
+                    <span class="card-count-badge">100 avaliações</span>
+                </div>
+
+                <div class="category-card" data-category="instagram">
+                    <div class="card-icon">📸</div>
+                    <h3>Instagram Posts</h3>
+                    <p>Reações de redes sociais: engajamento em Reels vs Feed, hashtags e bugs de direct.</p>
+                    <span class="card-count-badge">100 avaliações</span>
+                </div>
+
+                <div class="category-card" data-category="amazon">
+                    <div class="card-icon">📦</div>
+                    <h3>Amazon E-commerce</h3>
+                    <p>Opiniões sobre produtos físicos: atraso na entrega, embalagem, suporte e reembolso.</p>
+                    <span class="card-count-badge">100 avaliações</span>
+                </div>
+            </div>
+
+            <!-- Simulation Inputs Card -->
+            <div id="simulation-inputs-card" class="simulation-card hidden">
+                <h4 id="sim-title">Configurações de Extração Dinâmica</h4>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label id="lbl-sim-target" for="sim-target">Identificador de Destino</label>
+                        <input type="text" id="sim-target" class="sim-input" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label id="lbl-sim-key" for="sim-key">Chave de API de Autenticação</label>
+                        <input type="password" id="sim-key" class="sim-input" placeholder="Chave fictícia de acesso">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Area -->
+            <div class="selection-actions">
+                <button id="btn-start-analysis" class="btn-primary btn-large" disabled>
+                    Selecione uma categoria primeiro
+                </button>
+                <div class="cache-actions">
+                    <button id="btn-clear-global-cache" class="btn-link">
+                        🧹 Limpar Caches do Sistema
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading / Progress Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 id="loading-title">Iniciando análise de dados...</h2>
+            
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+
+            <!-- Steps Checklist -->
+            <div class="steps-checklist">
+                <div class="step-item" id="step-load">
+                    <span class="step-status-icon">⚪</span>
+                    <span class="step-label">Carregar base de dados JSON</span>
+                </div>
+                <div class="step-item" id="step-cache">
+                    <span class="step-status-icon">⚪</span>
+                    <span class="step-label">Consultar cache local SQLite</span>
+                </div>
+                <div class="step-item" id="step-ai">
+                    <span class="step-status-icon">⚪</span>
+                    <span class="step-label">Analisar novos comentários via IA</span>
+                </div>
+                <div class="step-item" id="step-stats">
+                    <span class="step-status-icon">⚪</span>
+                    <span class="step-label">Calcular estatísticas e gráficos</span>
+                </div>
+            </div>
+
+            <p class="loading-subtext" id="loading-log">Preparando pipeline de NLP...</p>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="error-state hidden">
+        <div class="error-content">
+            <span class="error-icon">⚠️</span>
+            <h2>Erro ao processar dados</h2>
+            <p id="error-message"></p>
+            <div class="error-actions">
+                <button id="btn-retry" class="btn-primary">Tentar Novamente</button>
+                <button id="btn-error-back" class="btn-secondary">Voltar ao Início</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="main-dashboard" class="hidden">
+
+        <!-- Sidebar Navigation & Filters -->
+        <aside class="dashboard-sidebar">
+            <!-- Botão Voltar (Standalone) -->
+            <div class="sidebar-nav-back">
+                <button id="btn-back-to-selection" class="btn-back">
+                    ← Voltar ao Início
+                </button>
+            </div>
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-titles">
+                        <div class="header-title">
+                            <span class="header-icon" id="dashboard-category-icon">🧠</span>
+                            <h1>Analisador de Sentimentos — <span id="dashboard-category-name">Categoria</span></h1>
+                        </div>
+                        <p class="header-subtitle">Dashboard inteligente de avaliações e análise semântica</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Performance / Cache Optimization Banner -->
+            <section class="performance-banner" id="performance-banner" aria-label="Métricas de Otimização">
+                <div class="perf-badge">⚡ Otimizado</div>
+                <div class="perf-stats">
+                    <span>Tempo total: <strong id="perf-time">-- ms</strong></span>
+                    <span class="separator">|</span>
+                    <span>Cache local SQLite: <strong id="perf-cache-count">--/-- (0%)</strong></span>
+                    <span class="separator">|</span>
+                    <span>Processado por IA: <strong id="perf-ia-count">--</strong></span>
+                    <span class="separator">|</span>
+                    <span class="perf-saving-text">Economia estimada: <strong id="perf-saving">--s</strong></span>
+                </div>
+            </section>
+
+            <!-- Dynamic Tabs Navigation -->
+            <div class="tabs-container">
+                <nav class="dashboard-tabs" aria-label="Navegação do Dashboard">
+                    <button class="tab-button active" data-tab="tab-geral">📊 Visão Geral</button>
+                    <button class="tab-button" data-tab="tab-custom">⚙️ Métricas da Categoria</button>
+                    <button class="tab-button" data-tab="tab-feed">💬 Lista de Avaliações</button>
+                </nav>
+            </div>
+
+            <!-- Global Filters Bar (Available across all tabs) -->
+            <section class="filters-section" aria-label="Filtros">
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label for="filtro-data-inicio">Data Início</label>
+                        <input type="date" id="filtro-data-inicio" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filtro-data-fim">Data Fim</label>
+                        <input type="date" id="filtro-data-fim" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filtro-sentimento">Sentimento</label>
+                        <select id="filtro-sentimento" class="filter-input">
+                            <option value="todos">Todos</option>
+                            <option value="positivo">Positivo</option>
+                            <option value="negativo">Negativo</option>
+                            <option value="neutro">Neutro</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filtro-emocao">Emoção</label>
+                        <select id="filtro-emocao" class="filter-input">
+                            <option value="todos">Todas</option>
+                        </select>
+                    </div>
+                    <button id="btn-limpar-filtros" class="btn-secondary">Limpar Filtros</button>
+                </div>
+            </section>
+        </aside>
+
+        <!-- TAB 1: VISÃO GERAL -->
+        <div id="tab-geral" class="tab-pane">
+            <!-- KPI Cards -->
+            <section class="kpi-section" aria-label="Indicadores principais">
+                <div class="kpi-card" id="kpi-total">
+                    <div class="kpi-icon">📋</div>
+                    <div class="kpi-info">
+                        <span class="kpi-value" id="kpi-total-valor">--</span>
+                        <span class="kpi-label">Total de Avaliações</span>
+                    </div>
+                </div>
+                <div class="kpi-card" id="kpi-media">
+                    <div class="kpi-icon">⭐</div>
+                    <div class="kpi-info">
+                        <span class="kpi-value" id="kpi-media-valor">--</span>
+                        <span class="kpi-label">Média de Estrelas</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-positivo" id="kpi-positivo">
+                    <div class="kpi-icon">😊</div>
+                    <div class="kpi-info">
+                        <span class="kpi-value" id="kpi-positivo-valor">--</span>
+                        <span class="kpi-label">Positivos</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-negativo" id="kpi-negativo">
+                    <div class="kpi-icon">😞</div>
+                    <div class="kpi-info">
+                        <span class="kpi-value" id="kpi-negativo-valor">--</span>
+                        <span class="kpi-label">Negativos</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-neutro" id="kpi-neutro">
+                    <div class="kpi-icon">😐</div>
+                    <div class="kpi-info">
+                        <span class="kpi-value" id="kpi-neutro-valor">--</span>
+                        <span class="kpi-label">Neutros</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Row 1 -->
+            <section class="charts-row" aria-label="Gráficos de sentimentos e emoções">
+                <div class="chart-card">
+                    <h2 class="chart-title">Distribuição de Sentimentos</h2>
+                    <div class="chart-container chart-container-doughnut">
+                        <canvas id="grafico-sentimentos"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h2 class="chart-title">Emoções Identificadas</h2>
+                    <div class="chart-container">
+                        <canvas id="grafico-emocoes"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chart Row 2: Timeline -->
+            <section class="charts-row charts-row-full" aria-label="Evolução temporal">
+                <div class="chart-card chart-card-full">
+                    <h2 class="chart-title">Evolução dos Sentimentos ao Longo do Tempo</h2>
+                    <div class="chart-container chart-container-line">
+                        <canvas id="grafico-evolucao"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: MÉTRICAS DA CATEGORIA -->
+        <div id="tab-custom" class="tab-pane hidden">
+            <!-- Specific custom charts row -->
+            <section class="charts-row" aria-label="Métricas específicas da plataforma">
+                <div class="chart-card">
+                    <h2 class="chart-title" id="custom-chart-title-1">Métrica de Plataforma 1</h2>
+                    <div class="chart-container">
+                        <canvas id="grafico-custom-1"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h2 class="chart-title" id="custom-chart-title-2">Métrica de Plataforma 2</h2>
+                    <div class="chart-container">
+                        <canvas id="grafico-custom-2"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Points Section (Positivos/Negativos Recorrentes) -->
+            <section class="points-section" aria-label="Pontos recorrentes">
+                <div class="points-card points-positivos">
+                    <h2 class="points-title">
+                        <span class="points-icon">✅</span>
+                        Pontos Positivos Recorrentes
+                    </h2>
+                    <ul id="lista-pontos-positivos" class="points-list"></ul>
+                </div>
+                <div class="points-card points-negativos">
+                    <h2 class="points-title">
+                        <span class="points-icon">❌</span>
+                        Pontos Negativos Recorrentes
+                    </h2>
+                    <ul id="lista-pontos-negativos" class="points-list"></ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 3: LISTA DE AVALIAÇÕES -->
+        <div id="tab-feed" class="tab-pane hidden">
+            <!-- Comments Section -->
+            <section class="comments-section" aria-label="Comentários representativos">
+                <div class="comments-column">
+                    <h2 class="comments-title">
+                        <span class="comments-icon">🌟</span>
+                        Melhores Comentários Positivos
+                    </h2>
+                    <div id="comentarios-positivos" class="comments-list"></div>
+                    <button id="btn-load-more-pos" class="btn-load-more hidden">Mostrar Mais Comentários Positivos (+5)</button>
+                </div>
+                <div class="comments-column">
+                    <h2 class="comments-title">
+                        <span class="comments-icon">🔴</span>
+                        Comentários Negativos Críticos
+                    </h2>
+                    <div id="comentarios-negativos" class="comments-list"></div>
+                    <button id="btn-load-more-neg" class="btn-load-more hidden">Mostrar Mais Comentários Críticos (+5)</button>
+                </div>
+            </section>
+
+            <!-- All Reviews Table -->
+            <section class="reviews-section" aria-label="Todas as avaliações">
+                <h2 class="section-title">📝 Todas as Avaliações</h2>
+                <div class="reviews-table-container">
+                    <table class="reviews-table" id="tabela-avaliacoes">
+                        <thead>
+                            <tr>
+                                <th>Usuário</th>
+                                <th>Estrelas</th>
+                                <th>Comentário</th>
+                                <th>Sentimento</th>
+                                <th>Emoção</th>
+                                <th>Criticidade</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-avaliacoes"></tbody>
+                    </table>
+                </div>
+                <button id="btn-load-more-table" class="btn-load-more hidden">Carregar Mais Avaliações (+10)</button>
+            </section>
+        </div>
+
+
+
+    </div>
+
+    <!-- Dashboard JS -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

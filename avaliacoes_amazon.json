@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-02",
+    "dias_entrega": 4,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 2,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 5,
+    "comentario": "Superou todas as expectativas! Design moderno, material resistente e atendimento impecável. Nota 10!",
+    "data": "2026-05-13",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 3,
+    "usuario": "Natália Castro",
+    "estrelas": 1,
+    "comentario": "Não gostei. A descrição prometia muito e entregou pouco. O material parece barato e frágil.",
+    "data": "2026-05-06",
+    "dias_entrega": 14,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 4,
+    "usuario": "Felipe Correia",
+    "estrelas": 4,
+    "comentario": "Gostei do produto, funciona bem e tem boa durabilidade. Excelente compra!",
+    "data": "2026-05-12",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 5,
+    "usuario": "Renato Ramos",
+    "estrelas": 5,
+    "comentario": "Produto excelente! Chegou antes do prazo e a qualidade superou minhas expectativas. Recomendo demais!",
+    "data": "2026-05-20",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 6,
+    "usuario": "Ana Oliveira",
+    "estrelas": 4,
+    "comentario": "Gostei do produto, funciona bem e tem boa durabilidade. Excelente compra!",
+    "data": "2026-05-09",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 7,
+    "usuario": "João Santos",
+    "estrelas": 3,
+    "comentario": "Entrega rápida, porém o produto é ligeiramente menor do que parece nas fotos promocionais.",
+    "data": "2026-05-19",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 8,
+    "usuario": "Matheus Santos",
+    "estrelas": 3,
+    "comentario": "Gostei bastante do produto, atendimento foi rápido e eficiente. Só achei a embalagem um pouco frágil.",
+    "data": "2026-05-18",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 9,
+    "usuario": "Marcos Rocha",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-15",
+    "dias_entrega": 7,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 10,
+    "usuario": "Gustavo Cardoso",
+    "estrelas": 5,
+    "comentario": "Excelente custo-benefício! Produto robusto, bonito e funcional. Suporte respondeu minhas dúvidas em minutos.",
+    "data": "2026-05-08",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 11,
+    "usuario": "Maria Silva",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-01",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 12,
+    "usuario": "João Santos",
+    "estrelas": 4,
+    "comentario": "Gostei do produto, funciona bem e tem boa durabilidade. Excelente compra!",
+    "data": "2026-05-18",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 13,
+    "usuario": "Patricia Nunes",
+    "estrelas": 3,
+    "comentario": "Razoável. Cumpre o que promete mas não surpreende. A embalagem poderia ser melhor para proteger o produto.",
+    "data": "2026-05-21",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 14,
+    "usuario": "Isabela Mendes",
+    "estrelas": 3,
+    "comentario": "Chegou dentro do prazo mas veio com alguns pequenos riscos na superfície. Funciona normalmente.",
+    "data": "2026-05-10",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 15,
+    "usuario": "Sabrina Pires",
+    "estrelas": 3,
+    "comentario": "Normal, sem grandes surpresas. Funciona direitinho mas nada que me faça comprar de novo. Indiferente.",
+    "data": "2026-05-06",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 16,
+    "usuario": "Alexandre Sales",
+    "estrelas": 3,
+    "comentario": "Entrega rápida, porém o produto é ligeiramente menor do que parece nas fotos promocionais.",
+    "data": "2026-05-02",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 17,
+    "usuario": "Natália Castro",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-12",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 18,
+    "usuario": "Renato Ramos",
+    "estrelas": 1,
+    "comentario": "Pior compra que já fiz. Produto veio quebrado dentro da caixa e o vendedor sumiu. Vou pedir reembolso.",
+    "data": "2026-05-04",
+    "dias_entrega": 12,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 19,
+    "usuario": "Maria Silva",
+    "estrelas": 5,
+    "comentario": "Produto excelente! Chegou antes do prazo e a qualidade superou minhas expectativas. Recomendo demais!",
+    "data": "2026-05-11",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 20,
+    "usuario": "Vitor Goulart",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-05",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 21,
+    "usuario": "André Correia",
+    "estrelas": 4,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-05",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 22,
+    "usuario": "Otávio Mendes",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-20",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 23,
+    "usuario": "Kamila Dias",
+    "estrelas": 5,
+    "comentario": "Produto bom e bonito. A instalação foi fácil e funciona perfeitamente. Recomendo para quem precisa.",
+    "data": "2026-05-15",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 24,
+    "usuario": "Patricia Cruz",
+    "estrelas": 2,
+    "comentario": "Muito ruim. Recebi o produto errado e quando pedi troca, disseram que demoraria 30 dias. Inaceitável!",
+    "data": "2026-05-01",
+    "dias_entrega": 12,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 25,
+    "usuario": "Ricardo Ferreira",
+    "estrelas": 2,
+    "comentario": "A caixa de papelão veio toda amassada e o produto arranhado por dentro. Falta de cuidado na entrega.",
+    "data": "2026-05-06",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 26,
+    "usuario": "Patricia Nunes",
+    "estrelas": 3,
+    "comentario": "Entrega rápida, porém o produto é ligeiramente menor do que parece nas fotos promocionais.",
+    "data": "2026-05-04",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 27,
+    "usuario": "Fernanda Lima",
+    "estrelas": 5,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-14",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 28,
+    "usuario": "Camila Rodrigues",
+    "estrelas": 1,
+    "comentario": "Muito ruim. Recebi o produto errado e quando pedi troca, disseram que demoraria 30 dias. Inaceitável!",
+    "data": "2026-05-19",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 29,
+    "usuario": "Carlos Souza",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-17",
+    "dias_entrega": 9,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 30,
+    "usuario": "Marcelo Lins",
+    "estrelas": 4,
+    "comentario": "Excelente custo-benefício! Produto robusto, bonito e funcional. Suporte respondeu minhas dúvidas em minutos.",
+    "data": "2026-05-18",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 31,
+    "usuario": "Tatiane Assis",
+    "estrelas": 2,
+    "comentario": "Horrível! Comprei e me arrependi. O produto parou de funcionar em dois dias e ninguém atende o telefone do suporte.",
+    "data": "2026-05-20",
+    "dias_entrega": 13,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 32,
+    "usuario": "André Correia",
+    "estrelas": 3,
+    "comentario": "Produto ok, nada demais. Funciona conforme o esperado mas não tem nenhum diferencial. Preço justo.",
+    "data": "2026-05-15",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 33,
+    "usuario": "Marcos Rocha",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-16",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 34,
+    "usuario": "Marcelo Lins",
+    "estrelas": 5,
+    "comentario": "Muito bom, entrega rápida e produto de qualidade. Muito satisfeito.",
+    "data": "2026-05-03",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 35,
+    "usuario": "Bruna Cavalcanti",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-04",
+    "dias_entrega": 12,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 36,
+    "usuario": "Monique Viana",
+    "estrelas": 3,
+    "comentario": "Gostei bastante do produto, atendimento foi rápido e eficiente. Só achei a embalagem um pouco frágil.",
+    "data": "2026-05-15",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 37,
+    "usuario": "Isabela Mendes",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-14",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 38,
+    "usuario": "Gabriela Lima",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-04",
+    "dias_entrega": 7,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 39,
+    "usuario": "Vitor Goulart",
+    "estrelas": 2,
+    "comentario": "O suporte pós-venda é péssimo. Tentei devolver e disseram que o frete de devolução é por minha conta.",
+    "data": "2026-05-01",
+    "dias_entrega": 12,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 40,
+    "usuario": "Tatiane Assis",
+    "estrelas": 5,
+    "comentario": "Muito bom, entrega rápida e produto de qualidade. Muito satisfeito.",
+    "data": "2026-05-04",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 41,
+    "usuario": "Sabrina Pires",
+    "estrelas": 5,
+    "comentario": "Produto excelente! Chegou antes do prazo e a qualidade superou minhas expectativas. Recomendo demais!",
+    "data": "2026-05-18",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 42,
+    "usuario": "Gabriel Costa",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-02",
+    "dias_entrega": 4,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 43,
+    "usuario": "Amanda Pereira",
+    "estrelas": 3,
+    "comentario": "Gostei bastante do produto, atendimento foi rápido e eficiente. Só achei a embalagem um pouco frágil.",
+    "data": "2026-05-15",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 44,
+    "usuario": "Pedro Almeida",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-17",
+    "dias_entrega": 13,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 45,
+    "usuario": "Diego Lopes",
+    "estrelas": 2,
+    "comentario": "Muito ruim. Recebi o produto errado e quando pedi troca, disseram que demoraria 30 dias. Inaceitável!",
+    "data": "2026-05-18",
+    "dias_entrega": 14,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 46,
+    "usuario": "Fernanda Lima",
+    "estrelas": 4,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-03",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 47,
+    "usuario": "Júlia Carvalho",
+    "estrelas": 1,
+    "comentario": "Não recomendo. O produto esquenta demais e faz um barulho estranho. Parece que vai quebrar.",
+    "data": "2026-05-02",
+    "dias_entrega": 15,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 48,
+    "usuario": "Luana Souza",
+    "estrelas": 5,
+    "comentario": "Produto excelente! Chegou antes do prazo e a qualidade superou minhas expectativas. Recomendo demais!",
+    "data": "2026-05-11",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 49,
+    "usuario": "Renato Ramos",
+    "estrelas": 4,
+    "comentario": "Gostei do produto, funciona bem e tem boa durabilidade. Excelente compra!",
+    "data": "2026-05-11",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 50,
+    "usuario": "Gabriel Costa",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-21",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 51,
+    "usuario": "Ana Oliveira",
+    "estrelas": 3,
+    "comentario": "Chegou dentro do prazo mas veio com alguns pequenos riscos na superfície. Funciona normalmente.",
+    "data": "2026-05-02",
+    "dias_entrega": 7,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 52,
+    "usuario": "Vanessa Dias",
+    "estrelas": 2,
+    "comentario": "Decepcionante. A qualidade do material é muito inferior ao anunciado. Parece produto falsificado.",
+    "data": "2026-05-15",
+    "dias_entrega": 14,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 53,
+    "usuario": "João Santos",
+    "estrelas": 2,
+    "comentario": "Não recomendo. O produto esquenta demais e faz um barulho estranho. Parece que vai quebrar.",
+    "data": "2026-05-12",
+    "dias_entrega": 11,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 54,
+    "usuario": "Carolina Moreira",
+    "estrelas": 2,
+    "comentario": "O suporte pós-venda é péssimo. Tentei devolver e disseram que o frete de devolução é por minha conta.",
+    "data": "2026-05-19",
+    "dias_entrega": 11,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 55,
+    "usuario": "Júlia Carvalho",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-02",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 56,
+    "usuario": "Patricia Cruz",
+    "estrelas": 5,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-03",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 57,
+    "usuario": "Sabrina Pires",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-16",
+    "dias_entrega": 4,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 58,
+    "usuario": "Diego Lopes",
+    "estrelas": 3,
+    "comentario": "Produto ok, nada demais. Funciona conforme o esperado mas não tem nenhum diferencial. Preço justo.",
+    "data": "2026-05-18",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 59,
+    "usuario": "Bruno Martins",
+    "estrelas": 4,
+    "comentario": "Compra nota mil! Produto chegou rapidíssimo, embalagem impecável e qualidade top. Já indiquei para amigos.",
+    "data": "2026-05-06",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 60,
+    "usuario": "Patricia Cruz",
+    "estrelas": 4,
+    "comentario": "Excelente custo-benefício! Produto robusto, bonito e funcional. Suporte respondeu minhas dúvidas em minutos.",
+    "data": "2026-05-19",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 61,
+    "usuario": "Felipe Correia",
+    "estrelas": 1,
+    "comentario": "Não recomendo. O produto esquenta demais e faz um barulho estranho. Parece que vai quebrar.",
+    "data": "2026-05-15",
+    "dias_entrega": 8,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 62,
+    "usuario": "Cláudia Diniz",
+    "estrelas": 4,
+    "comentario": "Adorei! Produto lindo, bem embalado e chegou super rápido. O atendimento pelo chat foi ótimo também.",
+    "data": "2026-05-20",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 63,
+    "usuario": "Fernanda Lima",
+    "estrelas": 4,
+    "comentario": "Simplesmente maravilhoso! A qualidade é impecável e o atendimento da equipe foi muito atencioso. Voltarei a comprar.",
+    "data": "2026-05-14",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 64,
+    "usuario": "Amanda Pereira",
+    "estrelas": 5,
+    "comentario": "Produto excelente! Chegou antes do prazo e a qualidade superou minhas expectativas. Recomendo demais!",
+    "data": "2026-05-16",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 65,
+    "usuario": "Ana Oliveira",
+    "estrelas": 1,
+    "comentario": "Não gostei. A descrição prometia muito e entregou pouco. O material parece barato e frágil.",
+    "data": "2026-05-07",
+    "dias_entrega": 8,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 66,
+    "usuario": "Diego Lopes",
+    "estrelas": 3,
+    "comentario": "É um produto aceitável pelo preço. Não é o melhor do mercado mas também não é o pior. Cumpre sua função básica.",
+    "data": "2026-05-16",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 67,
+    "usuario": "Bruno Martins",
+    "estrelas": 2,
+    "comentario": "Pior compra que já fiz. Produto veio quebrado dentro da caixa e o vendedor sumiu. Vou pedir reembolso.",
+    "data": "2026-05-19",
+    "dias_entrega": 12,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 68,
+    "usuario": "Renato Ramos",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-12",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 69,
+    "usuario": "Maria Silva",
+    "estrelas": 4,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-04",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 70,
+    "usuario": "Alexandre Sales",
+    "estrelas": 2,
+    "comentario": "Não gostei. A descrição prometia muito e entregou pouco. O material parece barato e frágil.",
+    "data": "2026-05-06",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 71,
+    "usuario": "Marcos Rocha",
+    "estrelas": 4,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-09",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 72,
+    "usuario": "Arthur Rezende",
+    "estrelas": 3,
+    "comentario": "Razoável. Cumpre o que promete mas não surpreende. A embalagem poderia ser melhor para proteger o produto.",
+    "data": "2026-05-07",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 73,
+    "usuario": "Marcelo Lins",
+    "estrelas": 3,
+    "comentario": "Mediano. O produto é funcional mas nada excepcional. Esperava mais pelo preço que paguei.",
+    "data": "2026-05-05",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 74,
+    "usuario": "Cláudia Diniz",
+    "estrelas": 3,
+    "comentario": "Chegou dentro do prazo mas veio com alguns pequenos riscos na superfície. Funciona normalmente.",
+    "data": "2026-05-11",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 75,
+    "usuario": "Alexandre Sales",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-09",
+    "dias_entrega": 4,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 76,
+    "usuario": "Daniel Ferreira",
+    "estrelas": 3,
+    "comentario": "Mediano. O produto é funcional mas nada excepcional. Esperava mais pelo preço que paguei.",
+    "data": "2026-05-14",
+    "dias_entrega": 4,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 77,
+    "usuario": "Diego Lopes",
+    "estrelas": 1,
+    "comentario": "Pior compra que já fiz. Produto veio quebrado dentro da caixa e o vendedor sumiu. Vou pedir reembolso.",
+    "data": "2026-05-09",
+    "dias_entrega": 15,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 78,
+    "usuario": "Felipe Correia",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-07",
+    "dias_entrega": 14,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 79,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 3,
+    "comentario": "Produto ok, nada demais. Funciona conforme o esperado mas não tem nenhum diferencial. Preço justo.",
+    "data": "2026-05-02",
+    "dias_entrega": 7,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 80,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 3,
+    "comentario": "Gostei bastante do produto, atendimento foi rápido e eficiente. Só achei a embalagem um pouco frágil.",
+    "data": "2026-05-03",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 81,
+    "usuario": "Diego Lopes",
+    "estrelas": 5,
+    "comentario": "Excelente custo-benefício! Produto robusto, bonito e funcional. Suporte respondeu minhas dúvidas em minutos.",
+    "data": "2026-05-12",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 82,
+    "usuario": "Lucas Barbosa",
+    "estrelas": 4,
+    "comentario": "Superou todas as expectativas! Design moderno, material resistente e atendimento impecável. Nota 10!",
+    "data": "2026-05-21",
+    "dias_entrega": 1,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 83,
+    "usuario": "Patricia Cruz",
+    "estrelas": 1,
+    "comentario": "Não recomendo. O produto esquenta demais e faz um barulho estranho. Parece que vai quebrar.",
+    "data": "2026-05-09",
+    "dias_entrega": 9,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 84,
+    "usuario": "João Santos",
+    "estrelas": 3,
+    "comentario": "Normal, sem grandes surpresas. Funciona direitinho mas nada que me faça comprar de novo. Indiferente.",
+    "data": "2026-05-19",
+    "dias_entrega": 6,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 85,
+    "usuario": "João Santos",
+    "estrelas": 1,
+    "comentario": "Muito ruim. Recebi o produto errado e quando pedi troca, disseram que demoraria 30 dias. Inaceitável!",
+    "data": "2026-05-18",
+    "dias_entrega": 13,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 86,
+    "usuario": "Alexandre Sales",
+    "estrelas": 2,
+    "comentario": "Produto chegou atrasado e diferente da foto. A cor não era o que eu esperava. Fiquei frustrado.",
+    "data": "2026-05-04",
+    "dias_entrega": 9,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 87,
+    "usuario": "Daniel Ferreira",
+    "estrelas": 2,
+    "comentario": "O suporte pós-venda é péssimo. Tentei devolver e disseram que o frete de devolução é por minha conta.",
+    "data": "2026-05-14",
+    "dias_entrega": 8,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 88,
+    "usuario": "Renato Ramos",
+    "estrelas": 4,
+    "comentario": "Produto bom e bonito. A instalação foi fácil e funciona perfeitamente. Recomendo para quem precisa.",
+    "data": "2026-05-14",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 89,
+    "usuario": "Bruno Martins",
+    "estrelas": 2,
+    "comentario": "Produto chegou atrasado e diferente da foto. A cor não era o que eu esperava. Fiquei frustrado.",
+    "data": "2026-05-04",
+    "dias_entrega": 12,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 90,
+    "usuario": "Rafael Teixeira",
+    "estrelas": 5,
+    "comentario": "Produto bom e bonito. A instalação foi fácil e funciona perfeitamente. Recomendo para quem precisa.",
+    "data": "2026-05-18",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 91,
+    "usuario": "Tatiane Assis",
+    "estrelas": 4,
+    "comentario": "Simplesmente maravilhoso! A qualidade é impecável e o atendimento da equipe foi muito atencioso. Voltarei a comprar.",
+    "data": "2026-05-11",
+    "dias_entrega": 2,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 92,
+    "usuario": "Arthur Rezende",
+    "estrelas": 2,
+    "comentario": "Não gostei. A descrição prometia muito e entregou pouco. O material parece barato e frágil.",
+    "data": "2026-05-12",
+    "dias_entrega": 8,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 93,
+    "usuario": "Gabriela Lima",
+    "estrelas": 1,
+    "comentario": "Pior compra que já fiz. Produto veio quebrado dentro da caixa e o vendedor sumiu. Vou pedir reembolso.",
+    "data": "2026-05-03",
+    "dias_entrega": 10,
+    "embalagem_status": "danificada"
+  },
+  {
+    "id": 94,
+    "usuario": "Ana Oliveira",
+    "estrelas": 3,
+    "comentario": "Razoável. Cumpre o que promete mas não surpreende. A embalagem poderia ser melhor para proteger o produto.",
+    "data": "2026-05-04",
+    "dias_entrega": 5,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 95,
+    "usuario": "André Correia",
+    "estrelas": 2,
+    "comentario": "A caixa de papelão veio toda amassada e o produto arranhado por dentro. Falta de cuidado na entrega.",
+    "data": "2026-05-13",
+    "dias_entrega": 10,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 96,
+    "usuario": "Carlos Souza",
+    "estrelas": 4,
+    "comentario": "Muito bom, entrega rápida e produto de qualidade. Muito satisfeito.",
+    "data": "2026-05-09",
+    "dias_entrega": 4,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 97,
+    "usuario": "Juliana Costa",
+    "estrelas": 3,
+    "comentario": "Bonito e funcional, contudo a bateria dura menos do que o especificado no anúncio.",
+    "data": "2026-05-20",
+    "dias_entrega": 3,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 98,
+    "usuario": "Isabela Mendes",
+    "estrelas": 4,
+    "comentario": "Perfeito! Exatamente como na descrição. Frete grátis e chegou rápido. Satisfação total!",
+    "data": "2026-05-10",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  },
+  {
+    "id": 99,
+    "usuario": "Beatriz Gomes",
+    "estrelas": 1,
+    "comentario": "Péssima experiência. O produto veio com defeito e o suporte não resolveu nada. Muito decepcionado.",
+    "data": "2026-05-08",
+    "dias_entrega": 8,
+    "embalagem_status": "frágil"
+  },
+  {
+    "id": 100,
+    "usuario": "Otávio Mendes",
+    "estrelas": 4,
+    "comentario": "Simplesmente maravilhoso! A qualidade é impecável e o atendimento da equipe foi muito atencioso. Voltarei a comprar.",
+    "data": "2026-05-09",
+    "dias_entrega": 3,
+    "embalagem_status": "excelente"
+  }
+]

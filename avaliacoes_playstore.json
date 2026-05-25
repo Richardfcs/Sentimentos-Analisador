@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "usuario": "Isabela Mendes",
+    "estrelas": 3,
+    "comentario": "Muito bom aplicativo. Apenas as propagandas na versão gratuita incomodam um pouco, mas nada que impeça o uso.",
+    "data": "2026-05-16",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 2,
+    "usuario": "Felipe Correia",
+    "estrelas": 2,
+    "comentario": "Depois da última atualização v2.1.0 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-06",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 3,
+    "usuario": "Gustavo Cardoso",
+    "estrelas": 5,
+    "comentario": "Fácil de usar e bem direto ao ponto. Gostei que removeram as notificações chatas na última atualização v1.2.0.",
+    "data": "2026-05-12",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 4,
+    "usuario": "Pedro Almeida",
+    "estrelas": 3,
+    "comentario": "É um app funcional e resolve meu problema, mas o design das telas está um pouco ultrapassado.",
+    "data": "2026-05-03",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 5,
+    "usuario": "Renato Ramos",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-13",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 6,
+    "usuario": "Matheus Santos",
+    "estrelas": 4,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-21",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 7,
+    "usuario": "Julio Cesar",
+    "estrelas": 2,
+    "comentario": "A versão para tablet está mal formatada, as fontes ficam gigantes e a tela cortada nas laterais.",
+    "data": "2026-05-21",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 8,
+    "usuario": "Beatriz Gomes",
+    "estrelas": 4,
+    "comentario": "Uso todos os dias e nunca tive problemas. Aplicativo muito leve, intuitivo e com ótimos recursos de acessibilidade.",
+    "data": "2026-05-15",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 9,
+    "usuario": "Patricia Cruz",
+    "estrelas": 3,
+    "comentario": "Dá pro gasto. Algumas telas demoram um pouco para carregar mas no geral funciona.",
+    "data": "2026-05-13",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 10,
+    "usuario": "Felipe Correia",
+    "estrelas": 5,
+    "comentario": "Gostei muito da nova interface, ficou bem mais moderna. Muito boa!",
+    "data": "2026-05-06",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 11,
+    "usuario": "Kamila Dias",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-07",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 12,
+    "usuario": "Kamila Dias",
+    "estrelas": 4,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-04",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 13,
+    "usuario": "Pedro Almeida",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-11",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 14,
+    "usuario": "Felipe Correia",
+    "estrelas": 3,
+    "comentario": "Útil, porém com alguns bugs pequenos de layout que não chegam a comprometer o funcionamento.",
+    "data": "2026-05-21",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 15,
+    "usuario": "Bruno Martins",
+    "estrelas": 5,
+    "comentario": "O aplicativo ficou incrível depois da última atualização v1.3.1! A navegação está super fluida e o novo dark mode é lindo demais.",
+    "data": "2026-05-04",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 16,
+    "usuario": "Amanda Pereira",
+    "estrelas": 4,
+    "comentario": "Muito rápido e prático. Economiza muito meu tempo nas tarefas diárias.",
+    "data": "2026-05-10",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 17,
+    "usuario": "Daniel Ferreira",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-03",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 18,
+    "usuario": "Júlia Carvalho",
+    "estrelas": 3,
+    "comentario": "O aplicativo é bom, mas o leitor de PDF integrado está com problemas para renderizar documentos grandes.",
+    "data": "2026-05-14",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 19,
+    "usuario": "Carlos Souza",
+    "estrelas": 4,
+    "comentario": "Fácil de usar e bem direto ao ponto. Gostei que removeram as notificações chatas na última atualização v1.3.1.",
+    "data": "2026-05-04",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 20,
+    "usuario": "Natália Castro",
+    "estrelas": 2,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-02",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 21,
+    "usuario": "Carlos Souza",
+    "estrelas": 5,
+    "comentario": "Perfeito! Resolveu totalmente a lentidão das versões antigas. Roda liso no meu celular.",
+    "data": "2026-05-15",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 22,
+    "usuario": "Juliana Costa",
+    "estrelas": 4,
+    "comentario": "Minha vida ficou muito mais organizada com esse app. O suporte ao cliente responde super rápido no menu de ajuda.",
+    "data": "2026-05-15",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 23,
+    "usuario": "Ricardo Ferreira",
+    "estrelas": 3,
+    "comentario": "Mediano. Cumpre as funções básicas mas não apresenta nada de inovador em relação aos concorrentes.",
+    "data": "2026-05-08",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 24,
+    "usuario": "Renata Guedes",
+    "estrelas": 2,
+    "comentario": "Muito instável. Fica dando erro de conexão mesmo com o wifi funcionando perfeitamente.",
+    "data": "2026-05-13",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 25,
+    "usuario": "Lucas Barbosa",
+    "estrelas": 3,
+    "comentario": "Mediano. Cumpre as funções básicas mas não apresenta nada de inovador em relação aos concorrentes.",
+    "data": "2026-05-05",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 26,
+    "usuario": "Carlos Souza",
+    "estrelas": 2,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-04",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 27,
+    "usuario": "Bruno Martins",
+    "estrelas": 4,
+    "comentario": "Nota 10! Consumo de internet super reduzido e funciona muito bem mesmo em conexões 3G mais lentas.",
+    "data": "2026-05-10",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 28,
+    "usuario": "André Correia",
+    "estrelas": 3,
+    "comentario": "O aplicativo cumpre o prometido, mas as cores do design são meio mortas. Poderia ter uma paleta mais viva.",
+    "data": "2026-05-14",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 29,
+    "usuario": "Julio Cesar",
+    "estrelas": 3,
+    "comentario": "Razoável. Consome um bocado de bateria mas os recursos oferecidos compensam a perda.",
+    "data": "2026-05-02",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 30,
+    "usuario": "Natália Castro",
+    "estrelas": 2,
+    "comentario": "Ficou horrível. Cheio de anúncios pop-up irritantes que travam a tela toda. Desinstalando.",
+    "data": "2026-05-21",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 31,
+    "usuario": "Camila Rodrigues",
+    "estrelas": 5,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-02",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 32,
+    "usuario": "Monique Viana",
+    "estrelas": 5,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-04",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 33,
+    "usuario": "Amanda Pereira",
+    "estrelas": 3,
+    "comentario": "O aplicativo cumpre o prometido, mas as cores do design são meio mortas. Poderia ter uma paleta mais viva.",
+    "data": "2026-05-13",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 34,
+    "usuario": "Cláudia Diniz",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-11",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 35,
+    "usuario": "Juliana Costa",
+    "estrelas": 1,
+    "comentario": "A versão para tablet está mal formatada, as fontes ficam gigantes e a tela cortada nas laterais.",
+    "data": "2026-05-01",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 36,
+    "usuario": "Kamila Dias",
+    "estrelas": 3,
+    "comentario": "Mediano. Cumpre as funções básicas mas não apresenta nada de inovador em relação aos concorrentes.",
+    "data": "2026-05-12",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 37,
+    "usuario": "Bruna Cavalcanti",
+    "estrelas": 1,
+    "comentario": "A versão para tablet está mal formatada, as fontes ficam gigantes e a tela cortada nas laterais.",
+    "data": "2026-05-19",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 38,
+    "usuario": "Bruna Cavalcanti",
+    "estrelas": 5,
+    "comentario": "O aplicativo ficou incrível depois da última atualização v2.0.0! A navegação está super fluida e o novo dark mode é lindo demais.",
+    "data": "2026-05-01",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 39,
+    "usuario": "Maria Silva",
+    "estrelas": 1,
+    "comentario": "Muito instável. Fica dando erro de conexão mesmo com o wifi funcionando perfeitamente.",
+    "data": "2026-05-05",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 40,
+    "usuario": "Cláudia Diniz",
+    "estrelas": 3,
+    "comentario": "Útil, porém com alguns bugs pequenos de layout que não chegam a comprometer o funcionamento.",
+    "data": "2026-05-15",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 41,
+    "usuario": "Luana Souza",
+    "estrelas": 5,
+    "comentario": "Fácil de usar e bem direto ao ponto. Gostei que removeram as notificações chatas na última atualização v2.1.0.",
+    "data": "2026-05-21",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 42,
+    "usuario": "Bruno Martins",
+    "estrelas": 4,
+    "comentario": "Uso todos os dias e nunca tive problemas. Aplicativo muito leve, intuitivo e com ótimos recursos de acessibilidade.",
+    "data": "2026-05-09",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 43,
+    "usuario": "Natália Castro",
+    "estrelas": 3,
+    "comentario": "Mediano. Cumpre as funções básicas mas não apresenta nada de inovador em relação aos concorrentes.",
+    "data": "2026-05-16",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 44,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 2,
+    "comentario": "Depois da última atualização v2.1.0 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-19",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 45,
+    "usuario": "Sabrina Pires",
+    "estrelas": 1,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-18",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 46,
+    "usuario": "Daniel Ferreira",
+    "estrelas": 5,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-21",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 47,
+    "usuario": "Juliana Costa",
+    "estrelas": 4,
+    "comentario": "Fácil de usar e bem direto ao ponto. Gostei que removeram as notificações chatas na última atualização v1.3.1.",
+    "data": "2026-05-09",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 48,
+    "usuario": "Julio Cesar",
+    "estrelas": 5,
+    "comentario": "Excepcional! Equipe de desenvolvimento está de parabéns, lançam correções de bugs quase toda semana.",
+    "data": "2026-05-21",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 49,
+    "usuario": "Fernanda Lima",
+    "estrelas": 3,
+    "comentario": "Razoável. Consome um bocado de bateria mas os recursos oferecidos compensam a perda.",
+    "data": "2026-05-09",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 50,
+    "usuario": "Gustavo Cardoso",
+    "estrelas": 2,
+    "comentario": "Ficou horrível. Cheio de anúncios pop-up irritantes que travam a tela toda. Desinstalando.",
+    "data": "2026-05-06",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 51,
+    "usuario": "André Correia",
+    "estrelas": 4,
+    "comentario": "O aplicativo ficou incrível depois da última atualização v1.2.0! A navegação está super fluida e o novo dark mode é lindo demais.",
+    "data": "2026-05-05",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 52,
+    "usuario": "Matheus Santos",
+    "estrelas": 1,
+    "comentario": "Ficou horrível. Cheio de anúncios pop-up irritantes que travam a tela toda. Desinstalando.",
+    "data": "2026-05-09",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 53,
+    "usuario": "Lucas Barbosa",
+    "estrelas": 2,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-13",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 54,
+    "usuario": "Otávio Mendes",
+    "estrelas": 3,
+    "comentario": "Dá pro gasto. Algumas telas demoram um pouco para carregar mas no geral funciona.",
+    "data": "2026-05-15",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 55,
+    "usuario": "Carolina Moreira",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-09",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 56,
+    "usuario": "João Santos",
+    "estrelas": 1,
+    "comentario": "Depois da última atualização v1.2.0 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-19",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 57,
+    "usuario": "Fernanda Lima",
+    "estrelas": 3,
+    "comentario": "Mediano. Cumpre as funções básicas mas não apresenta nada de inovador em relação aos concorrentes.",
+    "data": "2026-05-13",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 58,
+    "usuario": "Júlia Carvalho",
+    "estrelas": 3,
+    "comentario": "Muito bom aplicativo. Apenas as propagandas na versão gratuita incomodam um pouco, mas nada que impeça o uso.",
+    "data": "2026-05-04",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 59,
+    "usuario": "Isabela Mendes",
+    "estrelas": 3,
+    "comentario": "O aplicativo é bom, mas o leitor de PDF integrado está com problemas para renderizar documentos grandes.",
+    "data": "2026-05-05",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 60,
+    "usuario": "Patrícian Nunes",
+    "estrelas": 3,
+    "comentario": "É um app funcional e resolve meu problema, mas o design das telas está um pouco ultrapassado.",
+    "data": "2026-05-03",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 61,
+    "usuario": "Vanessa Dias",
+    "estrelas": 1,
+    "comentario": "A versão para tablet está mal formatada, as fontes ficam gigantes e a tela cortada nas laterais.",
+    "data": "2026-05-07",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 62,
+    "usuario": "Daniel Ferreira",
+    "estrelas": 2,
+    "comentario": "A barra de pesquisa sumiu e agora o menu lateral fica travando toda hora.",
+    "data": "2026-05-10",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 63,
+    "usuario": "Beatriz Gomes",
+    "estrelas": 1,
+    "comentario": "Uma porcaria. O app sumiu com todos os meus arquivos salvos localmente após a atualização v1.2.0.",
+    "data": "2026-05-12",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 64,
+    "usuario": "Otávio Mendes",
+    "estrelas": 4,
+    "comentario": "Minha vida ficou muito mais organizada com esse app. O suporte ao cliente responde super rápido no menu de ajuda.",
+    "data": "2026-05-08",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 65,
+    "usuario": "Otávio Mendes",
+    "estrelas": 2,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-09",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 66,
+    "usuario": "Vanessa Dias",
+    "estrelas": 3,
+    "comentario": "Dá pro gasto. Algumas telas demoram um pouco para carregar mas no geral funciona.",
+    "data": "2026-05-02",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 67,
+    "usuario": "Julio Cesar",
+    "estrelas": 5,
+    "comentario": "Gostei muito da nova interface, ficou bem mais moderna. Muito boa!",
+    "data": "2026-05-19",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 68,
+    "usuario": "Pedro Almeida",
+    "estrelas": 5,
+    "comentario": "Nota 10! Consumo de internet super reduzido e funciona muito bem mesmo em conexões 3G mais lentas.",
+    "data": "2026-05-10",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 69,
+    "usuario": "Kamila Dias",
+    "estrelas": 2,
+    "comentario": "Depois da última atualização v1.3.1 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-06",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 70,
+    "usuario": "Gustavo Cardoso",
+    "estrelas": 4,
+    "comentario": "Uso todos os dias e nunca tive problemas. Aplicativo muito leve, intuitivo e com ótimos recursos de acessibilidade.",
+    "data": "2026-05-05",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 71,
+    "usuario": "Vanessa Dias",
+    "estrelas": 1,
+    "comentario": "Depois da última atualização v1.3.1 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-09",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 72,
+    "usuario": "Rodrigo Azevedo",
+    "estrelas": 3,
+    "comentario": "Útil, porém com alguns bugs pequenos de layout que não chegam a comprometer o funcionamento.",
+    "data": "2026-05-14",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 73,
+    "usuario": "Arthur Rezende",
+    "estrelas": 2,
+    "comentario": "Depois da última atualização v2.0.0 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-15",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 74,
+    "usuario": "Pedro Almeida",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-13",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 75,
+    "usuario": "Fernanda Lima",
+    "estrelas": 2,
+    "comentario": "Uma porcaria. O app sumiu com todos os meus arquivos salvos localmente após a atualização v2.0.0.",
+    "data": "2026-05-04",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 76,
+    "usuario": "Natália Castro",
+    "estrelas": 4,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-17",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 77,
+    "usuario": "Gustavo Cardoso",
+    "estrelas": 5,
+    "comentario": "O melhor app da categoria disparado! A sincronização na nuvem é instantânea e a segurança com biometria funciona muito bem.",
+    "data": "2026-05-01",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 78,
+    "usuario": "Vanessa Dias",
+    "estrelas": 1,
+    "comentario": "Depois da última atualização v1.3.1 minhas configurações personalizadas sumiram. Tive que refazer tudo.",
+    "data": "2026-05-06",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 79,
+    "usuario": "Vanessa Dias",
+    "estrelas": 5,
+    "comentario": "Fácil de usar e bem direto ao ponto. Gostei que removeram as notificações chatas na última atualização v2.0.0.",
+    "data": "2026-05-10",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 80,
+    "usuario": "Renato Ramos",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-09",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 81,
+    "usuario": "Monique Viana",
+    "estrelas": 3,
+    "comentario": "Muito bom aplicativo. Apenas as propagandas na versão gratuita incomodam um pouco, mas nada que impeça o uso.",
+    "data": "2026-05-15",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 82,
+    "usuario": "Maria Silva",
+    "estrelas": 1,
+    "comentario": "A barra de pesquisa sumiu e agora o menu lateral fica travando toda hora.",
+    "data": "2026-05-19",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 83,
+    "usuario": "Thiago Araújo",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-05",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 84,
+    "usuario": "Amanda Pereira",
+    "estrelas": 2,
+    "comentario": "Ficou horrível. Cheio de anúncios pop-up irritantes que travam a tela toda. Desinstalando.",
+    "data": "2026-05-16",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 85,
+    "usuario": "Camila Rodrigues",
+    "estrelas": 3,
+    "comentario": "Útil, porém com alguns bugs pequenos de layout que não chegam a comprometer o funcionamento.",
+    "data": "2026-05-01",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 86,
+    "usuario": "Patricia Nunes",
+    "estrelas": 3,
+    "comentario": "Razoável. Consome um bocado de bateria mas os recursos oferecidos compensam a perda.",
+    "data": "2026-05-16",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 87,
+    "usuario": "João Santos",
+    "estrelas": 2,
+    "comentario": "A versão para tablet está mal formatada, as fontes ficam gigantes e a tela cortada nas laterais.",
+    "data": "2026-05-02",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 88,
+    "usuario": "Felipe Correia",
+    "estrelas": 2,
+    "comentario": "Ficou horrível. Cheio de anúncios pop-up irritantes que travam a tela toda. Desinstalando.",
+    "data": "2026-05-03",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 89,
+    "usuario": "Renato Ramos",
+    "estrelas": 3,
+    "comentario": "Útil, porém com alguns bugs pequenos de layout que não chegam a comprometer o funcionamento.",
+    "data": "2026-05-01",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 90,
+    "usuario": "Letícia Alves",
+    "estrelas": 4,
+    "comentario": "Nota 10! Consumo de internet super reduzido e funciona muito bem mesmo em conexões 3G mais lentas.",
+    "data": "2026-05-14",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 91,
+    "usuario": "Rafael Teixeira",
+    "estrelas": 2,
+    "comentario": "Não recomendo. O produto esquenta o celular demais e faz o processador fritar.",
+    "data": "2026-05-20",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 92,
+    "usuario": "Renato Ramos",
+    "estrelas": 1,
+    "comentario": "A barra de pesquisa sumiu e agora o menu lateral fica travando toda hora.",
+    "data": "2026-05-06",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 93,
+    "usuario": "Marcelo Lins",
+    "estrelas": 2,
+    "comentario": "A barra de pesquisa sumiu e agora o menu lateral fica travando toda hora.",
+    "data": "2026-05-04",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 94,
+    "usuario": "Fernanda Lima",
+    "estrelas": 3,
+    "comentario": "Bom, mas sinto falta de um widget para a tela inicial para facilitar o acesso rápido.",
+    "data": "2026-05-15",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 95,
+    "usuario": "Sabrina Pires",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-17",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 96,
+    "usuario": "Tatiane Assis",
+    "estrelas": 3,
+    "comentario": "É bonzinho. Mas o teclado virtual costuma bugar quando tento digitar caracteres especiais.",
+    "data": "2026-05-07",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  },
+  {
+    "id": 97,
+    "usuario": "Maria Silva",
+    "estrelas": 2,
+    "comentario": "Não consigo fazer login desde ontem. O aplicativo fecha sozinho toda vez que tento digitar minha senha.",
+    "data": "2026-05-21",
+    "versao_app": "v1.3.1",
+    "android_version": "Android 13"
+  },
+  {
+    "id": 98,
+    "usuario": "Kamila Dias",
+    "estrelas": 1,
+    "comentario": "Não recomendo. O produto esquenta o celular demais e faz o processador fritar.",
+    "data": "2026-05-15",
+    "versao_app": "v1.2.0",
+    "android_version": "Android 12"
+  },
+  {
+    "id": 99,
+    "usuario": "Cláudia Diniz",
+    "estrelas": 3,
+    "comentario": "Razoável. Consome um bocado de bateria mas os recursos oferecidos compensam a perda.",
+    "data": "2026-05-11",
+    "versao_app": "v2.0.0",
+    "android_version": "Android 14"
+  },
+  {
+    "id": 100,
+    "usuario": "André Correia",
+    "estrelas": 2,
+    "comentario": "Não recomendo. O produto esquenta o celular demais e faz o processador fritar.",
+    "data": "2026-05-14",
+    "versao_app": "v2.1.0",
+    "android_version": "Android 11"
+  }
+]
