@@ -74,6 +74,13 @@ class EvolucaoDiaria(BaseModel):
     neutro: int = 0
 
 
+class InsightItem(BaseModel):
+    """Representa um insight acionável gerado pelo sistema."""
+    texto: str
+    tipo: Literal["alerta", "sucesso", "sugestao", "info"]
+    is_premium: bool = False
+
+
 class EstatisticasGerais(BaseModel):
     """Estatísticas calculadas pelo backend (não pela IA)."""
     total_avaliacoes: int
@@ -83,6 +90,7 @@ class EstatisticasGerais(BaseModel):
     pontos_positivos_recorrentes: list[PontoRecorrente]
     pontos_negativos_recorrentes: list[PontoRecorrente]
     evolucao_por_data: list[EvolucaoDiaria]
+    insights: list[InsightItem] = Field(default_factory=list)
     
     # Métricas dinâmicas calculadas de acordo com a categoria selecionada
     metricas_plataforma: dict = Field(default_factory=dict)

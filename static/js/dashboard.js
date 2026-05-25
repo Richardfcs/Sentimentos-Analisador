@@ -19,6 +19,7 @@ let chartCustom1 = null;        // Instância Chart.js - Custom 1
 let chartCustom2 = null;        // Instância Chart.js - Custom 2
 
 let categoriaSelecionada = null; // Categoria atual (playstore, youtube, etc)
+let isPremiumUser = false;       // Estado de assinatura simulado (Fase 5)
 
 // Controles locais de paginação ("Carregar Mais")
 let posComentariosExibidos = 5;
@@ -95,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarRetry();
     configurarCarregarMais();
     inicializarSandbox();
+    configurarPremiumModal();
 });
 
 /**
@@ -104,7 +106,6 @@ function inicializarTelaSelecao() {
     const cards = document.querySelectorAll('.category-card');
     const simCard = document.getElementById('simulation-inputs-card');
     const btnStart = document.getElementById('btn-start-analysis');
-    const btnClearCache = document.getElementById('btn-clear-global-cache');
     const btnBack = document.getElementById('btn-back-to-selection');
     const btnErrorBack = document.getElementById('btn-error-back');
 
@@ -140,18 +141,6 @@ function inicializarTelaSelecao() {
     btnStart.addEventListener('click', () => {
         if (categoriaSelecionada) {
             carregarDados(categoriaSelecionada);
-        }
-    });
-
-    btnClearCache.addEventListener('click', async () => {
-        if (confirm('Deseja realmente limpar todos os caches (em memória e banco de dados SQLite)? Isso forçará novas chamadas à IA.')) {
-            try {
-                const response = await fetch('/api/limpar-cache', { method: 'POST' });
-                const res = await response.json();
-                alert(res.mensagem || res.erro);
-            } catch (error) {
-                alert('Erro ao limpar cache: ' + error.message);
-            }
         }
     });
 
@@ -209,6 +198,8 @@ function voltarParaSelecao() {
     mostrarDashboard(false);
     mostrarErro(false);
     limparFiltros();
+    
+    isPremiumUser = false; // Reset assinatura simulada ao voltar
 
     // Reset abas para geral ativa
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -421,7 +412,7 @@ function renderizarDashboard(dados) {
     const { avaliacoes, estatisticas } = dados;
 
     renderizarKPIs(estatisticas);
-    renderizarGraficoSentimentos(estatisticas.contagem_sentimentos);
+    renderizarGraficoSentimentos(avaliacoes);
     renderizarGraficoEmocoes(estatisticas.contagem_emocoes);
     renderizarGraficoEvolucao(estatisticas.evolucao_por_data);
     renderizarPontosRecorrentes(estatisticas);
@@ -429,6 +420,11 @@ function renderizarDashboard(dados) {
     renderizarTabela(avaliacoes);
     popularFiltroEmocoes(estatisticas.contagem_emocoes);
     
+    // Renderiza termômetro, nuvem de palavras e insights (Fase 5)
+    renderizarTermometro(estatisticas.contagem_sentimentos);
+    renderizarWordCloud(estatisticas);
+    renderizarInsights(estatisticas.insights);
+
     // Renderiza gráficos dinâmicos específicos da plataforma
     renderizarGraficosEspecificos(estatisticas, categoriaSelecionada);
 }
@@ -444,14 +440,31 @@ function renderizarKPIs(estatisticas) {
     document.getElementById('kpi-neutro-valor').textContent = sentimentos.neutro || 0;
 }
 
-// ── Gráfico de Sentimentos (Doughnut) ─────────────────────────────────
-function renderizarGraficoSentimentos(contagem) {
+// ── Gráfico de Sentimentos (Doughnut - Distribuição por Estrelas) ──────
+function renderizarGraficoSentimentos(avaliacoes) {
     const ctx = document.getElementById('grafico-sentimentos').getContext('2d');
 
     if (chartSentimentos) chartSentimentos.destroy();
 
-    const labels = ['Positivo', 'Negativo', 'Neutro'];
-    const valores = [contagem.positivo || 0, contagem.negativo || 0, contagem.neutro || 0];
+    // Contar a distribuição por estrelas (1★ a 5★)
+    const estrelas = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    avaliacoes.forEach(a => {
+        if (a.estrelas in estrelas) {
+            estrelas[a.estrelas]++;
+        }
+    });
+
+    const labels = ['5 Estrelas (Muito Positivo)', '4 Estrelas (Positivo)', '3 Estrelas (Neutro)', '2 Estrelas (Negativo)', '1 Estrela (Muito Negativo)'];
+    const valores = [estrelas[5], estrelas[4], estrelas[3], estrelas[2], estrelas[1]];
+
+    // Cores temáticas harmoniosas combinando com o design system
+    const coresEstrelas = [
+        '#10b981', // Verde esmeralda (5)
+        '#34d399', // Verde menta (4)
+        '#fbbf24', // Amarelo âmbar (3)
+        '#f87171', // Vermelho suave (2)
+        '#ef4444'  // Vermelho vibrante (1)
+    ];
 
     chartSentimentos = new Chart(ctx, {
         type: 'doughnut',
@@ -459,7 +472,7 @@ function renderizarGraficoSentimentos(contagem) {
             labels: labels,
             datasets: [{
                 data: valores,
-                backgroundColor: [CORES.positivo, CORES.negativo, CORES.neutro],
+                backgroundColor: coresEstrelas,
                 borderWidth: 2,
                 borderColor: '#111827',
                 hoverOffset: 4,
@@ -473,10 +486,10 @@ function renderizarGraficoSentimentos(contagem) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 16,
+                        padding: 12,
                         usePointStyle: true,
-                        pointStyleWidth: 10,
-                        font: { size: 12, weight: '500' },
+                        pointStyleWidth: 8,
+                        font: { size: 10, weight: '500' },
                     },
                 },
                 tooltip: {
@@ -500,7 +513,7 @@ function renderizarGraficoSentimentos(contagem) {
     });
 }
 
-// ── Gráfico de Emoções (Bar Horizontal) ───────────────────────────────
+// ── Gráfico de Emoções (Radar Chart) ───────────────────────────────
 function renderizarGraficoEmocoes(contagem) {
     const ctx = document.getElementById('grafico-emocoes').getContext('2d');
 
@@ -508,24 +521,31 @@ function renderizarGraficoEmocoes(contagem) {
 
     const labels = Object.keys(contagem);
     const valores = Object.values(contagem);
-    const cores = labels.map(l => CORES_EMOCOES[l] || '#94a3b8');
+
+    // Cor do tema ativa
+    let themeColor = '#6366f1'; // default
+    if (document.body.classList.contains('theme-playstore')) themeColor = '#0f9d58';
+    else if (document.body.classList.contains('theme-youtube')) themeColor = '#ff0000';
+    else if (document.body.classList.contains('theme-instagram')) themeColor = '#d62976';
+    else if (document.body.classList.contains('theme-amazon')) themeColor = '#ff9900';
 
     chartEmocoes = new Chart(ctx, {
-        type: 'bar',
+        type: 'radar',
         data: {
             labels: labels.map(l => l.charAt(0).toUpperCase() + l.slice(1)),
             datasets: [{
-                label: 'Quantidade',
+                label: 'Frequência das Emoções',
                 data: valores,
-                backgroundColor: cores.map(c => c + '40'),
-                borderColor: cores,
-                borderWidth: 1.5,
-                borderRadius: 6,
-                barPercentage: 0.7,
+                backgroundColor: themeColor + '20',
+                borderColor: themeColor,
+                borderWidth: 2,
+                pointBackgroundColor: themeColor,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: themeColor
             }],
         },
         options: {
-            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
@@ -537,26 +557,30 @@ function renderizarGraficoEmocoes(contagem) {
                 },
             },
             scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 1,
-                        font: { size: 12 },
+                r: {
+                    angleLines: {
+                        color: 'rgba(148, 163, 184, 0.08)'
                     },
                     grid: {
-                        color: 'rgba(148, 163, 184, 0.06)',
+                        color: 'rgba(148, 163, 184, 0.08)'
                     },
-                },
-                y: {
+                    pointLabels: {
+                        color: '#94a3b8',
+                        font: {
+                            size: 11,
+                            weight: '600'
+                        }
+                    },
                     ticks: {
-                        font: { size: 12, weight: '500' },
-                    },
-                    grid: { display: false },
-                },
+                        backdropColor: 'transparent',
+                        color: '#64748b',
+                        font: { size: 10 },
+                        stepSize: Math.max(1, Math.ceil(Math.max(...valores) / 4))
+                    }
+                }
             },
             animation: {
                 duration: 800,
-                delay: (ctx) => ctx.dataIndex * 80,
             },
         },
     });
@@ -1151,12 +1175,16 @@ function aplicarFiltros() {
 
     // Re-renderizar com dados filtrados (respeitando paginação ativa)
     renderizarKPIs(estatisticasFiltradas);
-    renderizarGraficoSentimentos(estatisticasFiltradas.contagem_sentimentos);
+    renderizarGraficoSentimentos(filtradas);
     renderizarGraficoEmocoes(estatisticasFiltradas.contagem_emocoes);
     renderizarGraficoEvolucao(estatisticasFiltradas.evolucao_por_data);
     renderizarPontosRecorrentes(estatisticasFiltradas);
     renderizarComentariosRepresentativos(filtradas);
     renderizarTabela(filtradas);
+    
+    // Re-renderizar termômetro e nuvem de palavras
+    renderizarTermometro(estatisticasFiltradas.contagem_sentimentos);
+    renderizarWordCloud(estatisticasFiltradas);
     
     // Atualizar gráficos customizados
     renderizarGraficosEspecificos(estatisticasFiltradas, categoriaSelecionada);
@@ -1435,4 +1463,214 @@ function inicializarSandbox() {
             btnAnalise.disabled = false;
         }
     });
+}
+
+/**
+ * Renderiza o Termômetro de Satisfação Geral
+ */
+function renderizarTermometro(contagemSentimentos) {
+    const positivo = contagemSentimentos.positivo || 0;
+    const neutro = contagemSentimentos.neutro || 0;
+    const negativo = contagemSentimentos.negativo || 0;
+    const total = positivo + neutro + negativo;
+
+    const temp = total > 0 ? Math.round(((positivo + 0.5 * neutro) / total) * 100) : 0;
+    
+    const valueEl = document.getElementById('thermometer-value');
+    const barEl = document.getElementById('thermometer-bar');
+    if (valueEl) valueEl.textContent = `${temp}%`;
+    if (barEl) barEl.style.width = `${temp}%`;
+}
+
+/**
+ * Renderiza a Nuvem de Palavras-Chave (Word Cloud) baseada em tópicos frequentes
+ */
+function renderizarWordCloud(estatisticas) {
+    const container = document.getElementById('wordcloud-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const posList = estatisticas.pontos_positivos_recorrentes || [];
+    const negList = estatisticas.pontos_negativos_recorrentes || [];
+
+    // Mescla as listas com tags identificando tipo
+    const merged = [
+        ...posList.map(item => ({ ...item, tipo: 'positivo' })),
+        ...negList.map(item => ({ ...item, tipo: 'negativo' }))
+    ];
+
+    if (merged.length === 0) {
+        container.innerHTML = '<span style="color: var(--text-muted); font-size: 0.9rem;">Nenhuma palavra-chave para exibir.</span>';
+        return;
+    }
+
+    // Embaralha para ficar visualmente orgânico
+    merged.sort(() => Math.random() - 0.5);
+
+    // Acha a maior frequência para escala
+    const maxFreq = Math.max(...merged.map(x => x.frequencia));
+
+    merged.forEach(item => {
+        const tag = document.createElement('span');
+        tag.className = 'word-tag';
+        tag.textContent = item.ponto;
+        
+        // Escala o tamanho proporcionalmente
+        const sizeRatio = maxFreq > 0 ? (item.frequencia / maxFreq) : 0.5;
+        const fontSize = 0.72 + sizeRatio * 0.53; // 0.72rem a 1.25rem
+        tag.style.fontSize = `${fontSize}rem`;
+
+        // Cores
+        if (item.tipo === 'positivo') {
+            tag.style.color = 'var(--cor-positivo)';
+            tag.style.borderColor = 'rgba(74, 222, 128, 0.15)';
+        } else {
+            tag.style.color = 'var(--cor-negativo)';
+            tag.style.borderColor = 'rgba(248, 113, 113, 0.15)';
+        }
+
+        container.appendChild(tag);
+    });
+}
+
+/**
+ * Renderiza a lista de insights e aplica o paywall Premium
+ */
+function renderizarInsights(insights) {
+    const list = document.getElementById('insights-list');
+    const paywall = document.getElementById('premium-paywall');
+    if (!list) return;
+
+    list.innerHTML = '';
+
+    const listItems = insights || [];
+
+    let hasLocked = false;
+
+    listItems.forEach((insight, idx) => {
+        const card = document.createElement('div');
+        card.className = `insight-card insight-${insight.tipo}`;
+
+        // Altera ícone de acordo com o tipo
+        let icon = '💡';
+        if (insight.tipo === 'alerta') icon = '⚠️';
+        else if (insight.tipo === 'sucesso') icon = '📈';
+        else if (insight.tipo === 'sugestao') icon = '🎯';
+
+        // Lógica de Paywall Premium
+        const isLocked = !isPremiumUser && (idx >= 3 || insight.is_premium);
+        if (isLocked) {
+            card.classList.add('locked');
+            hasLocked = true;
+        }
+
+        card.innerHTML = `
+            <span class="insight-card-icon">${icon}</span>
+            <span class="insight-card-text">${insight.texto}</span>
+        `;
+
+        list.appendChild(card);
+    });
+
+    if (paywall) {
+        if (hasLocked) {
+            paywall.classList.remove('hidden');
+        } else {
+            paywall.classList.add('hidden');
+        }
+    }
+}
+
+/**
+ * Configura os ouvintes de evento e lógica do Modal Premium
+ */
+function configurarPremiumModal() {
+    const modal = document.getElementById('premium-modal');
+    const btnUpgrade = document.getElementById('btn-upgrade-premium');
+    const btnClose = document.getElementById('btn-close-premium-modal');
+    const btnPlanSelects = document.querySelectorAll('.btn-plan-select');
+    const billingForm = document.getElementById('billing-form');
+    const btnSubmitBilling = document.getElementById('btn-submit-billing');
+
+    if (!modal) return;
+
+    // Abrir Modal
+    if (btnUpgrade) {
+        btnUpgrade.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            if (billingForm) billingForm.classList.add('hidden');
+        });
+    }
+
+    // Fechar Modal
+    if (btnClose) {
+        btnClose.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+    }
+
+    // Clicar fora do modal fecha
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+
+    // Selecionar Plano Pro/Enterprise exibe formulário de faturamento
+    btnPlanSelects.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (billingForm) {
+                billingForm.classList.remove('hidden');
+                billingForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Submissão Simulada de Faturamento
+    if (btnSubmitBilling) {
+        btnSubmitBilling.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            // Validação simples
+            const holder = document.getElementById('bill-cardholder').value.trim();
+            const number = document.getElementById('bill-cardnumber').value.trim();
+            const expiry = document.getElementById('bill-expiry').value.trim();
+            const cvv = document.getElementById('bill-cvv').value.trim();
+
+            if (!holder || !number || !expiry || !cvv) {
+                alert('Por favor, preencha todos os campos do faturamento para simular o pagamento.');
+                return;
+            }
+
+            // Spinner de loading simulado no botão
+            btnSubmitBilling.disabled = true;
+            const originalText = btnSubmitBilling.innerHTML;
+            btnSubmitBilling.innerHTML = '⚡ Processando Transação...';
+
+            await delay(1500); // Aguarda 1.5 segundos simulando o gateway de pagamento
+
+            isPremiumUser = true;
+
+            // Alerta de sucesso
+            alert('Assinatura Premium simulada com sucesso! Todos os recursos e insights avançados do SentView estão agora desbloqueados para esta sessão.');
+
+            // Reset campos
+            document.getElementById('bill-cardholder').value = '';
+            document.getElementById('bill-cardnumber').value = '';
+            document.getElementById('bill-expiry').value = '';
+            document.getElementById('bill-cvv').value = '';
+
+            btnSubmitBilling.innerHTML = originalText;
+            btnSubmitBilling.disabled = false;
+
+            // Fechar modal
+            modal.classList.add('hidden');
+
+            // Re-renderiza os insights desbloqueados
+            if (dadosOriginais && dadosOriginais.estatisticas && dadosOriginais.estatisticas.insights) {
+                renderizarInsights(dadosOriginais.estatisticas.insights);
+            }
+        });
+    }
 }

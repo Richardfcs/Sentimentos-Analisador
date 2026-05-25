@@ -25,7 +25,7 @@
         <div class="selection-container">
             <header class="selection-header">
                 <span class="main-icon">🧠</span>
-                <h1>Analisador de Sentimentos</h1>
+                <h1>SentView</h1>
                 <p>Selecione uma fonte de dados para analisar o sentimento e as emoções com inteligência artificial</p>
             </header>
 
@@ -80,11 +80,6 @@
                 <button id="btn-start-analysis" class="btn-primary btn-large" disabled>
                     Selecione uma categoria primeiro
                 </button>
-                <div class="cache-actions">
-                    <button id="btn-clear-global-cache" class="btn-link">
-                        🧹 Limpar Caches do Sistema
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -153,7 +148,7 @@
                     <div class="header-titles">
                         <div class="header-title">
                             <span class="header-icon" id="dashboard-category-icon">🧠</span>
-                            <h1>Analisador de Sentimentos — <span id="dashboard-category-name">Categoria</span></h1>
+                            <h1>SentView — <span id="dashboard-category-name">Categoria</span></h1>
                         </div>
                         <p class="header-subtitle">Dashboard inteligente de avaliações e análise semântica</p>
                     </div>
@@ -171,6 +166,17 @@
                     <span>Processado por IA: <strong id="perf-ia-count">--</strong></span>
                     <span class="separator">|</span>
                     <span class="perf-saving-text">Economia estimada: <strong id="perf-saving">--s</strong></span>
+                </div>
+            </section>
+
+            <!-- Termômetro de Satisfação (Sentiment Thermometer) -->
+            <section class="thermometer-section" id="thermometer-section" aria-label="Termômetro de Satisfação">
+                <div class="thermometer-header">
+                    <span>Satisfação Geral</span>
+                    <strong id="thermometer-value">0%</strong>
+                </div>
+                <div class="thermometer-track">
+                    <div class="thermometer-bar" id="thermometer-bar" style="width: 0%;"></div>
                 </div>
             </section>
 
@@ -259,7 +265,7 @@
             <!-- Charts Row 1 -->
             <section class="charts-row" aria-label="Gráficos de sentimentos e emoções">
                 <div class="chart-card">
-                    <h2 class="chart-title">Distribuição de Sentimentos</h2>
+                    <h2 class="chart-title">Distribuição por Estrelas (1-5★)</h2>
                     <div class="chart-container chart-container-doughnut">
                         <canvas id="grafico-sentimentos"></canvas>
                     </div>
@@ -278,6 +284,34 @@
                     <h2 class="chart-title">Evolução dos Sentimentos ao Longo do Tempo</h2>
                     <div class="chart-container chart-container-line">
                         <canvas id="grafico-evolucao"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Word Cloud (Mapa de Palavras-Chave) -->
+            <section class="charts-row" aria-label="Nuvem de palavras">
+                <div class="chart-card chart-card-full">
+                    <h2 class="chart-title">☁️ Nuvem de Palavras-Chave (Tópicos Frequentes)</h2>
+                    <div class="wordcloud-container" id="wordcloud-container">
+                        <!-- Palavras serão injetadas via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights Section -->
+            <section class="insights-section" aria-label="Insights da IA">
+                <h2 class="section-title">🧠 Insights de Negócio por IA</h2>
+                <div class="insights-wrapper">
+                    <div class="insights-list" id="insights-list">
+                        <!-- Insights serão injetados via JS -->
+                    </div>
+                    <!-- Premium Paywall Block -->
+                    <div class="premium-paywall-card hidden" id="premium-paywall">
+                        <div class="paywall-content">
+                            <h3>🔒 Diagnósticos SentView Enterprise</h3>
+                            <p>Desbloqueie o relatório analítico completo de causa-efeito e planos de ação sugeridos pela IA para o seu produto.</p>
+                            <button class="btn-primary" id="btn-upgrade-premium">⭐ Upgrade para Premium</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -429,6 +463,66 @@
             </section>
         </div>
 
+    </div>
+
+    <!-- Premium Upgrade Modal -->
+    <div class="modal-overlay hidden" id="premium-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="btn-close-premium-modal">&times;</button>
+            <div class="modal-header">
+                <h2>⭐ Upgrade para SentView Premium</h2>
+                <p>Libere o poder total dos diagnósticos de negócio automatizados por IA</p>
+            </div>
+            <div class="modal-body">
+                <div class="premium-plans">
+                    <div class="plan-card">
+                        <h3>SentView Pro</h3>
+                        <div class="plan-price">R$ 49<span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li>✅ Insights analíticos ilimitados</li>
+                            <li>✅ Nuvem de Palavras-Chave interativa</li>
+                            <li>✅ Relatórios semanais consolidados</li>
+                        </ul>
+                        <button class="btn-plan-select btn-secondary" data-plan="Pro">Assinar Plano Pro</button>
+                    </div>
+                    <div class="plan-card featured">
+                        <div class="plan-badge">RECOMENDADO</div>
+                        <h3>SentView Enterprise</h3>
+                        <div class="plan-price">R$ 149<span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li>✅ Tudo do plano Pro</li>
+                            <li>✅ Análise em tempo real ilimitada</li>
+                            <li>✅ Diagnósticos e planos de ação prioritários</li>
+                            <li>✅ Suporte dedicado com analistas</li>
+                        </ul>
+                        <button class="btn-plan-select btn-primary" data-plan="Enterprise">Assinar Plano Enterprise</button>
+                    </div>
+                </div>
+                <!-- Billing Form (Initially hidden) -->
+                <div class="billing-form hidden" id="billing-form">
+                    <h3>Dados do Cartão (Simulação de Faturamento)</h3>
+                    <div class="form-group">
+                        <label for="bill-cardholder">Nome no Cartão</label>
+                        <input type="text" id="bill-cardholder" class="sim-input" placeholder="Maria G. Souza" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bill-cardnumber">Número do Cartão</label>
+                        <input type="text" id="bill-cardnumber" class="sim-input" placeholder="4000 1234 5678 9010" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bill-expiry">Validade</label>
+                            <input type="text" id="bill-expiry" class="sim-input" placeholder="12/30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bill-cvv">CVV</label>
+                            <input type="password" id="bill-cvv" class="sim-input" placeholder="•••" required>
+                        </div>
+                    </div>
+                    <button class="btn-primary btn-large btn-glow" id="btn-submit-billing">Confirmar Pagamento e Desbloquear</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Dashboard JS -->
