@@ -157,6 +157,33 @@ def api_dados(categoria):
         return jsonify({"erro": str(e)}), 500
 
 
+@app.route("/api/analisar-avulso", methods=["POST"])
+def api_analisar_avulso():
+    """
+    Recebe um comentário avulso, analisa via IA (com cache persistente) e retorna o resultado.
+    """
+    from flask import request
+    
+    data = request.get_json()
+    if not data or "texto" not in data:
+        return jsonify({"erro": "O campo 'texto' é obrigatório."}), 400
+        
+    texto = data["texto"].strip()
+    if not texto:
+        return jsonify({"erro": "O texto não pode ser vazio."}), 400
+
+    comentario_avulso = [{"id": "avulso", "comentario": texto}]
+
+    try:
+        analises, _ = analisar_comentarios(comentario_avulso)
+        if analises and analises[0]:
+            return jsonify(analises[0].model_dump())
+        return jsonify({"erro": "Não foi possível obter resposta da IA."}), 500
+    except Exception as e:
+        logger.exception("Erro ao processar análise avulsa")
+        return jsonify({"erro": str(e)}), 500
+
+
 @app.route("/api/limpar-cache", methods=["POST"])
 def limpar_cache():
     """Limpa o cache em memória e o banco de dados SQLite persistente."""

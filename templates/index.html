@@ -180,6 +180,7 @@
                     <button class="tab-button active" data-tab="tab-geral">📊 Visão Geral</button>
                     <button class="tab-button" data-tab="tab-custom">⚙️ Métricas da Categoria</button>
                     <button class="tab-button" data-tab="tab-feed">💬 Lista de Avaliações</button>
+                    <button class="tab-button" data-tab="tab-sandbox">🧪 Testar IA (Sandbox)</button>
                 </nav>
             </div>
 
@@ -364,7 +365,69 @@
             </section>
         </div>
 
+        <!-- TAB 4: SANDBOX -->
+        <div id="tab-sandbox" class="tab-pane hidden">
+            <section class="sandbox-section" aria-label="Sandbox de Análise">
+                <h2 class="section-title">🧪 Analisador Individual em Tempo Real</h2>
+                <p class="header-subtitle" style="margin-top: 0; margin-bottom: var(--spacing-md); color: var(--text-secondary);">
+                    Escreva qualquer comentário abaixo para ver a inteligência artificial analisar o sentimento, emoções e pontos-chave na hora.
+                </p>
+                
+                <div class="sandbox-container">
+                    <!-- Input Card -->
+                    <div class="sandbox-card sandbox-input-card">
+                        <textarea id="sandbox-textarea" placeholder="Digite seu comentário aqui (ex: 'O produto chegou rápido e a embalagem veio impecável, porém achei o cabo do carregador um pouco curto.')" rows="6"></textarea>
+                        <button id="btn-sandbox-analisar" class="btn-primary">
+                            <span>🧠 Analisar Comentário</span>
+                        </button>
+                    </div>
 
+                    <!-- Result Card -->
+                    <div id="sandbox-result-card" class="sandbox-card sandbox-result-card hidden">
+                        <div class="result-header">
+                            <h3>Resultado da Análise</h3>
+                            <div class="result-badges">
+                                <span id="sandbox-badge-sentimento" class="badge">--</span>
+                                <span id="sandbox-badge-criticidade" class="badge">--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Emoção Identificada</span>
+                                <strong id="sandbox-val-emocao">--</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Confiança da IA</span>
+                                <strong id="sandbox-val-confianca">--</strong>
+                            </div>
+                        </div>
+
+                        <div class="result-summary">
+                            <h4>📌 Resumo Semântico</h4>
+                            <p id="sandbox-val-resumo" class="comment-text">--</p>
+                        </div>
+
+                        <div class="result-points">
+                            <div class="points-col points-pos">
+                                <h5>✅ Aspectos Positivos</h5>
+                                <ul id="sandbox-list-positivos" class="points-list-simple"></ul>
+                            </div>
+                            <div class="points-col points-neg">
+                                <h5>❌ Problemas Citados</h5>
+                                <ul id="sandbox-list-negativos" class="points-list-simple"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="sandbox-loading" class="sandbox-loading hidden">
+                        <div class="loading-spinner"></div>
+                        <p>A IA está analisando seu comentário...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
     </div>
 

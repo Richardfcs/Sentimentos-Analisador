@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarFiltros();
     configurarRetry();
     configurarCarregarMais();
+    inicializarSandbox();
 });
 
 /**
@@ -216,6 +217,15 @@ function voltarParaSelecao() {
     document.getElementById('tab-geral').classList.remove('hidden');
     document.getElementById('tab-custom').classList.add('hidden');
     document.getElementById('tab-feed').classList.add('hidden');
+    document.getElementById('tab-sandbox').classList.add('hidden');
+
+    // Reset Sandbox elements
+    const textarea = document.getElementById('sandbox-textarea');
+    if (textarea) textarea.value = '';
+    const resultCard = document.getElementById('sandbox-result-card');
+    if (resultCard) resultCard.classList.add('hidden');
+    const loadingCard = document.getElementById('sandbox-loading');
+    if (loadingCard) loadingCard.classList.add('hidden');
 
     const selectionScreen = document.getElementById('category-selection-screen');
     selectionScreen.classList.remove('hidden');
@@ -1337,4 +1347,92 @@ function limparFiltros() {
     if (dadosOriginais) {
         renderizarDashboard(dadosOriginais);
     }
+}
+
+/**
+ * Inicializa a funcionalidade de Sandbox (análise de comentário avulso em tempo real)
+ */
+function inicializarSandbox() {
+    const btnAnalise = document.getElementById('btn-sandbox-analisar');
+    const textarea = document.getElementById('sandbox-textarea');
+    const resultCard = document.getElementById('sandbox-result-card');
+    const loadingCard = document.getElementById('sandbox-loading');
+
+    if (!btnAnalise || !textarea) return;
+
+    btnAnalise.addEventListener('click', async () => {
+        const texto = textarea.value.trim();
+        if (!texto) {
+            alert('Por favor, digite um comentário antes de analisar.');
+            return;
+        }
+
+        // Oculta card de resultado e mostra loading
+        resultCard.classList.add('hidden');
+        loadingCard.classList.remove('hidden');
+        btnAnalise.disabled = true;
+
+        try {
+            const response = await fetch('/api/analisar-avulso', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ texto: texto })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || data.erro) {
+                throw new Error(data.erro || 'Erro ao processar análise da IA.');
+            }
+
+            // Popular dados no card
+            const badgeSentimento = document.getElementById('sandbox-badge-sentimento');
+            const badgeCriticidade = document.getElementById('sandbox-badge-criticidade');
+            const valEmocao = document.getElementById('sandbox-val-emocao');
+            const valConfianca = document.getElementById('sandbox-val-confianca');
+            const valResumo = document.getElementById('sandbox-val-resumo');
+            const listPositivos = document.getElementById('sandbox-list-positivos');
+            const listNegativos = document.getElementById('sandbox-list-negativos');
+
+            // Reset classes
+            badgeSentimento.className = 'badge';
+            badgeCriticidade.className = 'badge';
+
+            // Sentimento
+            badgeSentimento.textContent = data.sentimento;
+            badgeSentimento.classList.add(`badge-${data.sentimento}`);
+
+            // Criticidade
+            badgeCriticidade.textContent = `Criticidade: ${data.nivel_criticidade}`;
+            badgeCriticidade.classList.add(`badge-${data.nivel_criticidade}`);
+
+            // Emoção e Confiança
+            valEmocao.textContent = data.emocao.charAt(0).toUpperCase() + data.emocao.slice(1);
+            valConfianca.textContent = `${(data.confianca * 100).toFixed(0)}%`;
+
+            // Resumo
+            valResumo.textContent = data.resumo;
+
+            // Listas de Aspectos
+            listPositivos.innerHTML = data.pontos_positivos && data.pontos_positivos.length
+                ? data.pontos_positivos.map(p => `<li>${p}</li>`).join('')
+                : '<li class="no-bullet" style="color: var(--text-muted);">Nenhum aspecto positivo</li>';
+
+            listNegativos.innerHTML = data.pontos_negativos && data.pontos_negativos.length
+                ? data.pontos_negativos.map(p => `<li>${p}</li>`).join('')
+                : '<li class="no-bullet" style="color: var(--text-muted);">Nenhum problema citado</li>';
+
+            // Mostrar card de resultado
+            resultCard.classList.remove('hidden');
+
+        } catch (error) {
+            console.error('Erro na análise Sandbox:', error);
+            alert('Falha na análise: ' + error.message);
+        } finally {
+            loadingCard.classList.add('hidden');
+            btnAnalise.disabled = false;
+        }
+    });
 }
