@@ -29,7 +29,7 @@ let tabelaExibida = 10;
 const NOMES_CATEGORIAS = {
     playstore: { 
         nome: 'Google Play Store', 
-        emoji: '📱', 
+        icon: 'smartphone', 
         targetLabel: 'ID do Pacote (ex: com.whatsapp)', 
         targetPlaceholder: 'com.whatsapp',
         keyLabel: 'API Key do Console Google Play',
@@ -37,7 +37,7 @@ const NOMES_CATEGORIAS = {
     },
     youtube: { 
         nome: 'YouTube Canais', 
-        emoji: '📺', 
+        icon: 'youtube', 
         targetLabel: 'URL do Vídeo ou Canal', 
         targetPlaceholder: 'https://youtube.com/watch?v=...',
         keyLabel: 'API Key do YouTube Data v3',
@@ -45,7 +45,7 @@ const NOMES_CATEGORIAS = {
     },
     instagram: { 
         nome: 'Instagram Posts', 
-        emoji: '📸', 
+        icon: 'instagram', 
         targetLabel: 'Hashtag ou Link do Post', 
         targetPlaceholder: '#devlife',
         keyLabel: 'Meta Graph Access Token',
@@ -53,7 +53,7 @@ const NOMES_CATEGORIAS = {
     },
     amazon: { 
         nome: 'Amazon E-commerce', 
-        emoji: '📦', 
+        icon: 'package', 
         targetLabel: 'ASIN do Produto (ex: B08N5WRWNW)', 
         targetPlaceholder: 'B08N5WRWNW',
         keyLabel: 'Amazon PA-API Key',
@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarCarregarMais();
     inicializarSandbox();
     configurarPremiumModal();
+    
+    // Inicializa todos os ícones estáticos do Lucide na tela
+    lucide.createIcons();
 });
 
 /**
@@ -291,7 +294,14 @@ async function carregarDados(categoria) {
         // Configura títulos do cabeçalho do Dashboard
         const infoCat = NOMES_CATEGORIAS[categoria];
         document.getElementById('dashboard-category-name').textContent = infoCat.nome;
-        document.getElementById('dashboard-category-icon').textContent = infoCat.emoji;
+        if (categoria === 'youtube') {
+            document.getElementById('dashboard-category-icon').innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>`;
+        } else if (categoria === 'instagram') {
+            document.getElementById('dashboard-category-icon').innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`;
+        } else {
+            document.getElementById('dashboard-category-icon').innerHTML = `<i data-lucide="${infoCat.icon}"></i>`;
+            lucide.createIcons();
+        }
 
         // Renderiza tudo
         renderizarDashboard(dados);
@@ -350,14 +360,14 @@ function atualizarProgresso(porcentagem, activeStepId, logMsg) {
 
         if (stepId === activeStepId) {
             el.className = 'step-item active';
-            el.querySelector('.step-status-icon').textContent = '🔵';
+            el.querySelector('.step-status-icon').innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i>';
             stepEncontrado = true;
         } else if (!stepEncontrado && activeStepId !== '') {
             el.className = 'step-item completed';
-            el.querySelector('.step-status-icon').textContent = '✅';
+            el.querySelector('.step-status-icon').innerHTML = '<i data-lucide="check-circle-2"></i>';
         } else {
             el.className = 'step-item';
-            el.querySelector('.step-status-icon').textContent = '⚪';
+            el.querySelector('.step-status-icon').innerHTML = '<i data-lucide="circle"></i>';
         }
     });
 
@@ -366,10 +376,13 @@ function atualizarProgresso(porcentagem, activeStepId, logMsg) {
             const el = document.getElementById(stepId);
             if (el) {
                 el.className = 'step-item completed';
-                el.querySelector('.step-status-icon').textContent = '✅';
+                el.querySelector('.step-status-icon').innerHTML = '<i data-lucide="check-circle-2"></i>';
             }
         });
     }
+
+    // Processa os novos ícones injetados
+    lucide.createIcons();
 }
 
 function delay(ms) {
@@ -1553,10 +1566,10 @@ function renderizarInsights(insights) {
         card.className = `insight-card insight-${insight.tipo}`;
 
         // Altera ícone de acordo com o tipo
-        let icon = '💡';
-        if (insight.tipo === 'alerta') icon = '⚠️';
-        else if (insight.tipo === 'sucesso') icon = '📈';
-        else if (insight.tipo === 'sugestao') icon = '🎯';
+        let icon = '<i data-lucide="lightbulb"></i>';
+        if (insight.tipo === 'alerta') icon = '<i data-lucide="alert-triangle"></i>';
+        else if (insight.tipo === 'sucesso') icon = '<i data-lucide="trending-up"></i>';
+        else if (insight.tipo === 'sugestao') icon = '<i data-lucide="target"></i>';
 
         // Lógica de Paywall Premium
         const isLocked = !isPremiumUser && (idx >= 3 || insight.is_premium);
@@ -1580,6 +1593,9 @@ function renderizarInsights(insights) {
             paywall.classList.add('hidden');
         }
     }
+
+    // Processa os ícones injetados
+    lucide.createIcons();
 }
 
 /**

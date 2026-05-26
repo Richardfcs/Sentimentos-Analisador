@@ -102,6 +102,16 @@ body {
     background-attachment: fixed;
 }
 
+/* ── Lucide SVGs ───────────────────────────────────────────────────────── */
+.lucide {
+    width: 1.15em;
+    height: 1.15em;
+    stroke-width: 2px;
+    vertical-align: middle;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
 /* ── Loading Overlay ───────────────────────────────────────────────────── */
 .loading-overlay {
     position: fixed;
@@ -677,6 +687,9 @@ body {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .reviews-table-container {
@@ -1271,8 +1284,25 @@ body.theme-amazon .sim-input:focus { border-color: #ff9900; box-shadow: 0 0 10px
 }
 
 .step-status-icon {
-    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
 }
+
+.step-item.active .step-status-icon {
+    color: var(--cor-scrollbar-thumb, #6366f1);
+}
+
+.step-item.completed .step-status-icon {
+    color: #4ade80;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
 
 .loading-subtext {
     font-family: monospace;
@@ -1387,6 +1417,9 @@ body.theme-amazon .sim-input:focus { border-color: #ff9900; box-shadow: 0 0 10px
     padding: 0.75rem var(--spacing-lg);
     cursor: pointer;
     transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
 }
 
 .tab-button:hover {

@@ -15,6 +15,9 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous"></script>
 
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -24,7 +27,7 @@
     <div id="category-selection-screen" class="selection-screen">
         <div class="selection-container">
             <header class="selection-header">
-                <span class="main-icon">🧠</span>
+                <span class="main-icon"><i data-lucide="brain"></i></span>
                 <h1>SentView</h1>
                 <p>Selecione uma fonte de dados para analisar o sentimento e as emoções com inteligência artificial</p>
             </header>
@@ -32,28 +35,39 @@
             <!-- Cards Grid -->
             <div class="category-grid">
                 <div class="category-card" data-category="playstore">
-                    <div class="card-icon">📱</div>
+                    <div class="card-icon"><i data-lucide="smartphone"></i></div>
                     <h3>Google Play Store</h3>
                     <p>Avaliações de apps: estabilidade, bugs, versões do app, versão do Android e atualizações.</p>
                     <span class="card-count-badge">100 avaliações</span>
                 </div>
 
                 <div class="category-card" data-category="youtube">
-                    <div class="card-icon">📺</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+                        </svg>
+                    </div>
                     <h3>YouTube Canais</h3>
                     <p>Comentários de vídeos: didática, áudio, quantidade de anúncios, duração do vídeo e temas.</p>
                     <span class="card-count-badge">100 avaliações</span>
                 </div>
 
                 <div class="category-card" data-category="instagram">
-                    <div class="card-icon">📸</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
                     <h3>Instagram Posts</h3>
                     <p>Reações de redes sociais: engajamento em Reels vs Feed, hashtags e bugs de direct.</p>
                     <span class="card-count-badge">100 avaliações</span>
                 </div>
 
                 <div class="category-card" data-category="amazon">
-                    <div class="card-icon">📦</div>
+                    <div class="card-icon"><i data-lucide="package"></i></div>
                     <h3>Amazon E-commerce</h3>
                     <p>Opiniões sobre produtos físicos: atraso na entrega, embalagem, suporte e reembolso.</p>
                     <span class="card-count-badge">100 avaliações</span>
@@ -97,19 +111,19 @@
             <!-- Steps Checklist -->
             <div class="steps-checklist">
                 <div class="step-item" id="step-load">
-                    <span class="step-status-icon">⚪</span>
+                    <span class="step-status-icon"><i data-lucide="circle"></i></span>
                     <span class="step-label">Carregar base de dados JSON</span>
                 </div>
                 <div class="step-item" id="step-cache">
-                    <span class="step-status-icon">⚪</span>
+                    <span class="step-status-icon"><i data-lucide="circle"></i></span>
                     <span class="step-label">Consultar cache local SQLite</span>
                 </div>
                 <div class="step-item" id="step-ai">
-                    <span class="step-status-icon">⚪</span>
+                    <span class="step-status-icon"><i data-lucide="circle"></i></span>
                     <span class="step-label">Analisar novos comentários via IA</span>
                 </div>
                 <div class="step-item" id="step-stats">
-                    <span class="step-status-icon">⚪</span>
+                    <span class="step-status-icon"><i data-lucide="circle"></i></span>
                     <span class="step-label">Calcular estatísticas e gráficos</span>
                 </div>
             </div>
@@ -121,7 +135,7 @@
     <!-- Error State -->
     <div id="error-state" class="error-state hidden">
         <div class="error-content">
-            <span class="error-icon">⚠️</span>
+            <span class="error-icon"><i data-lucide="alert-triangle"></i></span>
             <h2>Erro ao processar dados</h2>
             <p id="error-message"></p>
             <div class="error-actions">
@@ -139,7 +153,7 @@
             <!-- Botão Voltar (Standalone) -->
             <div class="sidebar-nav-back">
                 <button id="btn-back-to-selection" class="btn-back">
-                    ← Voltar ao Início
+                    <i data-lucide="arrow-left"></i> Voltar ao Início
                 </button>
             </div>
             <!-- Header -->
@@ -147,7 +161,7 @@
                 <div class="header-content">
                     <div class="header-titles">
                         <div class="header-title">
-                            <span class="header-icon" id="dashboard-category-icon">🧠</span>
+                            <span class="header-icon" id="dashboard-category-icon"><i data-lucide="brain"></i></span>
                             <h1>SentView — <span id="dashboard-category-name">Categoria</span></h1>
                         </div>
                         <p class="header-subtitle">Dashboard inteligente de avaliações e análise semântica</p>
@@ -157,7 +171,7 @@
 
             <!-- Performance / Cache Optimization Banner -->
             <section class="performance-banner" id="performance-banner" aria-label="Métricas de Otimização">
-                <div class="perf-badge">⚡ Otimizado</div>
+                <div class="perf-badge"><i data-lucide="zap"></i> Otimizado</div>
                 <div class="perf-stats">
                     <span>Tempo total: <strong id="perf-time">-- ms</strong></span>
                     <span class="separator">|</span>
@@ -183,10 +197,10 @@
             <!-- Dynamic Tabs Navigation -->
             <div class="tabs-container">
                 <nav class="dashboard-tabs" aria-label="Navegação do Dashboard">
-                    <button class="tab-button active" data-tab="tab-geral">📊 Visão Geral</button>
-                    <button class="tab-button" data-tab="tab-custom">⚙️ Métricas da Categoria</button>
-                    <button class="tab-button" data-tab="tab-feed">💬 Lista de Avaliações</button>
-                    <button class="tab-button" data-tab="tab-sandbox">🧪 Testar IA (Sandbox)</button>
+                    <button class="tab-button active" data-tab="tab-geral"><i data-lucide="layout-dashboard"></i> Visão Geral</button>
+                    <button class="tab-button" data-tab="tab-custom"><i data-lucide="sliders"></i> Métricas da Categoria</button>
+                    <button class="tab-button" data-tab="tab-feed"><i data-lucide="message-square"></i> Lista de Avaliações</button>
+                    <button class="tab-button" data-tab="tab-sandbox"><i data-lucide="flask-conical"></i> Testar IA (Sandbox)</button>
                 </nav>
             </div>
 
@@ -216,7 +230,7 @@
                             <option value="todos">Todas</option>
                         </select>
                     </div>
-                    <button id="btn-limpar-filtros" class="btn-secondary">Limpar Filtros</button>
+                    <button id="btn-limpar-filtros" class="btn-secondary"><i data-lucide="rotate-ccw"></i> Limpar Filtros</button>
                 </div>
             </section>
         </aside>
@@ -226,35 +240,35 @@
             <!-- KPI Cards -->
             <section class="kpi-section" aria-label="Indicadores principais">
                 <div class="kpi-card" id="kpi-total">
-                    <div class="kpi-icon">📋</div>
+                    <div class="kpi-icon"><i data-lucide="message-square"></i></div>
                     <div class="kpi-info">
                         <span class="kpi-value" id="kpi-total-valor">--</span>
                         <span class="kpi-label">Total de Avaliações</span>
                     </div>
                 </div>
                 <div class="kpi-card" id="kpi-media">
-                    <div class="kpi-icon">⭐</div>
+                    <div class="kpi-icon"><i data-lucide="star"></i></div>
                     <div class="kpi-info">
                         <span class="kpi-value" id="kpi-media-valor">--</span>
                         <span class="kpi-label">Média de Estrelas</span>
                     </div>
                 </div>
                 <div class="kpi-card kpi-positivo" id="kpi-positivo">
-                    <div class="kpi-icon">😊</div>
+                    <div class="kpi-icon"><i data-lucide="smile"></i></div>
                     <div class="kpi-info">
                         <span class="kpi-value" id="kpi-positivo-valor">--</span>
                         <span class="kpi-label">Positivos</span>
                     </div>
                 </div>
                 <div class="kpi-card kpi-negativo" id="kpi-negativo">
-                    <div class="kpi-icon">😞</div>
+                    <div class="kpi-icon"><i data-lucide="frown"></i></div>
                     <div class="kpi-info">
                         <span class="kpi-value" id="kpi-negativo-valor">--</span>
                         <span class="kpi-label">Negativos</span>
                     </div>
                 </div>
                 <div class="kpi-card kpi-neutro" id="kpi-neutro">
-                    <div class="kpi-icon">😐</div>
+                    <div class="kpi-icon"><i data-lucide="meh"></i></div>
                     <div class="kpi-info">
                         <span class="kpi-value" id="kpi-neutro-valor">--</span>
                         <span class="kpi-label">Neutros</span>
@@ -291,7 +305,7 @@
             <!-- Word Cloud (Mapa de Palavras-Chave) -->
             <section class="charts-row" aria-label="Nuvem de palavras">
                 <div class="chart-card chart-card-full">
-                    <h2 class="chart-title">☁️ Nuvem de Palavras-Chave (Tópicos Frequentes)</h2>
+                    <h2 class="chart-title"><i data-lucide="tag"></i> Nuvem de Palavras-Chave (Tópicos Frequentes)</h2>
                     <div class="wordcloud-container" id="wordcloud-container">
                         <!-- Palavras serão injetadas via JS -->
                     </div>
@@ -300,7 +314,7 @@
 
             <!-- Insights Section -->
             <section class="insights-section" aria-label="Insights da IA">
-                <h2 class="section-title">🧠 Insights de Negócio por IA</h2>
+                <h2 class="section-title"><i data-lucide="brain"></i> Insights de Negócio por IA</h2>
                 <div class="insights-wrapper">
                     <div class="insights-list" id="insights-list">
                         <!-- Insights serão injetados via JS -->
@@ -308,9 +322,9 @@
                     <!-- Premium Paywall Block -->
                     <div class="premium-paywall-card hidden" id="premium-paywall">
                         <div class="paywall-content">
-                            <h3>🔒 Diagnósticos SentView Enterprise</h3>
+                            <h3><i data-lucide="lock"></i> Diagnósticos SentView Enterprise</h3>
                             <p>Desbloqueie o relatório analítico completo de causa-efeito e planos de ação sugeridos pela IA para o seu produto.</p>
-                            <button class="btn-primary" id="btn-upgrade-premium">⭐ Upgrade para Premium</button>
+                            <button class="btn-primary" id="btn-upgrade-premium"><i data-lucide="crown"></i> Upgrade para Premium</button>
                         </div>
                     </div>
                 </div>
@@ -339,14 +353,14 @@
             <section class="points-section" aria-label="Pontos recorrentes">
                 <div class="points-card points-positivos">
                     <h2 class="points-title">
-                        <span class="points-icon">✅</span>
+                        <span class="points-icon"><i data-lucide="thumbs-up"></i></span>
                         Pontos Positivos Recorrentes
                     </h2>
                     <ul id="lista-pontos-positivos" class="points-list"></ul>
                 </div>
                 <div class="points-card points-negativos">
                     <h2 class="points-title">
-                        <span class="points-icon">❌</span>
+                        <span class="points-icon"><i data-lucide="thumbs-down"></i></span>
                         Pontos Negativos Recorrentes
                     </h2>
                     <ul id="lista-pontos-negativos" class="points-list"></ul>
@@ -356,11 +370,10 @@
 
         <!-- TAB 3: LISTA DE AVALIAÇÕES -->
         <div id="tab-feed" class="tab-pane hidden">
-            <!-- Comments Section -->
-            <section class="comments-section" aria-label="Comentários representativos">
+            <section class="comments-section" aria-label="Comentários destacados">
                 <div class="comments-column">
                     <h2 class="comments-title">
-                        <span class="comments-icon">🌟</span>
+                        <span class="comments-icon"><i data-lucide="smile"></i></span>
                         Melhores Comentários Positivos
                     </h2>
                     <div id="comentarios-positivos" class="comments-list"></div>
@@ -368,17 +381,17 @@
                 </div>
                 <div class="comments-column">
                     <h2 class="comments-title">
-                        <span class="comments-icon">🔴</span>
+                        <span class="comments-icon"><i data-lucide="frown"></i></span>
                         Comentários Negativos Críticos
                     </h2>
                     <div id="comentarios-negativos" class="comments-list"></div>
                     <button id="btn-load-more-neg" class="btn-load-more hidden">Mostrar Mais Comentários Críticos (+5)</button>
                 </div>
             </section>
-
+ 
             <!-- All Reviews Table -->
             <section class="reviews-section" aria-label="Todas as avaliações">
-                <h2 class="section-title">📝 Todas as Avaliações</h2>
+                <h2 class="section-title"><i data-lucide="message-square"></i> Todas as Avaliações</h2>
                 <div class="reviews-table-container">
                     <table class="reviews-table" id="tabela-avaliacoes">
                         <thead>
@@ -402,7 +415,7 @@
         <!-- TAB 4: SANDBOX -->
         <div id="tab-sandbox" class="tab-pane hidden">
             <section class="sandbox-section" aria-label="Sandbox de Análise">
-                <h2 class="section-title">🧪 Analisador Individual em Tempo Real</h2>
+                <h2 class="section-title"><i data-lucide="flask-conical"></i> Analisador Individual em Tempo Real</h2>
                 <p class="header-subtitle" style="margin-top: 0; margin-bottom: var(--spacing-md); color: var(--text-secondary);">
                     Escreva qualquer comentário abaixo para ver a inteligência artificial analisar o sentimento, emoções e pontos-chave na hora.
                 </p>
@@ -412,7 +425,7 @@
                     <div class="sandbox-card sandbox-input-card">
                         <textarea id="sandbox-textarea" placeholder="Digite seu comentário aqui (ex: 'O produto chegou rápido e a embalagem veio impecável, porém achei o cabo do carregador um pouco curto.')" rows="6"></textarea>
                         <button id="btn-sandbox-analisar" class="btn-primary">
-                            <span>🧠 Analisar Comentário</span>
+                            <span><i data-lucide="sparkles"></i> Analisar Comentário</span>
                         </button>
                     </div>
 
@@ -438,17 +451,17 @@
                         </div>
 
                         <div class="result-summary">
-                            <h4>📌 Resumo Semântico</h4>
+                            <h4><i data-lucide="file-text"></i> Resumo Semântico</h4>
                             <p id="sandbox-val-resumo" class="comment-text">--</p>
                         </div>
 
                         <div class="result-points">
                             <div class="points-col points-pos">
-                                <h5>✅ Aspectos Positivos</h5>
+                                <h5><i data-lucide="plus-circle" class="text-success"></i> Aspectos Positivos</h5>
                                 <ul id="sandbox-list-positivos" class="points-list-simple"></ul>
                             </div>
                             <div class="points-col points-neg">
-                                <h5>❌ Problemas Citados</h5>
+                                <h5><i data-lucide="minus-circle" class="text-danger"></i> Problemas Citados</h5>
                                 <ul id="sandbox-list-negativos" class="points-list-simple"></ul>
                             </div>
                         </div>
@@ -470,7 +483,7 @@
         <div class="modal-card">
             <button class="modal-close-btn" id="btn-close-premium-modal">&times;</button>
             <div class="modal-header">
-                <h2>⭐ Upgrade para SentView Premium</h2>
+                <h2><i data-lucide="crown"></i> Upgrade para SentView Premium</h2>
                 <p>Libere o poder total dos diagnósticos de negócio automatizados por IA</p>
             </div>
             <div class="modal-body">
