@@ -504,7 +504,7 @@ body {
 }
 
 .chart-container-doughnut {
-    max-width: 260px;
+    max-width: 380px;
     margin: 0 auto;
 }
 
@@ -2352,5 +2352,302 @@ body.theme-amazon .sandbox-input-card textarea:focus {
 
 .btn-glow:hover {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+}
+
+/* ── Sidebar Premium Actions (Fase 7) ─────────────────────────────────── */
+.sidebar-premium-actions {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.actions-premium-header {
+    display: flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fbbf24; /* Golden premium header */
+    margin-bottom: var(--spacing-xs);
+    gap: var(--spacing-xs);
+}
+
+.actions-premium-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.btn-premium-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.45rem 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.btn-premium-action:not(.locked):hover {
+    background: var(--gradiente-accent);
+    border-color: transparent;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-premium-action.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-premium-action .lock-indicator {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.btn-premium-action:not(.locked) .lock-indicator {
+    display: none;
+}
+
+/* ── AI Action Plan Section (Fase 7) ─────────────────────────────────── */
+.action-plan-section {
+    grid-column: 1 / -1;
+    margin-top: var(--spacing-lg);
+    animation: fadeInUp 0.5s ease 0.4s backwards;
+}
+
+.action-plan-wrapper {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    overflow: hidden;
+}
+
+.action-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+    transition: filter var(--transition-slow);
+}
+
+/* Timeline Vertical Line */
+.action-timeline::before {
+    content: '';
+    position: absolute;
+    top: var(--spacing-xs);
+    bottom: var(--spacing-xs);
+    left: calc(var(--spacing-md) - 2px);
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.2));
+}
+
+.action-step-card {
+    position: relative;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-base);
+}
+
+.action-step-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    background: rgba(15, 23, 42, 0.6);
+}
+
+/* Checklist Checkbox & Step Dot */
+.step-dot {
+    position: absolute;
+    left: calc(-1 * var(--spacing-xl) + var(--spacing-xs) - 1px);
+    top: var(--spacing-md);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid #6366f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.step-dot:hover {
+    transform: scale(1.2);
+    border-color: #8b5cf6;
+}
+
+.step-dot.completed {
+    background: #4ade80;
+    border-color: #4ade80;
+    color: #000;
+}
+
+.step-dot.completed::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 8px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.step-title-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.step-number {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(99, 102, 241, 0.2);
+    color: #8b5cf6;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+}
+
+.step-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.action-step-card.completed .step-title {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.step-description {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.action-step-card.completed .step-description {
+    opacity: 0.5;
+}
+
+/* Priority Badges */
+.priority-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+}
+
+.priority-alta {
+    background: var(--cor-negativo-bg);
+    color: var(--cor-negativo);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.priority-media {
+    background: var(--cor-neutro-bg);
+    color: var(--cor-neutro);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.priority-baixa {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+/* Action Plan Paywall */
+.action-timeline.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.action-plan-paywall {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 14, 26, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 5;
+    animation: fadeIn var(--transition-base);
+}
+
+.paywall-overlay-content {
+    background: rgba(17, 24, 37, 0.95);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 420px;
+    text-align: center;
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.paywall-icon {
+    font-size: 2.2rem;
+    color: #fbbf24;
+    animation: bounce 2s infinite;
+}
+
+.paywall-overlay-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.paywall-overlay-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 

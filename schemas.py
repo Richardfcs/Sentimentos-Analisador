@@ -14,9 +14,13 @@ class AvaliacaoInput(BaseModel):
     """Modelo para validar cada avaliação do arquivo JSON específico."""
     id: int
     usuario: str
-    estrelas: int = Field(ge=1, le=5, description="Nota de 1 a 5 estrelas")
+    estrelas: int | None = Field(default=None, ge=1, le=5, description="Nota de 1 a 5 estrelas")
     comentario: str = Field(min_length=5, description="Comentário textual do usuário")
     data: date
+
+    # Campos de engajamento social (YouTube, Instagram)
+    curtidas: int | None = None
+    compartilhamentos: int | None = None
 
     # Campos opcionais para as diferentes plataformas
     versao_app: str | None = None
@@ -44,10 +48,14 @@ class AvaliacaoCompleta(BaseModel):
     """Combina os dados originais da avaliação com a análise feita pela IA."""
     id: int
     usuario: str
-    estrelas: int
+    estrelas: int | None = None
     comentario: str
     data: date
     analise: AnaliseIA
+
+    # Campos de engajamento social
+    curtidas: int | None = None
+    compartilhamentos: int | None = None
 
     # Campos específicos das plataformas
     versao_app: str | None = None
@@ -81,16 +89,26 @@ class InsightItem(BaseModel):
     is_premium: bool = False
 
 
+class ActionStepItem(BaseModel):
+    """Representa uma etapa do roteiro de ação gerado pela IA."""
+    passo: int
+    titulo: str
+    descricao: str
+    prioridade: Literal["alta", "media", "baixa"]
+    is_premium: bool = True
+
+
 class EstatisticasGerais(BaseModel):
     """Estatísticas calculadas pelo backend (não pela IA)."""
     total_avaliacoes: int
-    media_estrelas: float
+    media_estrelas: float | None
     contagem_sentimentos: dict[str, int]
     contagem_emocoes: dict[str, int]
     pontos_positivos_recorrentes: list[PontoRecorrente]
     pontos_negativos_recorrentes: list[PontoRecorrente]
     evolucao_por_data: list[EvolucaoDiaria]
     insights: list[InsightItem] = Field(default_factory=list)
+    plano_acao: list[ActionStepItem] = Field(default_factory=list)
     
     # Métricas dinâmicas calculadas de acordo com a categoria selecionada
     metricas_plataforma: dict = Field(default_factory=dict)

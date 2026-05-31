@@ -17,6 +17,7 @@ from schemas import (
     PontoRecorrente,
     EvolucaoDiaria,
     InsightItem,
+    ActionStepItem,
 )
 
 logger = logging.getLogger(__name__)
@@ -58,6 +59,30 @@ def carregar_avaliacoes(categoria: str) -> list[AvaliacaoInput]:
     return avaliacoes
 
 
+PLANOS_ACAO = {
+    "playstore": [
+        ActionStepItem(passo=1, titulo="Corrigir Travamento da V2.1.2 no Android 12", descricao="Resolver bug de permissão de notificação e reverter o patch de sincronização em segundo plano imediatamente.", prioridade="alta"),
+        ActionStepItem(passo=2, titulo="Otimizar Processo de Autenticação", descricao="Refatorar o fluxo de login lento relatado por usuários após a última atualização de segurança.", prioridade="media"),
+        ActionStepItem(passo=3, titulo="Expandir Tema Escuro", descricao="Implementar a interface escura em 100% das telas secundárias após feedback altamente positivo de 30% dos usuários.", prioridade="baixa"),
+    ],
+    "youtube": [
+        ActionStepItem(passo=1, titulo="Reduzir Propagandas Mid-Roll em Vídeos Longos", descricao="Dividir vídeos acima de 25 minutos em partes ou otimizar a inserção de anúncios automáticos para reduzir rejeição de 35%.", prioridade="alta"),
+        ActionStepItem(passo=2, titulo="Tratamento de Áudio e Ruído", descricao="Implementar filtro de redução de ruído nos próximos tutoriais para reverter a queda de 12% na taxa de retenção.", prioridade="media"),
+        ActionStepItem(passo=3, titulo="Dobrar Foco em Tutoriais de Código", descricao="Aumentar a frequência de postagem de vídeos práticos e didáticos que alcançaram aprovação unânime de 95%.", prioridade="baixa"),
+    ],
+    "instagram": [
+        ActionStepItem(passo=1, titulo="Priorizar Reels Educacionais Curtos", descricao="Focar 80% do conteúdo criativo em Reels dinâmicos de até 30 segundos, impulsionando sentimentos de gratidão.", prioridade="alta"),
+        ActionStepItem(passo=2, titulo="Limpeza de Hashtags Irrelevantes", descricao="Substituir hashtags genéricas (como #dev) por tags de caixas de perguntas e engajamento orgânico de comunidade.", prioridade="media"),
+        ActionStepItem(passo=3, titulo="Otimizar Resolução de Upload de Reels", descricao="Corrigir bugs de falha de reprodução comprimindo vídeos de forma nativa para evitar quebra no player.", prioridade="baixa"),
+    ],
+    "amazon": [
+        ActionStepItem(passo=1, titulo="Resolver Atrasos Críticos de Logística", descricao="Substituir o parceiro logístico regional nas rotas onde as entregas ultrapassam 5 dias úteis.", prioridade="alta"),
+        ActionStepItem(passo=2, titulo="Reforço e Padrão de Embalagem", descricao="Priorizar embalagens reforçadas para itens rotulados como frágeis para eliminar sentimentos de raiva e frustração.", prioridade="media"),
+        ActionStepItem(passo=3, titulo="Alavancar Entregas Expressas", descricao="Oferecer frete rápido com surpresa de 2 dias de prazo para clientes fiéis, estimulando reviews positivos.", prioridade="baixa"),
+    ],
+}
+
+
 def calcular_estatisticas(avaliacoes: list[AvaliacaoCompleta], categoria: str) -> EstatisticasGerais:
     """
     Calcula todas as estatísticas gerais (média estrelas, sentimentos) e específicas
@@ -66,9 +91,8 @@ def calcular_estatisticas(avaliacoes: list[AvaliacaoCompleta], categoria: str) -
     total = len(avaliacoes)
 
     # 1. Estatísticas Gerais Básicas
-    media_estrelas = round(
-        sum(a.estrelas for a in avaliacoes) / total, 2
-    ) if total > 0 else 0.0
+    valid_estrelas = [a.estrelas for a in avaliacoes if a.estrelas is not None]
+    media_estrelas = round(sum(valid_estrelas) / len(valid_estrelas), 2) if valid_estrelas else None
 
     contagem_sentimentos = Counter(a.analise.sentimento for a in avaliacoes)
     contagem_emocoes = Counter(a.analise.emocao for a in avaliacoes)
@@ -165,7 +189,15 @@ def calcular_estatisticas(avaliacoes: list[AvaliacaoCompleta], categoria: str) -
                 t = a.categoria_video
                 sent_tema[t][a.analise.sentimento] += 1
 
+        # Média de curtidas e compartilhamentos
+        curtidas_validas = [a.curtidas for a in avaliacoes if a.curtidas is not None]
+        compartilhamentos_validos = [a.compartilhamentos for a in avaliacoes if a.compartilhamentos is not None]
+        media_curtidas = round(sum(curtidas_validas) / len(curtidas_validas), 1) if curtidas_validas else 0.0
+        media_compartilhamentos = round(sum(compartilhamentos_validos) / len(compartilhamentos_validos), 1) if compartilhamentos_validos else 0.0
+
         metricas_plataforma = {
+            "media_curtidas": media_curtidas,
+            "media_compartilhamentos": media_compartilhamentos,
             "sentimento_por_duracao": sent_duracao,
             "sentimento_por_tema": dict(sent_tema)
         }
@@ -188,7 +220,15 @@ def calcular_estatisticas(avaliacoes: list[AvaliacaoCompleta], categoria: str) -
                 sent_tag[tag][a.analise.sentimento] += 1
                 sent_tag[tag]["total"] += 1
 
+        # Média de curtidas e compartilhamentos
+        curtidas_validas = [a.curtidas for a in avaliacoes if a.curtidas is not None]
+        compartilhamentos_validos = [a.compartilhamentos for a in avaliacoes if a.compartilhamentos is not None]
+        media_curtidas = round(sum(curtidas_validas) / len(curtidas_validas), 1) if curtidas_validas else 0.0
+        media_compartilhamentos = round(sum(compartilhamentos_validos) / len(compartilhamentos_validos), 1) if compartilhamentos_validos else 0.0
+
         metricas_plataforma = {
+            "media_curtidas": media_curtidas,
+            "media_compartilhamentos": media_compartilhamentos,
             "sentimento_por_midia": sent_midia,
             "sentimento_por_hashtag": {
                 tag: {
@@ -272,6 +312,7 @@ def calcular_estatisticas(avaliacoes: list[AvaliacaoCompleta], categoria: str) -
         pontos_negativos_recorrentes=pontos_negativos_recorrentes,
         evolucao_por_data=evolucao_por_data,
         insights=insights,
+        plano_acao=PLANOS_ACAO.get(categoria, []),
         metricas_plataforma=metricas_plataforma
     )
 
@@ -293,6 +334,8 @@ def combinar_avaliacoes_com_analises(
             comentario=avaliacao.comentario,
             data=avaliacao.data,
             analise=analise,
+            curtidas=avaliacao.curtidas,
+            compartilhamentos=avaliacao.compartilhamentos,
             versao_app=avaliacao.versao_app,
             android_version=avaliacao.android_version,
             duracao_minutos=avaliacao.duracao_minutos,

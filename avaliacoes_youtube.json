@@ -2,901 +2,1001 @@
   {
     "id": 1,
     "usuario": "Lucas Barbosa",
-    "estrelas": 5,
     "comentario": "Excelente produção! Vídeo em 4K com luz perfeita, roteiro muito bem construído e áudio cristalino.",
     "data": "2026-05-06",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 1736,
+    "compartilhamentos": 72
   },
   {
     "id": 2,
     "usuario": "Carlos Souza",
-    "estrelas": 3,
     "comentario": "Bom resumo, mas o ritmo é um pouco cansativo se você já conhece o básico do assunto.",
     "data": "2026-05-13",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 55,
+    "compartilhamentos": 8
   },
   {
     "id": 3,
     "usuario": "Gustavo Cardoso",
-    "estrelas": 2,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-11",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 5,
+    "compartilhamentos": 5
   },
   {
     "id": 4,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 2,
     "comentario": "O vídeo tem 30 minutos mas 20 são só propaganda de curso pago. Conteúdo de verdade quase nada.",
     "data": "2026-05-12",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 50,
+    "compartilhamentos": 3
   },
   {
     "id": 5,
     "usuario": "Maria Silva",
-    "estrelas": 2,
     "comentario": "Áudio horroroso! Tem um ruído de fundo estridente insuportável e a voz está muito baixa.",
     "data": "2026-05-03",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 19,
+    "compartilhamentos": 3
   },
   {
     "id": 6,
     "usuario": "Fernanda Lima",
-    "estrelas": 4,
     "comentario": "Gostei da clareza dos slides e da calma do professor para explicar. Vídeo bem estruturado.",
     "data": "2026-05-17",
     "duracao_minutos": 5,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 604,
+    "compartilhamentos": 37
   },
   {
     "id": 7,
     "usuario": "Sabrina Pires",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-11",
     "duracao_minutos": 5,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2256,
+    "compartilhamentos": 69
   },
   {
     "id": 8,
     "usuario": "Vanessa Dias",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-07",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 213,
+    "compartilhamentos": 5
   },
   {
     "id": 9,
     "usuario": "Bruno Martins",
-    "estrelas": 2,
     "comentario": "Vídeo desatualizado. As bibliotecas usadas mudaram de versão e o código não funciona mais.",
     "data": "2026-05-01",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 17,
+    "compartilhamentos": 5
   },
   {
     "id": 10,
     "usuario": "Amanda Pereira",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-02",
     "duracao_minutos": 45,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 1986,
+    "compartilhamentos": 150
   },
   {
     "id": 11,
     "usuario": "Juliana Costa",
-    "estrelas": 3,
     "comentario": "Mediano. A teoria foi boa, mas a prática foi muito rápida e com cortes que dificultam acompanhar.",
     "data": "2026-05-19",
     "duracao_minutos": 12,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 170,
+    "compartilhamentos": 13
   },
   {
     "id": 12,
     "usuario": "João Santos",
-    "estrelas": 3,
     "comentario": "Mediano. A teoria foi boa, mas a prática foi muito rápida e com cortes que dificultam acompanhar.",
     "data": "2026-05-19",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 249,
+    "compartilhamentos": 18
   },
   {
     "id": 13,
     "usuario": "Patricia Cruz",
-    "estrelas": 4,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-18",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 455,
+    "compartilhamentos": 37
   },
   {
     "id": 14,
     "usuario": "Alexandre Sales",
-    "estrelas": 5,
     "comentario": "Excelente produção! Vídeo em 4K com luz perfeita, roteiro muito bem construído e áudio cristalino.",
     "data": "2026-05-18",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 890,
+    "compartilhamentos": 123
   },
   {
     "id": 15,
     "usuario": "Marcelo Lins",
-    "estrelas": 4,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-10",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 652,
+    "compartilhamentos": 39
   },
   {
     "id": 16,
     "usuario": "André Correia",
-    "estrelas": 5,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-09",
     "duracao_minutos": 45,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 1892,
+    "compartilhamentos": 140
   },
   {
     "id": 17,
     "usuario": "Rafael Teixeira",
-    "estrelas": 3,
     "comentario": "Bom resumo, mas o ritmo é um pouco cansativo se você já conhece o básico do assunto.",
     "data": "2026-05-01",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 178,
+    "compartilhamentos": 17
   },
   {
     "id": 18,
     "usuario": "Marcos Rocha",
-    "estrelas": 5,
     "comentario": "Gostei da clareza dos slides e da calma do professor para explicar. Vídeo bem estruturado.",
     "data": "2026-05-02",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 2397,
+    "compartilhamentos": 99
   },
   {
     "id": 19,
     "usuario": "Beatriz Gomes",
-    "estrelas": 5,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-19",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 926,
+    "compartilhamentos": 149
   },
   {
     "id": 20,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 2,
     "comentario": "O microfone estava estourando em vários momentos do vídeo. Tive que ficar regulando o volume.",
     "data": "2026-05-09",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 44,
+    "compartilhamentos": 3
   },
   {
     "id": 21,
     "usuario": "Vanessa Dias",
-    "estrelas": 3,
     "comentario": "Aula interessante, embora o exemplo prático usado seja um pouco distante do mundo real.",
     "data": "2026-05-07",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 274,
+    "compartilhamentos": 17
   },
   {
     "id": 22,
     "usuario": "Felipe Correia",
-    "estrelas": 2,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-15",
     "duracao_minutos": 28,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 33,
+    "compartilhamentos": 3
   },
   {
     "id": 23,
     "usuario": "Patricia Cruz",
-    "estrelas": 3,
     "comentario": "O conteúdo do vídeo é bom, mas o apresentador fala rápido demais. Tive que diminuir a velocidade.",
     "data": "2026-05-01",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 232,
+    "compartilhamentos": 11
   },
   {
     "id": 24,
     "usuario": "Letícia Alves",
-    "estrelas": 5,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-03",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 1657,
+    "compartilhamentos": 55
   },
   {
     "id": 25,
     "usuario": "Renato Ramos",
-    "estrelas": 2,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-17",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 32,
+    "compartilhamentos": 1
   },
   {
     "id": 26,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 5,
     "comentario": "Material didático de altíssimo nível. A seção sobre otimização foi excelente e resolveu minhas dúvidas.",
     "data": "2026-05-01",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 2449,
+    "compartilhamentos": 111
   },
   {
     "id": 27,
     "usuario": "Gabriel Costa",
-    "estrelas": 5,
     "comentario": "Gostei da clareza dos slides e da calma do professor para explicar. Vídeo bem estruturado.",
     "data": "2026-05-04",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 1558,
+    "compartilhamentos": 92
   },
   {
     "id": 28,
     "usuario": "Ana Oliveira",
-    "estrelas": 2,
     "comentario": "O microfone estava estourando em vários momentos do vídeo. Tive que ficar regulando o volume.",
     "data": "2026-05-12",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 38,
+    "compartilhamentos": 2
   },
   {
     "id": 29,
     "usuario": "Thiago Araújo",
-    "estrelas": 3,
     "comentario": "Aula interessante, embora o exemplo prático usado seja um pouco distante do mundo real.",
     "data": "2026-05-01",
     "duracao_minutos": 45,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 83,
+    "compartilhamentos": 20
   },
   {
     "id": 30,
     "usuario": "Isabela Mendes",
-    "estrelas": 4,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-20",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 522,
+    "compartilhamentos": 46
   },
   {
     "id": 31,
     "usuario": "Letícia Alves",
-    "estrelas": 2,
     "comentario": "Iluminação ruim e a fonte do código está muito pequena. Não dá para ler nada na tela.",
     "data": "2026-05-07",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 9,
+    "compartilhamentos": 2
   },
   {
     "id": 32,
     "usuario": "Kamila Dias",
-    "estrelas": 3,
     "comentario": "Bom resumo, mas o ritmo é um pouco cansativo se você já conhece o básico do assunto.",
     "data": "2026-05-20",
     "duracao_minutos": 28,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 256,
+    "compartilhamentos": 8
   },
   {
     "id": 33,
     "usuario": "Cláudia Diniz",
-    "estrelas": 2,
     "comentario": "Título clickbait total! Promete ensinar a criar um projeto completo e no final só mostra slides.",
     "data": "2026-05-14",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 6,
+    "compartilhamentos": 5
   },
   {
     "id": 34,
     "usuario": "Pedro Almeida",
-    "estrelas": 2,
     "comentario": "Título clickbait total! Promete ensinar a criar um projeto completo e no final só mostra slides.",
     "data": "2026-05-07",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 27,
+    "compartilhamentos": 5
   },
   {
     "id": 35,
     "usuario": "Pedro Almeida",
-    "estrelas": 5,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-04",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 1127,
+    "compartilhamentos": 86
   },
   {
     "id": 36,
     "usuario": "Julio Cesar",
-    "estrelas": 2,
     "comentario": "Vídeo desatualizado. As bibliotecas usadas mudaram de versão e o código não funciona mais.",
     "data": "2026-05-20",
     "duracao_minutos": 5,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 40,
+    "compartilhamentos": 3
   },
   {
     "id": 37,
     "usuario": "Natália Castro",
-    "estrelas": 1,
     "comentario": "Iluminação ruim e a fonte do código está muito pequena. Não dá para ler nada na tela.",
     "data": "2026-05-03",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 0,
+    "compartilhamentos": 1
   },
   {
     "id": 38,
     "usuario": "Gabriela Lima",
-    "estrelas": 3,
     "comentario": "A explicação é razoável, mas a qualidade de som oscila muito entre o professor e a vinheta.",
     "data": "2026-05-21",
     "duracao_minutos": 5,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 138,
+    "compartilhamentos": 10
   },
   {
     "id": 39,
     "usuario": "Pedro Almeida",
-    "estrelas": 3,
     "comentario": "Aula interessante, embora o exemplo prático usado seja um pouco distante do mundo real.",
     "data": "2026-05-01",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 114,
+    "compartilhamentos": 18
   },
   {
     "id": 40,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 4,
     "comentario": "Professor explica muito bem. A parte prática foi essencial para fixar o aprendizado.",
     "data": "2026-05-13",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 675,
+    "compartilhamentos": 40
   },
   {
     "id": 41,
     "usuario": "Vanessa Dias",
-    "estrelas": 3,
     "comentario": "A explicação é razoável, mas a qualidade de som oscila muito entre o professor e a vinheta.",
     "data": "2026-05-18",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 127,
+    "compartilhamentos": 7
   },
   {
     "id": 42,
     "usuario": "Carolina Moreira",
-    "estrelas": 3,
     "comentario": "Ok, mas achei que faltou aprofundar mais na parte de banco de dados. Ficou muito por cima.",
     "data": "2026-05-16",
     "duracao_minutos": 5,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 89,
+    "compartilhamentos": 7
   },
   {
     "id": 43,
     "usuario": "Thiago Araújo",
-    "estrelas": 3,
     "comentario": "O conteúdo do vídeo é bom, mas o apresentador fala rápido demais. Tive que diminuir a velocidade.",
     "data": "2026-05-02",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 164,
+    "compartilhamentos": 5
   },
   {
     "id": 44,
     "usuario": "Matheus Santos",
-    "estrelas": 4,
     "comentario": "Material didático de altíssimo nível. A seção sobre otimização foi excelente e resolveu minhas dúvidas.",
     "data": "2026-05-11",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 770,
+    "compartilhamentos": 24
   },
   {
     "id": 45,
     "usuario": "Natália Castro",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-15",
     "duracao_minutos": 28,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 249,
+    "compartilhamentos": 13
   },
   {
     "id": 46,
     "usuario": "Fernanda Lima",
-    "estrelas": 1,
     "comentario": "O apresentador fica fazendo muitas piadas sem graça durante a explicação, corta o raciocínio.",
     "data": "2026-05-02",
     "duracao_minutos": 28,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 4,
+    "compartilhamentos": 0
   },
   {
     "id": 47,
     "usuario": "Rodrigo Azevedo",
-    "estrelas": 3,
     "comentario": "O conteúdo do vídeo é bom, mas o apresentador fala rápido demais. Tive que diminuir a velocidade.",
     "data": "2026-05-14",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 285,
+    "compartilhamentos": 6
   },
   {
     "id": 48,
     "usuario": "Gustavo Cardoso",
-    "estrelas": 3,
     "comentario": "Bom resumo, mas o ritmo é um pouco cansativo se você já conhece o básico do assunto.",
     "data": "2026-05-02",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 224,
+    "compartilhamentos": 6
   },
   {
     "id": 49,
     "usuario": "Camila Rodrigues",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-13",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2128,
+    "compartilhamentos": 67
   },
   {
     "id": 50,
     "usuario": "Luana Souza",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-13",
     "duracao_minutos": 5,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 123,
+    "compartilhamentos": 7
   },
   {
     "id": 51,
     "usuario": "Julio Cesar",
-    "estrelas": 2,
     "comentario": "O apresentador fica fazendo muitas piadas sem graça durante a explicação, corta o raciocínio.",
     "data": "2026-05-21",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 28,
+    "compartilhamentos": 2
   },
   {
     "id": 52,
     "usuario": "Carlos Souza",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-11",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 223,
+    "compartilhamentos": 13
   },
   {
     "id": 53,
     "usuario": "Rodrigo Azevedo",
-    "estrelas": 5,
     "comentario": "Edição impecável! O canal está de parabéns pela qualidade de gravação e clareza nos exemplos práticos.",
     "data": "2026-05-08",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2496,
+    "compartilhamentos": 97
   },
   {
     "id": 54,
     "usuario": "Letícia Alves",
-    "estrelas": 4,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-04",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 336,
+    "compartilhamentos": 39
   },
   {
     "id": 55,
     "usuario": "Bruno Martins",
-    "estrelas": 5,
     "comentario": "Excelente produção! Vídeo em 4K com luz perfeita, roteiro muito bem construído e áudio cristalino.",
     "data": "2026-05-10",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 1096,
+    "compartilhamentos": 121
   },
   {
     "id": 56,
     "usuario": "Natália Castro",
-    "estrelas": 3,
     "comentario": "O vídeo está bom, mas podiam colocar legendas em português corrigidas manualmente.",
     "data": "2026-05-20",
     "duracao_minutos": 12,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 92,
+    "compartilhamentos": 16
   },
   {
     "id": 57,
     "usuario": "Renato Ramos",
-    "estrelas": 3,
     "comentario": "A explicação é razoável, mas a qualidade de som oscila muito entre o professor e a vinheta.",
     "data": "2026-05-04",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 86,
+    "compartilhamentos": 6
   },
   {
     "id": 58,
     "usuario": "André Correia",
-    "estrelas": 1,
     "comentario": "Vídeo desatualizado. As bibliotecas usadas mudaram de versão e o código não funciona mais.",
     "data": "2026-05-15",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 4,
+    "compartilhamentos": 1
   },
   {
     "id": 59,
     "usuario": "Júlia Carvalho",
-    "estrelas": 5,
     "comentario": "Melhor canal de programação do Brasil! Explicações simples para conceitos complexos. Já deixei meu like.",
     "data": "2026-05-13",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 2127,
+    "compartilhamentos": 113
   },
   {
     "id": 60,
     "usuario": "Letícia Alves",
-    "estrelas": 2,
     "comentario": "O apresentador fica fazendo muitas piadas sem graça durante a explicação, corta o raciocínio.",
     "data": "2026-05-02",
     "duracao_minutos": 28,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 30,
+    "compartilhamentos": 3
   },
   {
     "id": 61,
     "usuario": "Arthur Rezende",
-    "estrelas": 1,
     "comentario": "O vídeo corta no meio de um raciocínio importante. Edição muito mal feita.",
     "data": "2026-05-19",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 4,
+    "compartilhamentos": 0
   },
   {
     "id": 62,
     "usuario": "Bruno Martins",
-    "estrelas": 2,
     "comentario": "Áudio horroroso! Tem um ruído de fundo estridente insuportável e a voz está muito baixa.",
     "data": "2026-05-17",
     "duracao_minutos": 5,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 14,
+    "compartilhamentos": 5
   },
   {
     "id": 63,
     "usuario": "Cláudia Diniz",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-15",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 192,
+    "compartilhamentos": 18
   },
   {
     "id": 64,
     "usuario": "Tatiane Assis",
-    "estrelas": 4,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-09",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 749,
+    "compartilhamentos": 29
   },
   {
     "id": 65,
     "usuario": "Gabriela Lima",
-    "estrelas": 2,
     "comentario": "Áudio horroroso! Tem um ruído de fundo estridente insuportável e a voz está muito baixa.",
     "data": "2026-05-09",
     "duracao_minutos": 5,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 11,
+    "compartilhamentos": 3
   },
   {
     "id": 66,
     "usuario": "Ana Oliveira",
-    "estrelas": 5,
     "comentario": "Melhor canal de programação do Brasil! Explicações simples para conceitos complexos. Já deixei meu like.",
     "data": "2026-05-11",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2351,
+    "compartilhamentos": 90
   },
   {
     "id": 67,
     "usuario": "Juliana Costa",
-    "estrelas": 5,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-06",
     "duracao_minutos": 28,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 1265,
+    "compartilhamentos": 83
   },
   {
     "id": 68,
     "usuario": "João Santos",
-    "estrelas": 3,
     "comentario": "O vídeo é informativo, mas o professor responde poucas dúvidas dos alunos nos comentários.",
     "data": "2026-05-19",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 206,
+    "compartilhamentos": 11
   },
   {
     "id": 69,
     "usuario": "João Santos",
-    "estrelas": 5,
     "comentario": "Material didático de altíssimo nível. A seção sobre otimização foi excelente e resolveu minhas dúvidas.",
     "data": "2026-05-04",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 1411,
+    "compartilhamentos": 121
   },
   {
     "id": 70,
     "usuario": "Juliana Costa",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-10",
     "duracao_minutos": 5,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 827,
+    "compartilhamentos": 75
   },
   {
     "id": 71,
     "usuario": "Monique Viana",
-    "estrelas": 5,
     "comentario": "Conteúdo de altíssima qualidade! Parabéns pelo excelente trabalho e dedicação com os alunos.",
     "data": "2026-05-10",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 2393,
+    "compartilhamentos": 90
   },
   {
     "id": 72,
     "usuario": "Alexandre Sales",
-    "estrelas": 5,
     "comentario": "Gostei da clareza dos slides e da calma do professor para explicar. Vídeo bem estruturado.",
     "data": "2026-05-08",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 917,
+    "compartilhamentos": 89
   },
   {
     "id": 73,
     "usuario": "Renata Guedes",
-    "estrelas": 3,
     "comentario": "Aula interessante, embora o exemplo prático usado seja um pouco distante do mundo real.",
     "data": "2026-05-11",
     "duracao_minutos": 5,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 255,
+    "compartilhamentos": 10
   },
   {
     "id": 74,
     "usuario": "Tatiane Assis",
-    "estrelas": 1,
     "comentario": "Título clickbait total! Promete ensinar a criar um projeto completo e no final só mostra slides.",
     "data": "2026-05-03",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 4,
+    "compartilhamentos": 0
   },
   {
     "id": 75,
     "usuario": "Ana Oliveira",
-    "estrelas": 3,
     "comentario": "O conteúdo do vídeo é bom, mas o apresentador fala rápido demais. Tive que diminuir a velocidade.",
     "data": "2026-05-02",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 274,
+    "compartilhamentos": 9
   },
   {
     "id": 76,
     "usuario": "Ana Oliveira",
-    "estrelas": 3,
     "comentario": "O vídeo é informativo, mas o professor responde poucas dúvidas dos alunos nos comentários.",
     "data": "2026-05-14",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 52,
+    "compartilhamentos": 15
   },
   {
     "id": 77,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 5,
     "comentario": "Professor explica muito bem. A parte prática foi essencial para fixar o aprendizado.",
     "data": "2026-05-04",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 2405,
+    "compartilhamentos": 96
   },
   {
     "id": 78,
     "usuario": "Luana Souza",
-    "estrelas": 1,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-12",
     "duracao_minutos": 28,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 4,
+    "compartilhamentos": 1
   },
   {
     "id": 79,
     "usuario": "Diego Lopes",
-    "estrelas": 1,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-19",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 5,
+    "compartilhamentos": 0
   },
   {
     "id": 80,
     "usuario": "João Santos",
-    "estrelas": 1,
     "comentario": "Título clickbait total! Promete ensinar a criar um projeto completo e no final só mostra slides.",
     "data": "2026-05-05",
     "duracao_minutos": 12,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 5,
+    "compartilhamentos": 1
   },
   {
     "id": 81,
     "usuario": "Júlia Carvalho",
-    "estrelas": 2,
     "comentario": "O microfone estava estourando em vários momentos do vídeo. Tive que ficar regulando o volume.",
     "data": "2026-05-06",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 15,
+    "compartilhamentos": 4
   },
   {
     "id": 82,
     "usuario": "Julio Cesar",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-11",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2196,
+    "compartilhamentos": 126
   },
   {
     "id": 83,
     "usuario": "Júlia Carvalho",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-06",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 156,
+    "compartilhamentos": 11
   },
   {
     "id": 84,
     "usuario": "Ana Oliveira",
-    "estrelas": 2,
     "comentario": "Áudio horroroso! Tem um ruído de fundo estridente insuportável e a voz está muito baixa.",
     "data": "2026-05-13",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 48,
+    "compartilhamentos": 3
   },
   {
     "id": 85,
     "usuario": "Thiago Araújo",
-    "estrelas": 5,
     "comentario": "Ótimo resumo sobre o assunto. Muito bom para revisar conceitos antes de uma entrevista.",
     "data": "2026-05-13",
     "duracao_minutos": 5,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 2495,
+    "compartilhamentos": 147
   },
   {
     "id": 86,
     "usuario": "Sabrina Pires",
-    "estrelas": 1,
     "comentario": "O apresentador fica fazendo muitas piadas sem graça durante a explicação, corta o raciocínio.",
     "data": "2026-05-04",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 0,
+    "compartilhamentos": 1
   },
   {
     "id": 87,
     "usuario": "Pedro Almeida",
-    "estrelas": 2,
     "comentario": "Conteúdo superficial. O título dizia que era nível avançado mas só mostrou coisas básicas.",
     "data": "2026-05-21",
     "duracao_minutos": 28,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 46,
+    "compartilhamentos": 4
   },
   {
     "id": 88,
     "usuario": "Patrícian Nunes",
-    "estrelas": 3,
     "comentario": "A explicação é razoável, mas a qualidade de som oscila muito entre o professor e a vinheta.",
     "data": "2026-05-02",
     "duracao_minutos": 45,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 250,
+    "compartilhamentos": 5
   },
   {
     "id": 89,
     "usuario": "Amanda Pereira",
-    "estrelas": 2,
     "comentario": "Áudio horroroso! Tem um ruído de fundo estridente insuportável e a voz está muito baixa.",
     "data": "2026-05-02",
     "duracao_minutos": 12,
-    "categoria_video": "Didática"
+    "categoria_video": "Didática",
+    "curtidas": 44,
+    "compartilhamentos": 3
   },
   {
     "id": 90,
     "usuario": "André Correia",
-    "estrelas": 5,
     "comentario": "Excelente produção! Vídeo em 4K com luz perfeita, roteiro muito bem construído e áudio cristalino.",
     "data": "2026-05-14",
     "duracao_minutos": 45,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 1247,
+    "compartilhamentos": 125
   },
   {
     "id": 91,
     "usuario": "Amanda Pereira",
-    "estrelas": 1,
     "comentario": "O vídeo corta no meio de um raciocínio importante. Edição muito mal feita.",
     "data": "2026-05-16",
     "duracao_minutos": 45,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 3,
+    "compartilhamentos": 0
   },
   {
     "id": 92,
     "usuario": "Kamila Dias",
-    "estrelas": 4,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-21",
     "duracao_minutos": 45,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 307,
+    "compartilhamentos": 44
   },
   {
     "id": 93,
     "usuario": "Sabrina Pires",
-    "estrelas": 2,
     "comentario": "O microfone estava estourando em vários momentos do vídeo. Tive que ficar regulando o volume.",
     "data": "2026-05-02",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 41,
+    "compartilhamentos": 5
   },
   {
     "id": 94,
     "usuario": "Vitor Goulart",
-    "estrelas": 5,
     "comentario": "Aula sensacional! Didática perfeita e muito direta ao ponto. Consegui entender em minutos.",
     "data": "2026-05-12",
     "duracao_minutos": 12,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 970,
+    "compartilhamentos": 119
   },
   {
     "id": 95,
     "usuario": "Matheus Santos",
-    "estrelas": 3,
     "comentario": "Interessante, mas o conteúdo poderia ter sido resumido em metade do tempo do vídeo.",
     "data": "2026-05-09",
     "duracao_minutos": 12,
-    "categoria_video": "Anúncios"
+    "categoria_video": "Anúncios",
+    "curtidas": 64,
+    "compartilhamentos": 5
   },
   {
     "id": 96,
     "usuario": "Isabela Mendes",
-    "estrelas": 5,
     "comentario": "Gostei da clareza dos slides e da calma do professor para explicar. Vídeo bem estruturado.",
     "data": "2026-05-09",
     "duracao_minutos": 5,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 1973,
+    "compartilhamentos": 103
   },
   {
     "id": 97,
     "usuario": "Carolina Moreira",
-    "estrelas": 4,
     "comentario": "Estava com muita dificuldade nessa matéria e esse vídeo me salvou. Agradeço de coração!",
     "data": "2026-05-05",
     "duracao_minutos": 12,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 627,
+    "compartilhamentos": 32
   },
   {
     "id": 98,
     "usuario": "Daniel Ferreira",
-    "estrelas": 3,
     "comentario": "Bom resumo, mas o ritmo é um pouco cansativo se você já conhece o básico do assunto.",
     "data": "2026-05-02",
     "duracao_minutos": 28,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 197,
+    "compartilhamentos": 10
   },
   {
     "id": 99,
     "usuario": "Patrícian Nunes",
-    "estrelas": 3,
     "comentario": "O vídeo está bom, mas podiam colocar legendas em português corrigidas manualmente.",
     "data": "2026-05-12",
     "duracao_minutos": 28,
-    "categoria_video": "Áudio"
+    "categoria_video": "Áudio",
+    "curtidas": 146,
+    "compartilhamentos": 6
   },
   {
     "id": 100,
     "usuario": "Letícia Alves",
-    "estrelas": 1,
     "comentario": "O apresentador fica fazendo muitas piadas sem graça durante a explicação, corta o raciocínio.",
     "data": "2026-05-05",
     "duracao_minutos": 5,
-    "categoria_video": "Exemplos"
+    "categoria_video": "Exemplos",
+    "curtidas": 2,
+    "compartilhamentos": 0
   }
 ]

@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarCarregarMais();
     inicializarSandbox();
     configurarPremiumModal();
+    configurarExportacoes();
     
     // Inicializa todos os ícones estáticos do Lucide na tela
     lucide.createIcons();
@@ -433,24 +434,42 @@ function renderizarDashboard(dados) {
     renderizarTabela(avaliacoes);
     popularFiltroEmocoes(estatisticas.contagem_emocoes);
     
-    // Renderiza termômetro, nuvem de palavras e insights (Fase 5)
     renderizarTermometro(estatisticas.contagem_sentimentos);
     renderizarWordCloud(estatisticas);
-    renderizarInsights(estatisticas.insights);
+    
+    // Sincroniza estado premium e renderiza insights/roteiro de ação
+    atualizarEstadoPremiumUI();
 
-    // Renderiza gráficos dinâmicos específicos da plataforma
     renderizarGraficosEspecificos(estatisticas, categoriaSelecionada);
 }
 
 // ── KPI Cards ─────────────────────────────────────────────────────────
 function renderizarKPIs(estatisticas) {
     document.getElementById('kpi-total-valor').textContent = estatisticas.total_avaliacoes;
-    document.getElementById('kpi-media-valor').textContent = estatisticas.media_estrelas.toFixed(1);
+    
+    const mediaKpiCard = document.getElementById('kpi-media');
+    const mediaKpiValue = document.getElementById('kpi-media-valor');
+    const mediaKpiLabel = mediaKpiCard.querySelector('.kpi-label');
+    const mediaKpiIcon = mediaKpiCard.querySelector('.kpi-icon');
+    
+    if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+        const avgLikes = estatisticas.metricas_plataforma?.media_curtidas || 0;
+        mediaKpiValue.textContent = avgLikes.toLocaleString('pt-BR');
+        mediaKpiLabel.textContent = 'Curtidas Médias';
+        mediaKpiIcon.innerHTML = '<i data-lucide="heart" style="color: #f87171"></i>';
+    } else {
+        const avgStars = estatisticas.media_estrelas || 0;
+        mediaKpiValue.textContent = avgStars.toFixed(1);
+        mediaKpiLabel.textContent = 'Média de Estrelas';
+        mediaKpiIcon.innerHTML = '<i data-lucide="star"></i>';
+    }
     
     const sentimentos = estatisticas.contagem_sentimentos;
     document.getElementById('kpi-positivo-valor').textContent = sentimentos.positivo || 0;
     document.getElementById('kpi-negativo-valor').textContent = sentimentos.negativo || 0;
     document.getElementById('kpi-neutro-valor').textContent = sentimentos.neutro || 0;
+    
+    lucide.createIcons();
 }
 
 // ── Gráfico de Sentimentos (Doughnut - Distribuição por Estrelas) ──────
@@ -459,7 +478,81 @@ function renderizarGraficoSentimentos(avaliacoes) {
 
     if (chartSentimentos) chartSentimentos.destroy();
 
-    // Contar a distribuição por estrelas (1★ a 5★)
+    // If social category, render "Nível de Engajamento" instead of stars
+    if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+        const engajamento = { alto: 0, medio: 0, baixo: 0 };
+        avaliacoes.forEach(a => {
+            const likes = a.curtidas || 0;
+            if (likes > 100) {
+                engajamento.alto++;
+            } else if (likes >= 10) {
+                engajamento.medio++;
+            } else {
+                engajamento.baixo++;
+            }
+        });
+
+        const labels = ['Alto (>100)', 'Médio (10-100)', 'Baixo (<10)'];
+        const valores = [engajamento.alto, engajamento.medio, engajamento.baixo];
+        const coresEngajamento = [
+            '#a855f7', // Roxo (Alto)
+            '#60a5fa', // Azul (Médio)
+            '#94a3b8'  // Cinza (Baixo)
+        ];
+
+        document.querySelector('#grafico-sentimentos').closest('.chart-card').querySelector('.chart-title').textContent = 'Nível de Engajamento (Rosca)';
+
+        chartSentimentos = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: valores,
+                    backgroundColor: coresEngajamento,
+                    borderWidth: 2,
+                    borderColor: '#111827',
+                    hoverOffset: 4,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '68%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            padding: 8,
+                            usePointStyle: true,
+                            pointStyleWidth: 8,
+                            font: { size: 10, weight: '500' },
+                            color: '#94a3b8'
+                        },
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            label: (ctx) => {
+                                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                                const pct = total > 0 ? ((ctx.raw / total) * 100).toFixed(1) : 0;
+                                return ` ${ctx.label}: ${ctx.raw} (${pct}%)`;
+                            },
+                        },
+                    },
+                },
+                animation: {
+                    animateRotate: true,
+                    duration: 800,
+                },
+            },
+        });
+        return;
+    }
+
+    document.querySelector('#grafico-sentimentos').closest('.chart-card').querySelector('.chart-title').textContent = 'Distribuição por Estrelas (1-5★)';
+
     const estrelas = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
     avaliacoes.forEach(a => {
         if (a.estrelas in estrelas) {
@@ -467,10 +560,14 @@ function renderizarGraficoSentimentos(avaliacoes) {
         }
     });
 
-    const labels = ['5 Estrelas (Muito Positivo)', '4 Estrelas (Positivo)', '3 Estrelas (Neutro)', '2 Estrelas (Negativo)', '1 Estrela (Muito Negativo)'];
+    const labels = [
+        '5 Estrelas (Muito Positivo)',
+        '4 Estrelas (Positivo)',
+        '3 Estrelas (Neutro)',
+        '2 Estrelas (Negativo)',
+        '1 Estrela (Muito Negativo)'
+    ];
     const valores = [estrelas[5], estrelas[4], estrelas[3], estrelas[2], estrelas[1]];
-
-    // Cores temáticas harmoniosas combinando com o design system
     const coresEstrelas = [
         '#10b981', // Verde esmeralda (5)
         '#34d399', // Verde menta (4)
@@ -497,12 +594,13 @@ function renderizarGraficoSentimentos(avaliacoes) {
             cutout: '68%',
             plugins: {
                 legend: {
-                    position: 'bottom',
+                    position: 'right',
                     labels: {
-                        padding: 12,
+                        padding: 8,
                         usePointStyle: true,
                         pointStyleWidth: 8,
                         font: { size: 10, weight: '500' },
+                        color: '#94a3b8'
                     },
                 },
                 tooltip: {
@@ -532,8 +630,36 @@ function renderizarGraficoEmocoes(contagem) {
 
     if (chartEmocoes) chartEmocoes.destroy();
 
-    const labels = Object.keys(contagem);
-    const valores = Object.values(contagem);
+    const eixosFixos = ['Alegria', 'Frustração', 'Raiva', 'Confiança', 'Dúvida', 'Surpresa'];
+    const mapeamento = {
+        satisfacao: 'Alegria',
+        gratidao: 'Alegria',
+        alegria: 'Alegria',
+        frustracao: 'Frustração',
+        decepcao: 'Frustração',
+        raiva: 'Raiva',
+        confianca: 'Confiança',
+        duvida: 'Dúvida',
+        surpresa: 'Surpresa'
+    };
+
+    const valoresEixos = {
+        'Alegria': 0,
+        'Frustração': 0,
+        'Raiva': 0,
+        'Confiança': 0,
+        'Dúvida': 0,
+        'Surpresa': 0
+    };
+
+    Object.entries(contagem).forEach(([emocao, count]) => {
+        const emocaoLimpa = emocao.toLowerCase().trim();
+        const eixo = mapeamento[emocaoLimpa] || 'Dúvida';
+        valoresEixos[eixo] += count;
+    });
+
+    const labels = eixosFixos;
+    const valores = eixosFixos.map(eixo => valoresEixos[eixo]);
 
     // Cor do tema ativa
     let themeColor = '#6366f1'; // default
@@ -545,15 +671,18 @@ function renderizarGraficoEmocoes(contagem) {
     chartEmocoes = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: labels.map(l => l.charAt(0).toUpperCase() + l.slice(1)),
+            labels: labels,
             datasets: [{
                 label: 'Frequência das Emoções',
                 data: valores,
-                backgroundColor: themeColor + '20',
+                backgroundColor: themeColor + '25', // ~15% opacity for better polygon visualization
                 borderColor: themeColor,
-                borderWidth: 2,
-                pointBackgroundColor: themeColor,
-                pointBorderColor: '#fff',
+                borderWidth: 2.5,
+                pointBackgroundColor: '#111827', // dark background for glowing point visual
+                pointBorderColor: themeColor,
+                pointBorderWidth: 2,
+                pointRadius: 4,
+                pointHoverRadius: 6,
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: themeColor
             }],
@@ -572,22 +701,23 @@ function renderizarGraficoEmocoes(contagem) {
             scales: {
                 r: {
                     angleLines: {
-                        color: 'rgba(148, 163, 184, 0.08)'
+                        color: 'rgba(148, 163, 184, 0.25)' // Brighter for better visibility
                     },
                     grid: {
-                        color: 'rgba(148, 163, 184, 0.08)'
+                        color: 'rgba(148, 163, 184, 0.25)' // Brighter grid lines
                     },
                     pointLabels: {
-                        color: '#94a3b8',
+                        color: '#cbd5e1', // Lighter font color for improved legibility
                         font: {
-                            size: 11,
+                            size: 12,
                             weight: '600'
                         }
                     },
                     ticks: {
+                        display: false, // Hides vertical overlapping scale numbers to clean up teia
                         backdropColor: 'transparent',
-                        color: '#64748b',
-                        font: { size: 10 },
+                        color: 'rgba(148, 163, 184, 0.5)',
+                        font: { size: 9 },
                         stepSize: Math.max(1, Math.ceil(Math.max(...valores) / 4))
                     }
                 }
@@ -1073,12 +1203,19 @@ function renderizarComentariosRepresentativos(avaliacoes) {
 }
 
 function criarCardComentario(avaliacao, tipo) {
-    const estrelas = '★'.repeat(avaliacao.estrelas) + '☆'.repeat(5 - avaliacao.estrelas);
+    let headerMeta = '';
+    if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+        headerMeta = `<span class="comment-stars" style="color: #f87171; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="heart" style="width: 0.85em; height: 0.85em; fill: #f87171;"></i> ${avaliacao.curtidas || 0}</span>`;
+    } else {
+        const estrelas = '★'.repeat(avaliacao.estrelas || 0) + '☆'.repeat(5 - (avaliacao.estrelas || 0));
+        headerMeta = `<span class="comment-stars">${estrelas}</span>`;
+    }
+    
     return `
         <div class="comment-card comment-card-${tipo}">
             <div class="comment-header">
                 <span class="comment-user">${avaliacao.usuario}</span>
-                <span class="comment-stars">${estrelas}</span>
+                ${headerMeta}
             </div>
             <p class="comment-text">"${avaliacao.comentario}"</p>
             <p class="comment-summary">📌 ${avaliacao.analise.resumo}</p>
@@ -1090,17 +1227,50 @@ function criarCardComentario(avaliacao, tipo) {
 function renderizarTabela(avaliacoes) {
     const tbody = document.getElementById('tbody-avaliacoes');
     
-    // Fatia de acordo com a paginação da tabela
     const visiveis = avaliacoes.slice(0, tabelaExibida);
 
+    const headerRow = document.querySelector('#tabela-avaliacoes thead tr');
+    if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+        headerRow.innerHTML = `
+            <th>Usuário</th>
+            <th>Curtidas ❤️</th>
+            <th>Compartilhamentos 🔄</th>
+            <th>Comentário</th>
+            <th>Sentimento</th>
+            <th>Emoção</th>
+            <th>Criticidade</th>
+            <th>Data</th>
+        `;
+    } else {
+        headerRow.innerHTML = `
+            <th>Usuário</th>
+            <th>Estrelas</th>
+            <th>Comentário</th>
+            <th>Sentimento</th>
+            <th>Emoção</th>
+            <th>Criticidade</th>
+            <th>Data</th>
+        `;
+    }
+
     tbody.innerHTML = visiveis.map(a => {
-        const estrelas = '★'.repeat(a.estrelas) + '☆'.repeat(5 - a.estrelas);
         const dataFormatada = new Date(a.data + 'T12:00:00').toLocaleDateString('pt-BR');
+        
+        let metaCells = '';
+        if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+            metaCells = `
+                <td style="color: #f87171; font-weight: 600;">${a.curtidas || 0}</td>
+                <td style="color: #60a5fa; font-weight: 600;">${a.compartilhamentos || 0}</td>
+            `;
+        } else {
+            const estrelas = '★'.repeat(a.estrelas || 0) + '☆'.repeat(5 - (a.estrelas || 0));
+            metaCells = `<td style="color: #fbbf24">${estrelas}</td>`;
+        }
 
         return `
             <tr>
                 <td>${a.usuario}</td>
-                <td style="color: #fbbf24">${estrelas}</td>
+                ${metaCells}
                 <td class="td-comentario" title="${a.comentario}">${a.comentario}</td>
                 <td><span class="badge badge-${a.analise.sentimento}">${a.analise.sentimento}</span></td>
                 <td>${a.analise.emocao}</td>
@@ -1118,6 +1288,8 @@ function renderizarTabela(avaliacoes) {
     } else {
         btnTable.classList.add('hidden');
     }
+    
+    lucide.createIcons();
 }
 
 // ── Filtros ───────────────────────────────────────────────────────────
@@ -1203,15 +1375,13 @@ function aplicarFiltros() {
     renderizarGraficosEspecificos(estatisticasFiltradas, categoriaSelecionada);
 }
 
-/**
- * Calcula estatísticas no frontend para os dados filtrados.
- * Evita fazer nova requisição ao backend ao aplicar filtros.
- */
 function calcularEstatisticasLocal(avaliacoes) {
     const total = avaliacoes.length;
-    const mediaEstrelas = total > 0
-        ? avaliacoes.reduce((sum, a) => sum + a.estrelas, 0) / total
-        : 0;
+    
+    const validEstrelas = avaliacoes.filter(a => a.estrelas !== null && a.estrelas !== undefined);
+    const mediaEstrelas = validEstrelas.length > 0
+        ? validEstrelas.reduce((sum, a) => sum + a.estrelas, 0) / validEstrelas.length
+        : null;
 
     const contagemSentimentos = { positivo: 0, negativo: 0, neutro: 0 };
     avaliacoes.forEach(a => {
@@ -1261,6 +1431,20 @@ function calcularEstatisticasLocal(avaliacoes) {
 
     // Re-calcula métricas de plataforma localmente para a categoria ativa
     const metricas_plataforma = {};
+    
+    if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+        const curtidasValidas = avaliacoes.map(a => a.curtidas).filter(c => c !== null && c !== undefined);
+        const compartilhamentosValidos = avaliacoes.map(a => a.compartilhamentos).filter(c => c !== null && c !== undefined);
+        
+        metricas_plataforma.media_curtidas = curtidasValidas.length > 0
+            ? Math.round(curtidasValidas.reduce((a, b) => a + b, 0) / curtidasValidas.length * 10) / 10
+            : 0;
+            
+        metricas_plataforma.media_compartilhamentos = compartilhamentosValidos.length > 0
+            ? Math.round(compartilhamentosValidos.reduce((a, b) => a + b, 0) / compartilhamentosValidos.length * 10) / 10
+            : 0;
+    }
+
     if (categoriaSelecionada === 'playstore') {
         const sent_versao = {};
         const sent_android = {};
@@ -1300,7 +1484,7 @@ function calcularEstatisticasLocal(avaliacoes) {
         const sent_tema = {};
         
         avaliacoes.forEach(a => {
-            if (a.duracao_minutos !== null) {
+            if (a.duracao_minutos !== null && a.duracao_minutos !== undefined) {
                 const d = a.duracao_minutos;
                 const faixa = d < 10 ? "Curto (<10 min)" : (d <= 25 ? "Médio (10-25 min)" : "Longo (>25 min)");
                 sent_duracao[faixa][a.analise.sentimento]++;
@@ -1344,7 +1528,7 @@ function calcularEstatisticasLocal(avaliacoes) {
         };
 
         avaliacoes.forEach(a => {
-            if (a.dias_entrega !== null && a.estrelas in estrelas_entrega) {
+            if (a.dias_entrega !== null && a.dias_entrega !== undefined && a.estrelas in estrelas_entrega) {
                 estrelas_entrega[a.estrelas].push(a.dias_entrega);
             }
             if (a.embalagem_status && a.embalagem_status in sent_embalagem) {
@@ -1370,6 +1554,7 @@ function calcularEstatisticasLocal(avaliacoes) {
         pontos_positivos_recorrentes: pontosPositivosRecorrentes,
         pontos_negativos_recorrentes: pontosNegativosRecorrentes,
         evolucao_por_data: evolucaoPorData,
+        plano_acao: dadosOriginais ? dadosOriginais.estatisticas.plano_acao : [],
         metricas_plataforma: metricas_plataforma
     };
 }
@@ -1507,7 +1692,6 @@ function renderizarWordCloud(estatisticas) {
     const posList = estatisticas.pontos_positivos_recorrentes || [];
     const negList = estatisticas.pontos_negativos_recorrentes || [];
 
-    // Mescla as listas com tags identificando tipo
     const merged = [
         ...posList.map(item => ({ ...item, tipo: 'positivo' })),
         ...negList.map(item => ({ ...item, tipo: 'negativo' }))
@@ -1518,10 +1702,8 @@ function renderizarWordCloud(estatisticas) {
         return;
     }
 
-    // Embaralha para ficar visualmente orgânico
     merged.sort(() => Math.random() - 0.5);
 
-    // Acha a maior frequência para escala
     const maxFreq = Math.max(...merged.map(x => x.frequencia));
 
     merged.forEach(item => {
@@ -1529,12 +1711,10 @@ function renderizarWordCloud(estatisticas) {
         tag.className = 'word-tag';
         tag.textContent = item.ponto;
         
-        // Escala o tamanho proporcionalmente
         const sizeRatio = maxFreq > 0 ? (item.frequencia / maxFreq) : 0.5;
-        const fontSize = 0.72 + sizeRatio * 0.53; // 0.72rem a 1.25rem
+        const fontSize = 0.75 + sizeRatio * 1.05; // 0.75rem a 1.8rem
         tag.style.fontSize = `${fontSize}rem`;
 
-        // Cores
         if (item.tipo === 'positivo') {
             tag.style.color = 'var(--cor-positivo)';
             tag.style.borderColor = 'rgba(74, 222, 128, 0.15)';
@@ -1604,6 +1784,7 @@ function renderizarInsights(insights) {
 function configurarPremiumModal() {
     const modal = document.getElementById('premium-modal');
     const btnUpgrade = document.getElementById('btn-upgrade-premium');
+    const btnUpgradeActionPlan = document.getElementById('btn-upgrade-action-plan');
     const btnClose = document.getElementById('btn-close-premium-modal');
     const btnPlanSelects = document.querySelectorAll('.btn-plan-select');
     const billingForm = document.getElementById('billing-form');
@@ -1611,29 +1792,26 @@ function configurarPremiumModal() {
 
     if (!modal) return;
 
-    // Abrir Modal
-    if (btnUpgrade) {
-        btnUpgrade.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-            if (billingForm) billingForm.classList.add('hidden');
-        });
-    }
+    const abrirModal = () => {
+        modal.classList.remove('hidden');
+        if (billingForm) billingForm.classList.add('hidden');
+    };
 
-    // Fechar Modal
+    if (btnUpgrade) btnUpgrade.addEventListener('click', abrirModal);
+    if (btnUpgradeActionPlan) btnUpgradeActionPlan.addEventListener('click', abrirModal);
+
     if (btnClose) {
         btnClose.addEventListener('click', () => {
             modal.classList.add('hidden');
         });
     }
 
-    // Clicar fora do modal fecha
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.add('hidden');
         }
     });
 
-    // Selecionar Plano Pro/Enterprise exibe formulário de faturamento
     btnPlanSelects.forEach(btn => {
         btn.addEventListener('click', () => {
             if (billingForm) {
@@ -1643,12 +1821,10 @@ function configurarPremiumModal() {
         });
     });
 
-    // Submissão Simulada de Faturamento
     if (btnSubmitBilling) {
         btnSubmitBilling.addEventListener('click', async (e) => {
             e.preventDefault();
 
-            // Validação simples
             const holder = document.getElementById('bill-cardholder').value.trim();
             const number = document.getElementById('bill-cardnumber').value.trim();
             const expiry = document.getElementById('bill-expiry').value.trim();
@@ -1659,19 +1835,16 @@ function configurarPremiumModal() {
                 return;
             }
 
-            // Spinner de loading simulado no botão
             btnSubmitBilling.disabled = true;
             const originalText = btnSubmitBilling.innerHTML;
             btnSubmitBilling.innerHTML = '⚡ Processando Transação...';
 
-            await delay(1500); // Aguarda 1.5 segundos simulando o gateway de pagamento
+            await delay(1500);
 
             isPremiumUser = true;
 
-            // Alerta de sucesso
             alert('Assinatura Premium simulada com sucesso! Todos os recursos e insights avançados do SentView estão agora desbloqueados para esta sessão.');
 
-            // Reset campos
             document.getElementById('bill-cardholder').value = '';
             document.getElementById('bill-cardnumber').value = '';
             document.getElementById('bill-expiry').value = '';
@@ -1680,13 +1853,154 @@ function configurarPremiumModal() {
             btnSubmitBilling.innerHTML = originalText;
             btnSubmitBilling.disabled = false;
 
-            // Fechar modal
             modal.classList.add('hidden');
 
-            // Re-renderiza os insights desbloqueados
-            if (dadosOriginais && dadosOriginais.estatisticas && dadosOriginais.estatisticas.insights) {
-                renderizarInsights(dadosOriginais.estatisticas.insights);
+            atualizarEstadoPremiumUI();
+        });
+    }
+}
+
+/**
+ * Atualiza e renderiza os elementos bloqueados com base na assinatura
+ */
+function atualizarEstadoPremiumUI() {
+    if (dadosOriginais && dadosOriginais.estatisticas) {
+        if (dadosOriginais.estatisticas.insights) {
+            renderizarInsights(dadosOriginais.estatisticas.insights);
+        }
+        if (dadosOriginais.estatisticas.plano_acao) {
+            renderizarPlanoAcao(dadosOriginais.estatisticas.plano_acao);
+        }
+    }
+    
+    const btnPdf = document.getElementById('btn-export-pdf');
+    const btnJson = document.getElementById('btn-export-json');
+    
+    if (btnPdf && btnJson) {
+        if (isPremiumUser) {
+            btnPdf.classList.remove('locked');
+            btnJson.classList.remove('locked');
+        } else {
+            btnPdf.classList.add('locked');
+            btnJson.classList.add('locked');
+        }
+    }
+}
+
+/**
+ * Renderiza o Roteiro de Ação Recomendado (IA) e aplica o paywall
+ */
+function renderizarPlanoAcao(planoAcao) {
+    const timeline = document.getElementById('action-timeline');
+    const paywall = document.getElementById('action-plan-paywall');
+    if (!timeline) return;
+
+    timeline.innerHTML = '';
+
+    const listSteps = planoAcao || [];
+    
+    if (isPremiumUser) {
+        timeline.classList.remove('blurred');
+        if (paywall) paywall.classList.add('hidden');
+    } else {
+        timeline.classList.add('blurred');
+        if (paywall) paywall.classList.remove('hidden');
+    }
+
+    listSteps.forEach((step) => {
+        const card = document.createElement('div');
+        card.className = 'action-step-card';
+        card.id = `step-card-${step.passo}`;
+
+        const dot = document.createElement('span');
+        dot.className = 'step-dot';
+
+        if (isPremiumUser) {
+            dot.addEventListener('click', () => {
+                dot.classList.toggle('completed');
+                card.classList.toggle('completed');
+            });
+        }
+
+        const header = document.createElement('div');
+        header.className = 'step-header';
+        
+        const titleGroup = document.createElement('div');
+        titleGroup.className = 'step-title-group';
+        
+        const stepNum = document.createElement('span');
+        stepNum.className = 'step-number';
+        stepNum.textContent = `Passo ${step.passo}`;
+
+        const title = document.createElement('span');
+        title.className = 'step-title';
+        title.textContent = step.titulo;
+
+        titleGroup.appendChild(stepNum);
+        titleGroup.appendChild(title);
+
+        const badge = document.createElement('span');
+        badge.className = `priority-badge priority-${step.prioridade}`;
+        badge.textContent = step.prioridade;
+
+        header.appendChild(titleGroup);
+        header.appendChild(badge);
+
+        const desc = document.createElement('p');
+        desc.className = 'step-description';
+        desc.textContent = step.descricao;
+
+        card.appendChild(dot);
+        card.appendChild(header);
+        card.appendChild(desc);
+
+        timeline.appendChild(card);
+    });
+
+    lucide.createIcons();
+}
+
+/**
+ * Configura as interações de exportação de dados (PDF e JSON)
+ */
+function configurarExportacoes() {
+    const btnPdf = document.getElementById('btn-export-pdf');
+    const btnJson = document.getElementById('btn-export-json');
+    const modal = document.getElementById('premium-modal');
+    const billingForm = document.getElementById('billing-form');
+
+    if (btnPdf) {
+        btnPdf.addEventListener('click', () => {
+            if (!isPremiumUser) {
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    if (billingForm) billingForm.classList.add('hidden');
+                }
+                return;
             }
+            alert('Gerando Relatório PDF executivo com insights e gráficos consolidados do SentView...');
+            const link = document.createElement('a');
+            link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent('--- Relatório SentView Premium ---\n\nCategoria: ' + categoriaSelecionada + '\nTotal avaliações: ' + dadosOriginais.avaliacoes.length);
+            link.download = `relatorio_sentview_${categoriaSelecionada}.pdf`;
+            link.click();
+        });
+    }
+
+    if (btnJson) {
+        btnJson.addEventListener('click', () => {
+            if (!isPremiumUser) {
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    if (billingForm) billingForm.classList.add('hidden');
+                }
+                return;
+            }
+            alert('Preparando exportação completa de dados estruturados em JSON...');
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dadosOriginais, null, 2));
+            const link = document.createElement('a');
+            link.setAttribute("href", dataStr);
+            link.setAttribute("download", `sentview_export_${categoriaSelecionada}.json`);
+            link.click();
         });
     }
 }

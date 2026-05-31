@@ -21,7 +21,7 @@ from data_service import (
 )
 from ai_service import analisar_comentarios
 
-# Configuração de logging
+# Configuração de logging do servidor Flask
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -101,6 +101,16 @@ def _processar_dados(categoria: str) -> dict:
                 "comentario": a.comentario,
                 "data": a.data.isoformat(),
                 "analise": a.analise.model_dump(),
+                "curtidas": a.curtidas,
+                "compartilhamentos": a.compartilhamentos,
+                "versao_app": a.versao_app,
+                "android_version": a.android_version,
+                "duracao_minutos": a.duracao_minutos,
+                "categoria_video": a.categoria_video,
+                "tipo_midia": a.tipo_midia,
+                "hashtag_principal": a.hashtag_principal,
+                "dias_entrega": a.dias_entrega,
+                "embalagem_status": a.embalagem_status,
             }
             for a in avaliacoes_completas
         ],

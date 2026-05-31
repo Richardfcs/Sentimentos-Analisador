@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.3">
 </head>
 <body>
 
@@ -233,6 +233,23 @@
                     <button id="btn-limpar-filtros" class="btn-secondary"><i data-lucide="rotate-ccw"></i> Limpar Filtros</button>
                 </div>
             </section>
+
+            <!-- Export / Quick Actions (Premium) Section -->
+            <section class="sidebar-premium-actions" id="sidebar-premium-actions" aria-label="Ações Rápidas">
+                <div class="actions-premium-header">
+                    <span><i data-lucide="sparkles"></i> Ações Rápidas (Premium)</span>
+                </div>
+                <div class="actions-premium-body">
+                    <button class="btn-premium-action locked" id="btn-export-pdf">
+                        <i data-lucide="file-text"></i> Exportar Relatório PDF
+                        <span class="lock-indicator"><i data-lucide="lock"></i></span>
+                    </button>
+                    <button class="btn-premium-action locked" id="btn-export-json">
+                        <i data-lucide="download"></i> Exportar Dados JSON
+                        <span class="lock-indicator"><i data-lucide="lock"></i></span>
+                    </button>
+                </div>
+            </section>
         </aside>
 
         <!-- TAB 1: VISÃO GERAL -->
@@ -325,6 +342,26 @@
                             <h3><i data-lucide="lock"></i> Diagnósticos SentView Enterprise</h3>
                             <p>Desbloqueie o relatório analítico completo de causa-efeito e planos de ação sugeridos pela IA para o seu produto.</p>
                             <button class="btn-primary" id="btn-upgrade-premium"><i data-lucide="crown"></i> Upgrade para Premium</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Plan (Roadmap IA) Section -->
+            <section class="action-plan-section" aria-label="Roteiro de Ação da IA">
+                <h2 class="section-title"><i data-lucide="check-square"></i> Roteiro de Ação Recomendado (IA)</h2>
+                <div class="action-plan-wrapper">
+                    <!-- Steps will be rendered inside this timeline -->
+                    <div class="action-timeline" id="action-timeline">
+                        <!-- Steps injected by JS -->
+                    </div>
+                    <!-- Action Plan Paywall Overlay -->
+                    <div class="action-plan-paywall hidden" id="action-plan-paywall">
+                        <div class="paywall-overlay-content">
+                            <span class="paywall-icon"><i data-lucide="lock"></i></span>
+                            <h3>Roteiro de Ação Recomendado</h3>
+                            <p>Assine o plano Enterprise para desbloquear o cronograma prático de execução e tarefas sugeridas pela IA.</p>
+                            <button class="btn-primary btn-upgrade-trigger" id="btn-upgrade-action-plan"><i data-lucide="crown"></i> Desbloquear Roteiro</button>
                         </div>
                     </div>
                 </div>
@@ -539,6 +576,6 @@
     </div>
 
     <!-- Dashboard JS -->
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}?v=1.3"></script>
 </body>
 </html>

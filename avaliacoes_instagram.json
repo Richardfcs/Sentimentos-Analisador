@@ -2,901 +2,1001 @@
   {
     "id": 1,
     "usuario": "Felipe Correia",
-    "estrelas": 4,
     "comentario": "A aba de mensagens ficou muito melhor com a função de editar as mensagens enviadas em até 15 minutos. #marketing",
     "data": "2026-05-17",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 682,
+    "compartilhamentos": 43
   },
   {
     "id": 2,
     "usuario": "João Santos",
-    "estrelas": 1,
     "comentario": "A nova atualização mudou o botão de pesquisa de lugar de novo. Interface confusa e ruim. #socialmedia",
     "data": "2026-05-04",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 8,
+    "compartilhamentos": 0
   },
   {
     "id": 3,
     "usuario": "Amanda Pereira",
-    "estrelas": 5,
     "comentario": "Muito bom poder mandar notas com áudio na aba de mensagens direct! Facilitou a comunicação. #marketing",
     "data": "2026-05-09",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 4413,
+    "compartilhamentos": 148
   },
   {
     "id": 4,
     "usuario": "Lucas Barbosa",
-    "estrelas": 5,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo reels, ajuda demais quem trabalha com isso. #socialmedia",
     "data": "2026-05-17",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 1266,
+    "compartilhamentos": 238
   },
   {
     "id": 5,
     "usuario": "Matheus Santos",
-    "estrelas": 1,
     "comentario": "Muitas propagandas a cada três stories visualizados cortam totalmente a experiência de uso. #analytics",
     "data": "2026-05-12",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 1,
+    "compartilhamentos": 2
   },
   {
     "id": 6,
     "usuario": "Renata Guedes",
-    "estrelas": 3,
     "comentario": "Mediano. Dá para usar para passar o tempo, mas perdeu a essência de compartilhamento de fotos antigamente. #devlife",
     "data": "2026-05-20",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 294,
+    "compartilhamentos": 15
   },
   {
     "id": 7,
     "usuario": "Cláudia Diniz",
-    "estrelas": 3,
     "comentario": "Legal as novidades de stickers interativos, mas às vezes o reels dá crash com muitas imagens. #design",
     "data": "2026-05-12",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 223,
+    "compartilhamentos": 16
   },
   {
     "id": 8,
     "usuario": "Maria Silva",
-    "estrelas": 4,
     "comentario": "Amei a opção de colocar música na bio do perfil! Dá um toque bem estiloso e único. #analytics",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 705,
+    "compartilhamentos": 32
   },
   {
     "id": 9,
     "usuario": "Bruna Cavalcanti",
-    "estrelas": 4,
     "comentario": "Muito bom reels no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #socialmedia",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 784,
+    "compartilhamentos": 32
   },
   {
     "id": 10,
     "usuario": "Gabriela Lima",
-    "estrelas": 3,
     "comentario": "O reels é bom, mas o recurso de legendas automáticas em português erra bastante a grafia. #design",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 369,
+    "compartilhamentos": 13
   },
   {
     "id": 11,
     "usuario": "Gustavo Cardoso",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #analytics",
     "data": "2026-05-13",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 164,
+    "compartilhamentos": 21
   },
   {
     "id": 12,
     "usuario": "Julio Cesar",
-    "estrelas": 4,
     "comentario": "Excelente plataforma. A possibilidade de criar figurinhas cortando partes de fotos ficou divertida. #socialmedia",
     "data": "2026-05-07",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 1069,
+    "compartilhamentos": 46
   },
   {
     "id": 13,
     "usuario": "Kamila Dias",
-    "estrelas": 4,
     "comentario": "Os novos filtros do Stories estão sensacionais! As fotos e vídeos saem muito mais nítidos. #devlife",
     "data": "2026-05-15",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 542,
+    "compartilhamentos": 68
   },
   {
     "id": 14,
     "usuario": "Amanda Pereira",
-    "estrelas": 4,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo post, ajuda demais quem trabalha com isso. #socialmedia",
     "data": "2026-05-20",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 825,
+    "compartilhamentos": 39
   },
   {
     "id": 15,
     "usuario": "Bruno Martins",
-    "estrelas": 4,
     "comentario": "Muito bom reels no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #design",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 851,
+    "compartilhamentos": 62
   },
   {
     "id": 16,
     "usuario": "Patricia Cruz",
-    "estrelas": 3,
     "comentario": "O reels é bom, mas o recurso de legendas automáticas em português erra bastante a grafia. #marketing",
     "data": "2026-05-04",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 346,
+    "compartilhamentos": 10
   },
   {
     "id": 17,
     "usuario": "Vitor Goulart",
-    "estrelas": 5,
     "comentario": "O reels está super rápido após a última atualização. As imagens carregam instantaneamente. #analytics",
     "data": "2026-05-15",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 1695,
+    "compartilhamentos": 171
   },
   {
     "id": 18,
     "usuario": "Pedro Almeida",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #analytics",
     "data": "2026-05-11",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 144,
+    "compartilhamentos": 29
   },
   {
     "id": 19,
     "usuario": "Fernanda Lima",
-    "estrelas": 3,
     "comentario": "Legal as novidades de stickers interativos, mas às vezes o reels dá crash com muitas imagens. #design",
     "data": "2026-05-19",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 274,
+    "compartilhamentos": 19
   },
   {
     "id": 20,
     "usuario": "Marcelo Lins",
-    "estrelas": 4,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #marketing",
     "data": "2026-05-17",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 871,
+    "compartilhamentos": 46
   },
   {
     "id": 21,
     "usuario": "Natália Castro",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #design",
     "data": "2026-05-10",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 146,
+    "compartilhamentos": 20
   },
   {
     "id": 22,
     "usuario": "Diego Lopes",
-    "estrelas": 3,
     "comentario": "Mediano. Dá para usar para passar o tempo, mas perdeu a essência de compartilhamento de fotos antigamente. #marketing",
     "data": "2026-05-08",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 204,
+    "compartilhamentos": 21
   },
   {
     "id": 23,
     "usuario": "Vitor Goulart",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #marketing",
     "data": "2026-05-02",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 146,
+    "compartilhamentos": 25
   },
   {
     "id": 24,
     "usuario": "Fernanda Lima",
-    "estrelas": 4,
     "comentario": "Muito bom post no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #marketing",
     "data": "2026-05-14",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 993,
+    "compartilhamentos": 40
   },
   {
     "id": 25,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 3,
     "comentario": "A navegação de carrossel de fotos às vezes fica travada no meio. Precisa de otimização. #analytics",
     "data": "2026-05-16",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 244,
+    "compartilhamentos": 16
   },
   {
     "id": 26,
     "usuario": "Bruno Martins",
-    "estrelas": 3,
     "comentario": "O reels continua bom para ver fotos, mas a insistência em transformar tudo em Reels é cansativa. #analytics",
     "data": "2026-05-09",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 190,
+    "compartilhamentos": 10
   },
   {
     "id": 27,
     "usuario": "Thiago Araújo",
-    "estrelas": 2,
     "comentario": "A entrega dos meus posts caiu drasticamente esta semana. O algoritmo está boicotando contas menores. #analytics",
     "data": "2026-05-19",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 82,
+    "compartilhamentos": 5
   },
   {
     "id": 28,
     "usuario": "Otávio Mendes",
-    "estrelas": 5,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #analytics",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 2243,
+    "compartilhamentos": 102
   },
   {
     "id": 29,
     "usuario": "Patrícian Nunes",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #devlife",
     "data": "2026-05-03",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 122,
+    "compartilhamentos": 30
   },
   {
     "id": 30,
     "usuario": "Cláudia Diniz",
-    "estrelas": 1,
     "comentario": "A nova atualização mudou o botão de pesquisa de lugar de novo. Interface confusa e ruim. #marketing",
     "data": "2026-05-07",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 1,
+    "compartilhamentos": 0
   },
   {
     "id": 31,
     "usuario": "Cláudia Diniz",
-    "estrelas": 1,
     "comentario": "O post está aquecendo demais o celular após uns minutos de uso. Bateria vai embora. #analytics",
     "data": "2026-05-02",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 3,
+    "compartilhamentos": 0
   },
   {
     "id": 32,
     "usuario": "Júlia Carvalho",
-    "estrelas": 5,
     "comentario": "Amei a opção de colocar música na bio do perfil! Dá um toque bem estiloso e único. #socialmedia",
     "data": "2026-05-06",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 3670,
+    "compartilhamentos": 244
   },
   {
     "id": 33,
     "usuario": "Renata Guedes",
-    "estrelas": 2,
     "comentario": "Minha conta foi suspensa sem motivo e o suporte do Instagram simplesmente ignora minhas selfies. #marketing",
     "data": "2026-05-16",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 82,
+    "compartilhamentos": 10
   },
   {
     "id": 34,
     "usuario": "Carlos Souza",
-    "estrelas": 1,
     "comentario": "A nova atualização mudou o botão de pesquisa de lugar de novo. Interface confusa e ruim. #design",
     "data": "2026-05-12",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 1,
+    "compartilhamentos": 0
   },
   {
     "id": 35,
     "usuario": "Patricia Cruz",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #marketing",
     "data": "2026-05-04",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 290,
+    "compartilhamentos": 12
   },
   {
     "id": 36,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 4,
     "comentario": "Gostei da opção de virar carrossel e fixar publicações no topo do perfil. Deixa a estética organizada. #analytics",
     "data": "2026-05-16",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 403,
+    "compartilhamentos": 53
   },
   {
     "id": 37,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 1,
     "comentario": "Muitas propagandas a cada três stories visualizados cortam totalmente a experiência de uso. #design",
     "data": "2026-05-13",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 7,
+    "compartilhamentos": 0
   },
   {
     "id": 38,
     "usuario": "Isabela Mendes",
-    "estrelas": 3,
     "comentario": "É legal, mas as ferramentas de edição de reels ainda são muito inferiores ao TikTok. #socialmedia",
     "data": "2026-05-10",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 392,
+    "compartilhamentos": 18
   },
   {
     "id": 39,
     "usuario": "Kamila Dias",
-    "estrelas": 5,
     "comentario": "Muito bom poder mandar notas com áudio na aba de mensagens direct! Facilitou a comunicação. #design",
     "data": "2026-05-01",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 3236,
+    "compartilhamentos": 202
   },
   {
     "id": 40,
     "usuario": "André Correia",
-    "estrelas": 2,
     "comentario": "O reels vive silenciando meus reels sem aviso alegando direitos autorais da biblioteca oficial. #design",
     "data": "2026-05-04",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 97,
+    "compartilhamentos": 2
   },
   {
     "id": 41,
     "usuario": "Carlos Souza",
-    "estrelas": 3,
     "comentario": "Mediano. Dá para usar para passar o tempo, mas perdeu a essência de compartilhamento de fotos antigamente. #socialmedia",
     "data": "2026-05-08",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 299,
+    "compartilhamentos": 25
   },
   {
     "id": 42,
     "usuario": "Daniel Ferreira",
-    "estrelas": 3,
     "comentario": "O feed de atividades está com visual novo, mas no fim exibe as mesmas notificações de sempre. #design",
     "data": "2026-05-11",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 340,
+    "compartilhamentos": 28
   },
   {
     "id": 43,
     "usuario": "Marcelo Lins",
-    "estrelas": 5,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo post, ajuda demais quem trabalha com isso. #socialmedia",
     "data": "2026-05-07",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 4435,
+    "compartilhamentos": 228
   },
   {
     "id": 44,
     "usuario": "Amanda Pereira",
-    "estrelas": 2,
     "comentario": "A entrega dos meus posts caiu drasticamente esta semana. O algoritmo está boicotando contas menores. #analytics",
     "data": "2026-05-03",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 66,
+    "compartilhamentos": 4
   },
   {
     "id": 45,
     "usuario": "Marcos Rocha",
-    "estrelas": 3,
     "comentario": "Legal as novidades de stickers interativos, mas às vezes o post dá crash com muitas imagens. #socialmedia",
     "data": "2026-05-02",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 247,
+    "compartilhamentos": 13
   },
   {
     "id": 46,
     "usuario": "Felipe Correia",
-    "estrelas": 5,
     "comentario": "Muito bom reels no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #devlife",
     "data": "2026-05-14",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 3864,
+    "compartilhamentos": 118
   },
   {
     "id": 47,
     "usuario": "Rafael Teixeira",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #devlife",
     "data": "2026-05-17",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 372,
+    "compartilhamentos": 17
   },
   {
     "id": 48,
     "usuario": "Tatiane Assis",
-    "estrelas": 4,
     "comentario": "A aba de mensagens ficou muito melhor com a função de editar as mensagens enviadas em até 15 minutos. #design",
     "data": "2026-05-02",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 1030,
+    "compartilhamentos": 31
   },
   {
     "id": 49,
     "usuario": "Maria Silva",
-    "estrelas": 3,
     "comentario": "Mediano. Dá para usar para passar o tempo, mas perdeu a essência de compartilhamento de fotos antigamente. #analytics",
     "data": "2026-05-02",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 183,
+    "compartilhamentos": 19
   },
   {
     "id": 50,
     "usuario": "Bruno Martins",
-    "estrelas": 3,
     "comentario": "O post continua bom para ver fotos, mas a insistência em transformar tudo em Reels é cansativa. #devlife",
     "data": "2026-05-15",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 362,
+    "compartilhamentos": 26
   },
   {
     "id": 51,
     "usuario": "Diego Lopes",
-    "estrelas": 1,
     "comentario": "A nova atualização mudou o botão de pesquisa de lugar de novo. Interface confusa e ruim. #devlife",
     "data": "2026-05-04",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 1,
+    "compartilhamentos": 1
   },
   {
     "id": 52,
     "usuario": "Marcos Rocha",
-    "estrelas": 4,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo reels, ajuda demais quem trabalha com isso. #analytics",
     "data": "2026-05-06",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 1015,
+    "compartilhamentos": 71
   },
   {
     "id": 53,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #devlife",
     "data": "2026-05-17",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 342,
+    "compartilhamentos": 26
   },
   {
     "id": 54,
     "usuario": "Thiago Araújo",
-    "estrelas": 1,
     "comentario": "A entrega dos meus posts caiu drasticamente esta semana. O algoritmo está boicotando contas menores. #marketing",
     "data": "2026-05-08",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 0,
+    "compartilhamentos": 1
   },
   {
     "id": 55,
     "usuario": "Renato Ramos",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #marketing",
     "data": "2026-05-02",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 296,
+    "compartilhamentos": 10
   },
   {
     "id": 56,
     "usuario": "Tatiane Assis",
-    "estrelas": 5,
     "comentario": "Gostei da opção de virar carrossel e fixar publicações no topo do perfil. Deixa a estética organizada. #devlife",
     "data": "2026-05-05",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 3154,
+    "compartilhamentos": 145
   },
   {
     "id": 57,
     "usuario": "Diego Lopes",
-    "estrelas": 4,
     "comentario": "O reels está super rápido após a última atualização. As imagens carregam instantaneamente. #marketing",
     "data": "2026-05-08",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 574,
+    "compartilhamentos": 71
   },
   {
     "id": 58,
     "usuario": "Beatriz Gomes",
-    "estrelas": 5,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #design",
     "data": "2026-05-02",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 3367,
+    "compartilhamentos": 126
   },
   {
     "id": 59,
     "usuario": "Sabrina Pires",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #devlife",
     "data": "2026-05-01",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 148,
+    "compartilhamentos": 10
   },
   {
     "id": 60,
     "usuario": "Bruna Cavalcanti",
-    "estrelas": 1,
     "comentario": "Muitas propagandas a cada três stories visualizados cortam totalmente a experiência de uso. #analytics",
     "data": "2026-05-10",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 0,
+    "compartilhamentos": 2
   },
   {
     "id": 61,
     "usuario": "Renata Guedes",
-    "estrelas": 1,
     "comentario": "Muitas falhas de carregamento nos directs. As mensagens demoram para chegar ou não notificam. #analytics",
     "data": "2026-05-18",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 6,
+    "compartilhamentos": 2
   },
   {
     "id": 62,
     "usuario": "Carlos Souza",
-    "estrelas": 1,
     "comentario": "A qualidade das fotos e vídeos postados pelo Android cai muito. Comprime a imagem e fica pixelado. #socialmedia",
     "data": "2026-05-06",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 10,
+    "compartilhamentos": 0
   },
   {
     "id": 63,
     "usuario": "Pedro Almeida",
-    "estrelas": 3,
     "comentario": "A navegação de carrossel de fotos às vezes fica travada no meio. Precisa de otimização. #analytics",
     "data": "2026-05-03",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 127,
+    "compartilhamentos": 22
   },
   {
     "id": 64,
     "usuario": "Patricia Cruz",
-    "estrelas": 3,
     "comentario": "Razoável. O reels consome dados móveis muito rápido se você não ativar o modo de economia nas configurações. #socialmedia",
     "data": "2026-05-18",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 287,
+    "compartilhamentos": 13
   },
   {
     "id": 65,
     "usuario": "Patricia Nunes",
-    "estrelas": 2,
     "comentario": "O reels vive silenciando meus reels sem aviso alegando direitos autorais da biblioteca oficial. #analytics",
     "data": "2026-05-21",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 81,
+    "compartilhamentos": 7
   },
   {
     "id": 66,
     "usuario": "Tatiane Assis",
-    "estrelas": 5,
     "comentario": "Gostei da opção de virar carrossel e fixar publicações no topo do perfil. Deixa a estética organizada. #analytics",
     "data": "2026-05-14",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 2242,
+    "compartilhamentos": 222
   },
   {
     "id": 67,
     "usuario": "Patricia Cruz",
-    "estrelas": 1,
     "comentario": "Muitas propagandas a cada três stories visualizados cortam totalmente a experiência de uso. #socialmedia",
     "data": "2026-05-19",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 10,
+    "compartilhamentos": 1
   },
   {
     "id": 68,
     "usuario": "Vitor Goulart",
-    "estrelas": 4,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #marketing",
     "data": "2026-05-11",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 1170,
+    "compartilhamentos": 52
   },
   {
     "id": 69,
     "usuario": "Patricia Cruz",
-    "estrelas": 1,
     "comentario": "A nova atualização mudou o botão de pesquisa de lugar de novo. Interface confusa e ruim. #marketing",
     "data": "2026-05-13",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 2,
+    "compartilhamentos": 0
   },
   {
     "id": 70,
     "usuario": "Tatiane Assis",
-    "estrelas": 2,
     "comentario": "A qualidade das fotos e vídeos postados pelo Android cai muito. Comprime a imagem e fica pixelado. #analytics",
     "data": "2026-05-21",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 65,
+    "compartilhamentos": 7
   },
   {
     "id": 71,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 5,
     "comentario": "O reels está super rápido após a última atualização. As imagens carregam instantaneamente. #socialmedia",
     "data": "2026-05-17",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 1560,
+    "compartilhamentos": 116
   },
   {
     "id": 72,
     "usuario": "Patrícian Nunes",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #devlife",
     "data": "2026-05-14",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 119,
+    "compartilhamentos": 10
   },
   {
     "id": 73,
     "usuario": "Ana Oliveira",
-    "estrelas": 5,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo post, ajuda demais quem trabalha com isso. #design",
     "data": "2026-05-04",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 4270,
+    "compartilhamentos": 227
   },
   {
     "id": 74,
     "usuario": "Julio Cesar",
-    "estrelas": 4,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #socialmedia",
     "data": "2026-05-19",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 916,
+    "compartilhamentos": 33
   },
   {
     "id": 75,
     "usuario": "Isabela Mendes",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #socialmedia",
     "data": "2026-05-17",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 298,
+    "compartilhamentos": 24
   },
   {
     "id": 76,
     "usuario": "Cláudia Diniz",
-    "estrelas": 5,
     "comentario": "A aba de mensagens ficou muito melhor com a função de editar as mensagens enviadas em até 15 minutos. #socialmedia",
     "data": "2026-05-02",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 1916,
+    "compartilhamentos": 186
   },
   {
     "id": 77,
     "usuario": "Letícia Alves",
-    "estrelas": 4,
     "comentario": "A aba de mensagens ficou muito melhor com a função de editar as mensagens enviadas em até 15 minutos. #devlife",
     "data": "2026-05-16",
     "tipo_midia": "reels",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 908,
+    "compartilhamentos": 55
   },
   {
     "id": 78,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 3,
     "comentario": "O post continua bom para ver fotos, mas a insistência em transformar tudo em Reels é cansativa. #analytics",
     "data": "2026-05-16",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 257,
+    "compartilhamentos": 22
   },
   {
     "id": 79,
     "usuario": "Isabela Mendes",
-    "estrelas": 5,
     "comentario": "Amei a opção de colocar música na bio do perfil! Dá um toque bem estiloso e único. #socialmedia",
     "data": "2026-05-13",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 2982,
+    "compartilhamentos": 103
   },
   {
     "id": 80,
     "usuario": "Carolina Moreira",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #marketing",
     "data": "2026-05-21",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 246,
+    "compartilhamentos": 18
   },
   {
     "id": 81,
     "usuario": "Bruno Martins",
-    "estrelas": 3,
     "comentario": "A navegação de carrossel de fotos às vezes fica travada no meio. Precisa de otimização. #design",
     "data": "2026-05-18",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 196,
+    "compartilhamentos": 20
   },
   {
     "id": 82,
     "usuario": "Julio Cesar",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #design",
     "data": "2026-05-13",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 189,
+    "compartilhamentos": 30
   },
   {
     "id": 83,
     "usuario": "Daniel Ferreira",
-    "estrelas": 2,
     "comentario": "A qualidade das fotos e vídeos postados pelo Android cai muito. Comprime a imagem e fica pixelado. #marketing",
     "data": "2026-05-01",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 84,
+    "compartilhamentos": 2
   },
   {
     "id": 84,
     "usuario": "Patrícian Nunes",
-    "estrelas": 5,
     "comentario": "Uso para divulgar minha loja virtual e as vendas cresceram muito com o uso dos canais de transmissão. #socialmedia",
     "data": "2026-05-20",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 1811,
+    "compartilhamentos": 240
   },
   {
     "id": 85,
     "usuario": "Ricardo Ferreira",
-    "estrelas": 4,
     "comentario": "Muito bom post no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #marketing",
     "data": "2026-05-08",
     "tipo_midia": "post",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 766,
+    "compartilhamentos": 79
   },
   {
     "id": 86,
     "usuario": "Sabrina Pires",
-    "estrelas": 3,
     "comentario": "A navegação de carrossel de fotos às vezes fica travada no meio. Precisa de otimização. #socialmedia",
     "data": "2026-05-02",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 142,
+    "compartilhamentos": 22
   },
   {
     "id": 87,
     "usuario": "Pedro Almeida",
-    "estrelas": 5,
     "comentario": "Excelente plataforma. A possibilidade de criar figurinhas cortando partes de fotos ficou divertida. #design",
     "data": "2026-05-20",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 4043,
+    "compartilhamentos": 152
   },
   {
     "id": 88,
     "usuario": "Larissa Ribeiro",
-    "estrelas": 2,
     "comentario": "O feed está uma bagunça completa. Não vejo mais os posts de amigos, só anúncios patrocinados. #marketing",
     "data": "2026-05-13",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 13,
+    "compartilhamentos": 9
   },
   {
     "id": 89,
     "usuario": "Vitor Goulart",
-    "estrelas": 4,
     "comentario": "Adorei a nova ferramenta de agendamento de posts direto pelo reels, ajuda demais quem trabalha com isso. #analytics",
     "data": "2026-05-13",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 482,
+    "compartilhamentos": 65
   },
   {
     "id": 90,
     "usuario": "Gustavo Cardoso",
-    "estrelas": 4,
     "comentario": "Muito bom post no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #socialmedia",
     "data": "2026-05-17",
     "tipo_midia": "post",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 406,
+    "compartilhamentos": 64
   },
   {
     "id": 91,
     "usuario": "Cláudia Diniz",
-    "estrelas": 4,
     "comentario": "Amei a opção de colocar música na bio do perfil! Dá um toque bem estiloso e único. #design",
     "data": "2026-05-10",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 770,
+    "compartilhamentos": 35
   },
   {
     "id": 92,
     "usuario": "Carolina Moreira",
-    "estrelas": 3,
     "comentario": "Funcional. A aba de compras sumiu, o que facilitou a navegação de quem não quer comprar nada. #analytics",
     "data": "2026-05-18",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 327,
+    "compartilhamentos": 19
   },
   {
     "id": 93,
     "usuario": "Gabriela Lima",
-    "estrelas": 2,
     "comentario": "A entrega dos meus posts caiu drasticamente esta semana. O algoritmo está boicotando contas menores. #socialmedia",
     "data": "2026-05-04",
     "tipo_midia": "reels",
-    "hashtag_principal": "#socialmedia"
+    "hashtag_principal": "#socialmedia",
+    "curtidas": 82,
+    "compartilhamentos": 5
   },
   {
     "id": 94,
     "usuario": "Cláudia Diniz",
-    "estrelas": 4,
     "comentario": "Gostei da opção de virar carrossel e fixar publicações no topo do perfil. Deixa a estética organizada. #design",
     "data": "2026-05-19",
     "tipo_midia": "post",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 752,
+    "compartilhamentos": 62
   },
   {
     "id": 95,
     "usuario": "Júlia Carvalho",
-    "estrelas": 4,
     "comentario": "Muito bom reels no geral. Gosto dos filtros de iluminação automáticos, ajudam muito. #design",
     "data": "2026-05-07",
     "tipo_midia": "reels",
-    "hashtag_principal": "#design"
+    "hashtag_principal": "#design",
+    "curtidas": 1185,
+    "compartilhamentos": 70
   },
   {
     "id": 96,
     "usuario": "Bruno Martins",
-    "estrelas": 5,
     "comentario": "Muito bom poder mandar notas com áudio na aba de mensagens direct! Facilitou a comunicação. #marketing",
     "data": "2026-05-02",
     "tipo_midia": "reels",
-    "hashtag_principal": "#marketing"
+    "hashtag_principal": "#marketing",
+    "curtidas": 2739,
+    "compartilhamentos": 231
   },
   {
     "id": 97,
     "usuario": "Luana Souza",
-    "estrelas": 3,
     "comentario": "Razoável. O post consome dados móveis muito rápido se você não ativar o modo de economia nas configurações. #analytics",
     "data": "2026-05-01",
     "tipo_midia": "post",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 212,
+    "compartilhamentos": 28
   },
   {
     "id": 98,
     "usuario": "Vitor Goulart",
-    "estrelas": 4,
     "comentario": "Os novos filtros do Stories estão sensacionais! As fotos e vídeos saem muito mais nítidos. #analytics",
     "data": "2026-05-07",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 884,
+    "compartilhamentos": 52
   },
   {
     "id": 99,
     "usuario": "Diego Lopes",
-    "estrelas": 4,
     "comentario": "A aba de mensagens ficou muito melhor com a função de editar as mensagens enviadas em até 15 minutos. #devlife",
     "data": "2026-05-03",
     "tipo_midia": "post",
-    "hashtag_principal": "#devlife"
+    "hashtag_principal": "#devlife",
+    "curtidas": 602,
+    "compartilhamentos": 61
   },
   {
     "id": 100,
     "usuario": "Marcos Rocha",
-    "estrelas": 3,
     "comentario": "Bom, mas as sugestões do explorar costumam ficar repetitivas depois de um tempo de uso. #analytics",
     "data": "2026-05-06",
     "tipo_midia": "reels",
-    "hashtag_principal": "#analytics"
+    "hashtag_principal": "#analytics",
+    "curtidas": 218,
+    "compartilhamentos": 19
   }
 ]
