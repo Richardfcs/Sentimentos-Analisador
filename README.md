@@ -3,6 +3,7 @@
 Dashboard inteligente que analisa avaliações de clientes usando Inteligência Artificial, classificando sentimentos, emoções e extraindo pontos positivos e negativos de comentários textuais.
 
 **Projeto Acadêmico — Programação 2026.1**
+https://sentimentos-analisador.onrender.com/
 
 ---
 
