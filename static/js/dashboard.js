@@ -1978,11 +1978,155 @@ function configurarExportacoes() {
                 }
                 return;
             }
+            
+            const removerAcentos = (str) => {
+                if (!str) return '';
+                if (typeof str !== 'string') str = String(str);
+                return str
+                    .replace(/[\u201c\u201d]/g, '"') // Curly double quotes to straight
+                    .replace(/[\u2018\u2019]/g, "'") // Curly single quotes to straight
+                    .replace(/[\u2014\u2013]/g, "-") // Em/en dashes to hyphen
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "") // Remove accents
+                    .replace(/[^\x20-\x7E]/g, ""); // Keep only printable ASCII
+            };
+
             alert('Gerando Relatório PDF executivo com insights e gráficos consolidados do SentView...');
-            const link = document.createElement('a');
-            link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent('--- Relatório SentView Premium ---\n\nCategoria: ' + categoriaSelecionada + '\nTotal avaliações: ' + dadosOriginais.avaliacoes.length);
-            link.download = `relatorio_sentview_${categoriaSelecionada}.pdf`;
-            link.click();
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                let y = 20;
+                
+                const checkAddPage = (neededHeight) => {
+                    if (y + neededHeight > 280) {
+                        doc.addPage();
+                        y = 20;
+                        return true;
+                    }
+                    return false;
+                };
+
+                // Header
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(22);
+                doc.setTextColor(99, 102, 241); // Indigo color matching SentView
+                doc.text("SentView - Relatorio de Analise", 15, y);
+                y += 8;
+                
+                doc.setFontSize(12);
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(100, 116, 139); // Muted text color
+                doc.text(`Gerado em: ${new Date().toLocaleDateString('pt-BR')}`, 15, y);
+                y += 8;
+                
+                // Divider Line
+                doc.setDrawColor(226, 232, 240);
+                doc.line(15, y, 195, y);
+                y += 10;
+                
+                // General Info Section
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.setTextColor(30, 41, 59); // Dark slate
+                doc.text("Informacoes Gerais", 15, y);
+                y += 8;
+                
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(11);
+                doc.text(`Plataforma analisada: ${removerAcentos(categoriaSelecionada.toUpperCase())}`, 15, y);
+                y += 7;
+                doc.text(`Total de avaliacoes processadas: ${dadosOriginais.avaliacoes.length}`, 15, y);
+                y += 7;
+                
+                // Metrics
+                const sentimentos = dadosOriginais.estatisticas.contagem_sentimentos;
+                const pos = sentimentos.positivo || 0;
+                const neg = sentimentos.negativo || 0;
+                const neu = sentimentos.neutro || 0;
+                
+                doc.text("Distribuicao de Sentimentos:", 15, y);
+                y += 7;
+                doc.text(`  - Positivos: ${pos}`, 15, y);
+                y += 7;
+                doc.text(`  - Negativos: ${neg}`, 15, y);
+                y += 7;
+                doc.text(`  - Neutros: ${neu}`, 15, y);
+                y += 7;
+                
+                // Platform Metric
+                if (categoriaSelecionada === 'youtube' || categoriaSelecionada === 'instagram') {
+                    const mediaLikes = dadosOriginais.estatisticas.metricas_plataforma?.media_curtidas || 0;
+                    doc.text(`Engajamento Medio (Curtidas): ${mediaLikes.toLocaleString('pt-BR')}`, 15, y);
+                } else {
+                    const mediaEstrelas = dadosOriginais.estatisticas.media_estrelas || 0;
+                    doc.text(`Media de Estrelas: ${mediaEstrelas.toFixed(1)} / 5.0`, 15, y);
+                }
+                y += 8;
+                
+                doc.line(15, y, 195, y);
+                y += 10;
+                
+                // AI Insights
+                checkAddPage(20);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.setTextColor(30, 41, 59);
+                doc.text("Insights Analiticos por IA", 15, y);
+                y += 8;
+                
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(10);
+                const insights = dadosOriginais.estatisticas.insights || [];
+                insights.forEach((ins, idx) => {
+                    const text = `${idx + 1}. [${removerAcentos(ins.tipo.toUpperCase())}] ${removerAcentos(ins.texto)}`;
+                    const splitText = doc.splitTextToSize(text, 175);
+                    const neededHeight = splitText.length * 5 + 3;
+                    checkAddPage(neededHeight);
+                    doc.text(splitText, 15, y);
+                    y += neededHeight;
+                });
+                
+                y += 5;
+                checkAddPage(15);
+                doc.setDrawColor(226, 232, 240);
+                doc.line(15, y, 195, y);
+                y += 10;
+                
+                // Recommended Action Plan
+                checkAddPage(20);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.setTextColor(30, 41, 59);
+                doc.text("Roteiro de Acao Recomendado (IA)", 15, y);
+                y += 8;
+                
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(10);
+                const plano = dadosOriginais.estatisticas.plano_acao || [];
+                plano.forEach((step) => {
+                    const titleText = `Passo ${step.passo}: ${removerAcentos(step.titulo)} (Prioridade: ${removerAcentos(step.prioridade)})`;
+                    const splitTitle = doc.splitTextToSize(titleText, 175);
+                    const splitDesc = doc.splitTextToSize(removerAcentos(step.descricao), 175);
+                    
+                    const neededHeight = (splitTitle.length * 5) + (splitDesc.length * 5) + 8;
+                    checkAddPage(neededHeight);
+                    
+                    doc.setFont("helvetica", "bold");
+                    doc.text(splitTitle, 15, y);
+                    y += splitTitle.length * 5;
+                    
+                    doc.setFont("helvetica", "normal");
+                    doc.text(splitDesc, 15, y);
+                    y += splitDesc.length * 5 + 5;
+                });
+                
+                doc.save(`relatorio_sentview_${categoriaSelecionada}.pdf`);
+            } catch (error) {
+                console.error("Erro ao gerar PDF:", error);
+                alert("Ocorreu um erro ao gerar o PDF. Por favor, tente novamente.");
+            }
         });
     }
 
