@@ -2,15 +2,15 @@
 
  
 
-> A smart dashboard that analyzes customer reviews using Artificial Intelligence, classifying feelings and emotions, and extracting positive and negative points from textual comments. Developed as an Academic Project for the **Programação 2026.1** course at **[[ College/Institution Name ]]**. 
+> A smart dashboard that analyzes customer reviews using Artificial Intelligence, classifying feelings and emotions, and extracting positive and negative points from textual comments. Developed as an Academic Project for the **Programação 2026.1** course at **SENAC PE - Systems Analysis and Development**. 
 
  
 
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE) 
 
-[![Institution](https://img.shields.io/badge/Institution-[[Institution%20Name]]-blue)]([[Institution%20URL]]) 
+[![Senac](https://img.shields.io/badge/Institution-Senac%20College-blue)](https://www.senac.br/)
 
-[[ [![LGPD](https://img.shields.io/badge/Compliance-LGPD%20Ready-blueviolet)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) ]]
+[![LGPD](https://img.shields.io/badge/Compliance-LGPD%20Ready-blueviolet)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) 
 
  
 
@@ -72,12 +72,12 @@ avaliacoes.json ➔ Flask reads ➔ Pydantic validates ➔ AI analyzes comments
 
  
 
-[[ Since this application processes customer reviews and potentially personal/sensitive data, ensure compliance with the Brazilian General Data Protection Law (LGPD - Law nº 13.709/2018). Fill in your project's privacy and compliance details below:
+Since this application processes customer reviews and potentially personal/sensitive data, ensure compliance with the Brazilian General Data Protection Law (LGPD - Law nº 13.709/2018). Fill in your project's privacy and compliance details below:
 
 ### Implemented Privacy Standards:
 * **Consent & Minimization:** Explain how user reviews and personal data are collected and stored.
 * **Anonymization:** Mention if user identifiers are anonymized.
-* **Security & Deletion:** Mention any encryption/hashing applied to user data or API keys, and cache-clearing mechanisms like the `/api/limpar-cache` endpoint that purges stored data. ]]
+* **Security & Deletion:** Mention any encryption/hashing applied to user data or API keys, and cache-clearing mechanisms like the `/api/limpar-cache` endpoint that purges stored data.
 
  
 
@@ -141,7 +141,7 @@ OPENROUTER_API_KEY="your_openrouter_api_key_here"
 
 ```bash 
 # 1. Clone the repository 
-git clone [[ https://github.com/Richardfcs/sentimentos-analisador.git ]] 
+git clone https://github.com/Richardfcs/sentimentos-analisador.git 
 cd Sentimentos-Analisador 
 
 # 2. Create and activate a virtual environment (recommended)
@@ -203,10 +203,10 @@ If we had another semester, we plan to implement:
 
  
 
-* **[[ Richard Silva ]]** - Backend & AI Integration Specialist - [GitHub](https://github.com/Richardfcs)
-* **[[ Team Member Name ]]** - Backend & AI Integration Specialist - [GitHub](https://github.com/luardo05)
-* **[[ Cauã Souza ]]** - Frontend Developer & UI Designer - [GitHub](https://github.com/Cauartsz)
-* **[[ Morgana Souza ]]** - Frontend Developer & UI Designer - [GitHub](https://github.com/MorganaSouza)
+* **Richard Silva** - Backend & AI Integration Specialist - [GitHub](https://github.com/Richardfcs)
+* **Luiz Eduardo** - Backend & AI Integration Specialist - [GitHub](https://github.com/luardo05)
+* **Cauã Souza** - Frontend Developer & UI Designer - [GitHub](https://github.com/Cauartsz)
+* **Morgana Souza** - Frontend Developer & UI Designer - [GitHub](https://github.com/MorganaSouza)
 
 * **Academic Advisor / Professor:** Prof. Rodrigo Rios de Larrazábal
 * **Tech English Course Professor:** Prof. Leonardo Trevas 
