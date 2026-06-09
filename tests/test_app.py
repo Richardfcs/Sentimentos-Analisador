@@ -35,8 +35,8 @@ def test_index_route(client):
     response = client.get("/")
     assert response.status_code == 200
     html = response.data.decode("utf-8")
-    assert "<title>Analisador de Sentimentos com IA</title>" in html
-    assert "SentView" in html
+    assert "<title>SenteAI — Analisador de Sentimentos com IA</title>" in html
+    assert "SenteAI" in html
 
 def test_api_dados_valid_category(client):
     """Garante que a rota de dados do dashboard carrega dados válidos (ex: Play Store)."""

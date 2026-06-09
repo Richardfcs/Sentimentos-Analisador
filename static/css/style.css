@@ -2651,3 +2651,82 @@ body.theme-amazon .sandbox-input-card textarea:focus {
     50% { transform: translateY(-5px); }
 }
 
+/* ==========================================================================
+   Logo SenteAI styling
+   ========================================================================== */
+.logo-wrapper {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.brand-logo {
+    height: 90px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.35));
+    transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.brand-logo:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.45));
+}
+
+.brand-logo-sidebar {
+    height: 25px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.25));
+    transition: transform var(--transition-base);
+}
+
+.brand-logo-sidebar:hover {
+    transform: scale(1.03);
+}
+
+.logo-sidebar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 14, 26, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    margin-bottom: var(--spacing-sm);
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .dashboard-sidebar .header-title {
+        justify-content: center;
+    }
+}
+
+.header-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .header-title-container {
+        align-items: center;
+    }
+}
+
+.category-name-badge {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+

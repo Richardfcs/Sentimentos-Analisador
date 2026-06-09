@@ -1843,7 +1843,7 @@ function configurarPremiumModal() {
 
             isPremiumUser = true;
 
-            alert('Assinatura Premium simulada com sucesso! Todos os recursos e insights avançados do SentView estão agora desbloqueados para esta sessão.');
+            alert('Assinatura Premium simulada com sucesso! Todos os recursos e insights avançados do SenteAI estão agora desbloqueados para esta sessão.');
 
             document.getElementById('bill-cardholder').value = '';
             document.getElementById('bill-cardnumber').value = '';
@@ -1991,7 +1991,7 @@ function configurarExportacoes() {
                     .replace(/[^\x20-\x7E]/g, ""); // Keep only printable ASCII
             };
 
-            alert('Gerando Relatório PDF executivo com insights e gráficos consolidados do SentView...');
+            alert('Gerando Relatório PDF executivo com insights e gráficos consolidados do SenteAI...');
             
             try {
                 const { jsPDF } = window.jspdf;
@@ -2011,8 +2011,8 @@ function configurarExportacoes() {
                 // Header
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(22);
-                doc.setTextColor(99, 102, 241); // Indigo color matching SentView
-                doc.text("SentView - Relatorio de Analise", 15, y);
+                doc.setTextColor(99, 102, 241); // Indigo color matching SenteAI
+                doc.text("SenteAI - Relatorio de Analise", 15, y);
                 y += 8;
                 
                 doc.setFontSize(12);
@@ -2122,7 +2122,7 @@ function configurarExportacoes() {
                     y += splitDesc.length * 5 + 5;
                 });
                 
-                doc.save(`relatorio_sentview_${categoriaSelecionada}.pdf`);
+                doc.save(`relatorio_senteai_${categoriaSelecionada}.pdf`);
             } catch (error) {
                 console.error("Erro ao gerar PDF:", error);
                 alert("Ocorreu um erro ao gerar o PDF. Por favor, tente novamente.");
@@ -2143,7 +2143,7 @@ function configurarExportacoes() {
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dadosOriginais, null, 2));
             const link = document.createElement('a');
             link.setAttribute("href", dataStr);
-            link.setAttribute("download", `sentview_export_${categoriaSelecionada}.json`);
+            link.setAttribute("download", `senteai_export_${categoriaSelecionada}.json`);
             link.click();
         });
     }

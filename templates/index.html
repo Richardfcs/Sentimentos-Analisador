@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dashboard de análise de sentimentos com IA - Visualize avaliações de clientes com gráficos interativos">
-    <title>Analisador de Sentimentos com IA</title>
+    <title>SenteAI — Analisador de Sentimentos com IA</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +30,9 @@
     <div id="category-selection-screen" class="selection-screen">
         <div class="selection-container">
             <header class="selection-header">
-                <span class="main-icon"><i data-lucide="brain"></i></span>
-                <h1>SentView</h1>
+                <div class="logo-wrapper">
+                    <img src="{{ url_for('static', filename='logo.png') }}" alt="SenteAI Logo" class="brand-logo" id="logo-inicio">
+                </div>
                 <p>Selecione uma fonte de dados para analisar o sentimento e as emoções com inteligência artificial</p>
             </header>
 
@@ -160,9 +164,14 @@
             <header class="header">
                 <div class="header-content">
                     <div class="header-titles">
-                        <div class="header-title">
-                            <span class="header-icon" id="dashboard-category-icon"><i data-lucide="brain"></i></span>
-                            <h1>SentView — <span id="dashboard-category-name">Categoria</span></h1>
+                        <div class="header-title-container">
+                            <div class="logo-sidebar-wrapper">
+                                <img src="{{ url_for('static', filename='logo.png') }}" alt="SenteAI Logo" class="brand-logo-sidebar" id="logo-sidebar">
+                            </div>
+                            <div class="header-title">
+                                <span class="header-icon" id="dashboard-category-icon"><i data-lucide="brain"></i></span>
+                                <span id="dashboard-category-name" class="category-name-badge">Categoria</span>
+                            </div>
                         </div>
                         <p class="header-subtitle">Dashboard inteligente de avaliações e análise semântica</p>
                     </div>
@@ -339,7 +348,7 @@
                     <!-- Premium Paywall Block -->
                     <div class="premium-paywall-card hidden" id="premium-paywall">
                         <div class="paywall-content">
-                            <h3><i data-lucide="lock"></i> Diagnósticos SentView Enterprise</h3>
+                            <h3><i data-lucide="lock"></i> Diagnósticos SenteAI Enterprise</h3>
                             <p>Desbloqueie o relatório analítico completo de causa-efeito e planos de ação sugeridos pela IA para o seu produto.</p>
                             <button class="btn-primary" id="btn-upgrade-premium"><i data-lucide="crown"></i> Upgrade para Premium</button>
                         </div>
@@ -520,13 +529,13 @@
         <div class="modal-card">
             <button class="modal-close-btn" id="btn-close-premium-modal">&times;</button>
             <div class="modal-header">
-                <h2><i data-lucide="crown"></i> Upgrade para SentView Premium</h2>
+                <h2><i data-lucide="crown"></i> Upgrade para SenteAI Premium</h2>
                 <p>Libere o poder total dos diagnósticos de negócio automatizados por IA</p>
             </div>
             <div class="modal-body">
                 <div class="premium-plans">
                     <div class="plan-card">
-                        <h3>SentView Pro</h3>
+                        <h3>SenteAI Pro</h3>
                         <div class="plan-price">R$ 49<span>/mês</span></div>
                         <ul class="plan-features">
                             <li>✅ Insights analíticos ilimitados</li>
@@ -537,7 +546,7 @@
                     </div>
                     <div class="plan-card featured">
                         <div class="plan-badge">RECOMENDADO</div>
-                        <h3>SentView Enterprise</h3>
+                        <h3>SenteAI Enterprise</h3>
                         <div class="plan-price">R$ 149<span>/mês</span></div>
                         <ul class="plan-features">
                             <li>✅ Tudo do plano Pro</li>
